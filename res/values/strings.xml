@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">mr_fit_v1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Home</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="action_tracker">Tracker</string>
+    <string name="action_friends">Friends</string>
+    <string name="action_statitics">Statistics</string>
+    <string name="title_activity_tracker">TrackerActivity</string>
+    <string name="title_activity_walking">WalkingActivity</string>
+    <string name="title_activity_report">ReportActivity</string>
+    <string name="title_activity_statistic">StatisticActivity</string>
+    <string name="title_activity_day">DayActivity</string>
+    <string name="title_activity_month">MonthActivity</string>
+    <string name="title_activity_week">WeekActivity</string>
+    <string name="title_activity_friends">FriendsActivity</string>
+    <string name="title_activity_search_friend">SearchFriendActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+</resources>

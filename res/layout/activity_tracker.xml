@@ -1,0 +1,26 @@
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mr_fit_v1.TrackerActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_x="190dp"
+        android:layout_y="155dp"
+     
+        android:text="Start Walking" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_x="194dp"
+        android:layout_y="385dp"
+        android:text="Start Running" />
+
+</AbsoluteLayout>
