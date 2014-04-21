@@ -208,63 +208,6 @@ containing a value of this type.
         public static final int calory=0x7f020002;
         public static final int clock=0x7f020003;
         public static final int clock2=0x7f020004;
-<<<<<<< HEAD
-        public static final int ic_action_data_usage=0x7f020005;
-        public static final int ic_action_good=0x7f020006;
-        public static final int ic_action_search=0x7f020007;
-        public static final int ic_action_shuffle=0x7f020008;
-        public static final int ic_action_time=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
-        public static final int noavatar_middle=0x7f02000b;
-    }
-    public static final class id {
-        public static final int Button01=0x7f0a0014;
-        public static final int ProgressBar01=0x7f0a0022;
-        public static final int ProgressBar02=0x7f0a0024;
-        public static final int RelativeLayout1=0x7f0a001b;
-        public static final int TextView01=0x7f0a001c;
-        public static final int TextView02=0x7f0a001e;
-        public static final int TextView03=0x7f0a0021;
-        public static final int TextView04=0x7f0a0023;
-        public static final int action_settings=0x7f0a002d;
-        public static final int button1=0x7f0a0002;
-        public static final int button2=0x7f0a0009;
-        public static final int checkBox1=0x7f0a0018;
-        public static final int chronometer1=0x7f0a000f;
-        public static final int container=0x7f0a0000;
-        public static final int content=0x7f0a0016;
-        public static final int editText1=0x7f0a0001;
-        public static final int editText2=0x7f0a0007;
-        public static final int imageView1=0x7f0a0015;
-        public static final int imageView2=0x7f0a001d;
-        public static final int imageView3=0x7f0a001f;
-        public static final int imageView4=0x7f0a0025;
-        public static final int item0=0x7f0a0027;
-        public static final int item1=0x7f0a0028;
-        public static final int item2=0x7f0a0029;
-        public static final int item3=0x7f0a002a;
-        public static final int item4=0x7f0a002b;
-        public static final int item5=0x7f0a002c;
-        public static final int pager=0x7f0a001a;
-        public static final int progressBar1=0x7f0a0020;
-        public static final int progressBar2=0x7f0a0026;
-        public static final int tableRow1=0x7f0a0003;
-        public static final int tableRow2=0x7f0a0004;
-        public static final int tableRow3=0x7f0a0005;
-        public static final int tableRow4=0x7f0a0006;
-        public static final int tableRow5=0x7f0a0017;
-        public static final int tableRow6=0x7f0a0019;
-        public static final int textView1=0x7f0a0008;
-        public static final int textView10=0x7f0a0013;
-        public static final int textView2=0x7f0a000b;
-        public static final int textView3=0x7f0a000a;
-        public static final int textView4=0x7f0a000c;
-        public static final int textView5=0x7f0a000d;
-        public static final int textView6=0x7f0a000e;
-        public static final int textView7=0x7f0a0010;
-        public static final int textView8=0x7f0a0011;
-        public static final int textView9=0x7f0a0012;
-=======
         public static final int common_signin_btn_icon_dark=0x7f020005;
         public static final int common_signin_btn_icon_disabled_dark=0x7f020006;
         public static final int common_signin_btn_icon_disabled_focus_dark=0x7f020007;
@@ -292,13 +235,14 @@ containing a value of this type.
         public static final int ic_action_data_usage=0x7f02001d;
         public static final int ic_action_good=0x7f02001e;
         public static final int ic_action_search=0x7f02001f;
-        public static final int ic_action_time=0x7f020020;
-        public static final int ic_launcher=0x7f020021;
-        public static final int ic_plusone_medium_off_client=0x7f020022;
-        public static final int ic_plusone_small_off_client=0x7f020023;
-        public static final int ic_plusone_standard_off_client=0x7f020024;
-        public static final int ic_plusone_tall_off_client=0x7f020025;
-        public static final int noavatar_middle=0x7f020026;
+        public static final int ic_action_shuffle=0x7f020020;
+        public static final int ic_action_time=0x7f020021;
+        public static final int ic_launcher=0x7f020022;
+        public static final int ic_plusone_medium_off_client=0x7f020023;
+        public static final int ic_plusone_small_off_client=0x7f020024;
+        public static final int ic_plusone_standard_off_client=0x7f020025;
+        public static final int ic_plusone_tall_off_client=0x7f020026;
+        public static final int noavatar_middle=0x7f020027;
     }
     public static final class id {
         public static final int Button01=0x7f060019;
@@ -309,7 +253,7 @@ containing a value of this type.
         public static final int TextView02=0x7f060023;
         public static final int TextView03=0x7f060026;
         public static final int TextView04=0x7f060028;
-        public static final int action_settings=0x7f060031;
+        public static final int action_settings=0x7f060032;
         public static final int button1=0x7f060007;
         public static final int button2=0x7f06000e;
         public static final int checkBox1=0x7f06001d;
@@ -322,18 +266,19 @@ containing a value of this type.
         public static final int imageView1=0x7f06001a;
         public static final int imageView2=0x7f060022;
         public static final int imageView3=0x7f060024;
-        public static final int item0=0x7f06002b;
-        public static final int item1=0x7f06002c;
-        public static final int item2=0x7f06002d;
-        public static final int item3=0x7f06002e;
-        public static final int item4=0x7f06002f;
-        public static final int item5=0x7f060030;
+        public static final int imageView4=0x7f06002a;
+        public static final int item0=0x7f06002c;
+        public static final int item1=0x7f06002d;
+        public static final int item2=0x7f06002e;
+        public static final int item3=0x7f06002f;
+        public static final int item4=0x7f060030;
+        public static final int item5=0x7f060031;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
         public static final int pager=0x7f06001f;
         public static final int progressBar1=0x7f060025;
+        public static final int progressBar2=0x7f06002b;
         public static final int satellite=0x7f060002;
-        public static final int section_label=0x7f06002a;
         public static final int tableRow1=0x7f060008;
         public static final int tableRow2=0x7f060009;
         public static final int tableRow3=0x7f06000a;
@@ -354,7 +299,6 @@ containing a value of this type.
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
->>>>>>> e1b44c3300202a835460fd3758d3ac3f169af901
     }
     public static final class layout {
         public static final int activity_friends=0x7f030000;
