@@ -42,9 +42,10 @@ public final class R {
         public static final int ic_action_data_usage=0x7f020005;
         public static final int ic_action_good=0x7f020006;
         public static final int ic_action_search=0x7f020007;
-        public static final int ic_action_time=0x7f020008;
-        public static final int ic_launcher=0x7f020009;
-        public static final int noavatar_middle=0x7f02000a;
+        public static final int ic_action_shuffle=0x7f020008;
+        public static final int ic_action_time=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int noavatar_middle=0x7f02000b;
     }
     public static final class id {
         public static final int Button01=0x7f0a0014;
@@ -55,7 +56,7 @@ public final class R {
         public static final int TextView02=0x7f0a001e;
         public static final int TextView03=0x7f0a0021;
         public static final int TextView04=0x7f0a0023;
-        public static final int action_settings=0x7f0a002c;
+        public static final int action_settings=0x7f0a002d;
         public static final int button1=0x7f0a0002;
         public static final int button2=0x7f0a0009;
         public static final int checkBox1=0x7f0a0018;
@@ -67,15 +68,16 @@ public final class R {
         public static final int imageView1=0x7f0a0015;
         public static final int imageView2=0x7f0a001d;
         public static final int imageView3=0x7f0a001f;
-        public static final int item0=0x7f0a0026;
-        public static final int item1=0x7f0a0027;
-        public static final int item2=0x7f0a0028;
-        public static final int item3=0x7f0a0029;
-        public static final int item4=0x7f0a002a;
-        public static final int item5=0x7f0a002b;
+        public static final int imageView4=0x7f0a0025;
+        public static final int item0=0x7f0a0027;
+        public static final int item1=0x7f0a0028;
+        public static final int item2=0x7f0a0029;
+        public static final int item3=0x7f0a002a;
+        public static final int item4=0x7f0a002b;
+        public static final int item5=0x7f0a002c;
         public static final int pager=0x7f0a001a;
         public static final int progressBar1=0x7f0a0020;
-        public static final int section_label=0x7f0a0025;
+        public static final int progressBar2=0x7f0a0026;
         public static final int tableRow1=0x7f0a0003;
         public static final int tableRow2=0x7f0a0004;
         public static final int tableRow3=0x7f0a0005;
