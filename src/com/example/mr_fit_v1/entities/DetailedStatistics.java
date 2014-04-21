@@ -10,9 +10,9 @@ public class DetailedStatistics extends DetailedActivityStatistics {
 		super();
 	}
 	
-	public DetailedStatistics(int curExerciseTime, int curBurnedTime, int steps,
-            				  float distance, Date date, String feedback) {
-		super(curExerciseTime, curBurnedTime, steps, distance);
+	public DetailedStatistics(int curExerciseTime, int curBurnedCalorie, float distance, 
+							  Date date, String feedback) {
+		super(curExerciseTime, curBurnedCalorie, distance);
 		this.date = date;
 		this.feedback = feedback;
 	}

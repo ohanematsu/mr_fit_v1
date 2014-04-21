@@ -6,15 +6,18 @@ import android.location.Location;
 
 public class Report extends CurrentActivityStatistics {
 	protected ArrayList<Location> path;
-
+	protected Calendar endTime;
+	
 	public Report() {
 		super();
+		this.endTime = Calendar.getInstance();
 	}
 	
-	public Report(int curExerciseTime, int curBurnedTime, int steps, 
-			      float distance, float speed, ArrayList<Location> path) {
-		super(curExerciseTime, curBurnedTime, steps, distance, speed);
+	public Report(int curExerciseTime, int curBurnedCalorie, int steps, float distance, 
+			      float speed, ArrayList<Location> path) {
+		super(curExerciseTime, curBurnedCalorie, distance, speed);
 		this.path = path;
+		this.endTime = Calendar.getInstance();
 	}
 	
 	public ArrayList<Location> getPath() {
@@ -25,5 +28,7 @@ public class Report extends CurrentActivityStatistics {
 		this.path = path;
 	}
 	
-
+	public Calendar getEndTime() {
+		return endTime;
+	}
 }

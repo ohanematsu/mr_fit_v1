@@ -8,7 +8,7 @@ import android.util.Log;
 // It should be a inner class of that fragment
 // TODO: Will do it later
 public class LocationReceiver extends BroadcastReceiver {
-	private static final String TAG = "LocationReceiver";
+	private static final String LOGTAG = "LocationReceiver";
 	
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -27,15 +27,15 @@ public class LocationReceiver extends BroadcastReceiver {
 		}
 	}
 	
+	
+	// This method will be overrided for specific usage
 	protected void onLocationReceived(Context context, Location location) {
-		Log.d(TAG, "Get location from " + location.getProvider() + ": " +
+		Log.i(LOGTAG, "Get location from " + location.getProvider() + ": " +
 	          location.getLatitude() + ", " + location.getLongitude());
-		
-		// TODO:
-		
 	}
 	
+	// This method will be overrided for specific usage
 	protected void onProviderEnableChanged(boolean enabled) {
-		Log.d(TAG, "Provider " + (enabled ? "Enabled" : "disabled"));
+		Log.i(LOGTAG, "Provider " + (enabled ? "Enabled" : "disabled"));
 	}
 }

@@ -2,15 +2,15 @@ package com.example.mr_fit_v1.entities;
 
 public class BasicActivityStatistics {
 	protected int curExerciseTime;
-	protected int curBurnedTime;
+	protected int curBurnedCalorie;
 	
 	public BasicActivityStatistics() {
 		
 	}
 	
-	public BasicActivityStatistics(int curExerciseTime, int curBurnedTime) {
+	public BasicActivityStatistics(int curExerciseTime, int curBurnedCalorie) {
 		this.curExerciseTime = curExerciseTime;
-		this.curBurnedTime = curBurnedTime;
+		this.curBurnedCalorie = curBurnedCalorie;
 	}
 	
 	public int getCurExerciseTime() {
@@ -21,11 +21,11 @@ public class BasicActivityStatistics {
 		this.curExerciseTime = curExerciseTime;
 	}
 
-	public int getCurBurnedTime() {
-		return curBurnedTime;
+	public int getCurBurnedCalorie() {
+		return curBurnedCalorie;
 	}
 
-	public void setCurBurnedTime(int curBurnedTime) {
-		this.curBurnedTime = curBurnedTime;
+	public void setCurBurnedCalorie(int curBurnedCalorie) {
+		this.curBurnedCalorie = curBurnedCalorie;
 	}
 }
