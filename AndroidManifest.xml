@@ -5,13 +5,16 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="19" />
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-feature android:required="true" android:name="android.hardware.location.gps"/>
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -36,28 +39,8 @@
             android:label="@string/title_activity_tracker" >
         </activity>
         <activity
-            android:name="com.example.mr_fit_v1.WalkingActivity"
-            android:label="@string/title_activity_walking" >
-        </activity>
-        <activity
             android:name="com.example.mr_fit_v1.ReportActivity"
             android:label="@string/title_activity_report" >
-        </activity>
-        <activity
-            android:name="com.example.mr_fit_v1.StatisticActivity"
-            android:label="@string/title_activity_statistic" >
-        </activity>
-        <activity
-            android:name="com.example.mr_fit_v1.DayActivity"
-            android:label="@string/title_activity_day" >
-        </activity>
-        <activity
-            android:name="com.example.mr_fit_v1.MonthActivity"
-            android:label="@string/title_activity_month" >
-        </activity>
-        <activity
-            android:name="com.example.mr_fit_v1.WeekActivity"
-            android:label="@string/title_activity_week" >
         </activity>
         <activity
             android:name="com.example.mr_fit_v1.FriendsActivity"
@@ -67,15 +50,35 @@
             android:name="com.example.mr_fit_v1.SearchFriendActivity"
             android:label="@string/title_activity_search_friend" >
         </activity>
-        <activity
-            android:name="com.example.mr_fit_v1.SettingsActivity"
-            android:label="@string/title_activity_settings" >
-        </activity>
-        <receiver android:name=".LocationReceiver" android:exported="false">
+
+        <receiver
+            android:name="com.example.mr_fit_v1.LocationReceiver"
+            android:exported="false" >
             <intent-filter>
-                <action android:name="com.example.mr_fit_v1.ws.local.ACTION_LOCATION"/>
+                <action android:name="com.example.mr_fit_v1.ws.local.ACTION_LOCATION" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="com.example.mr_fit_v1.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="android.preference.PreferenceActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.preference.PreferenceActivity" />
+        </activity>
+        <activity
+            android:name="com.example.mr_fit_v1.TrakcerSecondaryActivity"
+            android:label="@string/title_activity_trakcer_secondary" >
+        </activity>
+        <activity
+            android:name="com.example.mr_fit_v1.MapActivity"
+            android:label="@string/title_activity_map" >
+        </activity>
+        <activity
+            android:name="com.example.mr_fit_v1.StatisticsActivity"
+            android:label="@string/title_activity_statistics" >
+        </activity>
     </application>
 
 </manifest>

@@ -8,19 +8,20 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+    	android:layout_height="110dp"
         android:layout_x="190dp"
         android:layout_y="155dp"
-     
+     	android:background="@drawable/button"
         android:text="Start Walking" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
-        android:layout_x="194dp"
+        android:layout_width="200dp"
+    	android:layout_height="110dp"
+        android:layout_x="190dp"
         android:layout_y="385dp"
+        android:background="@drawable/button"
         android:text="Start Running" />
 
 </AbsoluteLayout>
