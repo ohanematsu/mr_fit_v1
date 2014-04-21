@@ -8,10 +8,10 @@ public class DayCurrentStatistics extends BasicActivityStatistics {
 		super();
 	}
 	
-	public DayCurrentStatistics(int curExerciseTime, int curBurnedTime, 
+	public DayCurrentStatistics(int curExerciseTime, int curBurnedCalorie, 
 								int timeElapasedSinceLastExercise,
 								ExerciseSettings exerciseSettings) {
-		super(curExerciseTime, curBurnedTime);
+		super(curExerciseTime, curBurnedCalorie);
 		this.timeElapasedSinceLastExercise = timeElapasedSinceLastExercise;
 		this.exerciseSettings = exerciseSettings;
 	}
