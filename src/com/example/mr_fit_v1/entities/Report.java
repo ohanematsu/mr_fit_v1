@@ -14,8 +14,8 @@ public class Report extends CurrentActivityStatistics {
 	}
 	
 	public Report(int curExerciseTime, int curBurnedCalorie, int steps, float distance, 
-			      float speed, ArrayList<Location> path) {
-		super(curExerciseTime, curBurnedCalorie, distance, speed);
+			      float speed, ArrayList<Location> path, String type) {
+		super(curExerciseTime, curBurnedCalorie, distance, speed, type);
 		this.path = path;
 		this.endTime = Calendar.getInstance();
 	}

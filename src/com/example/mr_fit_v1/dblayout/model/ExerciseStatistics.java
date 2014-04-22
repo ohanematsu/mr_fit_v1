@@ -3,6 +3,8 @@ package com.example.mr_fit_v1.dblayout.model;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.example.mr_fit_v1.entities.Report;
+
 import android.R.integer;
 import android.util.Log;
 
@@ -42,6 +44,22 @@ public class ExerciseStatistics {
 		this.distance = distance;
 		this.speed = speed;
 		this.burnedCalorie = burnedCalorie;
+	}
+	
+	public ExerciseStatistics(int userId, Report report) {
+		this.userId = userId;
+		Calendar startTime = report.getStartTime();
+		Calendar endTime = report.getEndTime();
+		this.day = startTime.get(Calendar.DATE);
+		this.week = startTime.get(Calendar.WEEK_OF_YEAR);
+		this.month = startTime.get(Calendar.MONTH);
+		this.year = startTime.get(Calendar.YEAR);
+		this.startTime = startTime.toString();
+		this.endTime = endTime.toString();
+		this.type = report.getType();
+		this.distance = report.getDistance();
+		this.speed = report.getSpeed();
+		this.burnedCalorie = report.getCurBurnedCalorie();
 	}
 	
 	public int getUserId() {

@@ -5,16 +5,21 @@ import java.util.*;
 import com.example.mr_fit_v1.util.CalorieCalculator;
 
 public class CurrentActivityStatistics extends DetailedActivityStatistics {
+	public static final String WALK = "WALK";
+	public static final String RUN = "RUN";
+	
 	protected float speed;
 	protected Calendar startTime;
+	protected String type;
 	private Calendar lastTime;
 	
 	public CurrentActivityStatistics(int curExerciseTime, int curBurnedCalorie,
-            						 float distance, float speed) {
+            						 float distance, float speed, String type) {
 		super(curExerciseTime, curBurnedCalorie, distance);
 		this.speed = speed;
 		this.startTime = Calendar.getInstance();
 		this.lastTime = this.startTime;
+		this.type = type;
 	}
 	
 	public CurrentActivityStatistics() {
@@ -33,6 +38,14 @@ public class CurrentActivityStatistics extends DetailedActivityStatistics {
 	
 	public Calendar getStartTime() {
 		return startTime;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	// If timer timeout, call this method to update

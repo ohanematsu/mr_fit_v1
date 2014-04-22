@@ -1,7 +1,5 @@
 package com.example.mr_fit_v1.util;
 
-import android.R.integer;
-
 public class CalorieCalculator {
 	// Speed Scale (Mile/Hour)
 	private static final float MAX_STATIC_SPEED = 0.5f;

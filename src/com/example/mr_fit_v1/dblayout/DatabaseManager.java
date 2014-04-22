@@ -31,7 +31,7 @@ public class DatabaseManager {
 		database.close();
 	}
 	
-	public static boolean insertStudent(ExerciseStatistics statistics) {		
+	public static boolean insertStatistics(ExerciseStatistics statistics) {		
 		databaseHelper.insertExerciseStatistics(statistics);
 		return true;
 	}
