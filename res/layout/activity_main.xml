@@ -3,27 +3,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-	
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="400dp"
-        android:layout_height="match_parent"
-        android:layout_x="102dp"
-        android:layout_y="252dp"
-        android:ems="10"
-        android:textAlignment="center" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="200dp"
-        android:layout_height="match_parent"
-        android:layout_x="102dp"
-        android:layout_y="252dp"
-        android:ems="10"
-        android:textAlignment="center" />
 
     <TableLayout
         android:layout_width="wrap_content"
