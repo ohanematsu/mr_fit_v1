@@ -13,7 +13,7 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="@style/Theme.AppCompat">
+    <style name="MyTheme" parent="@android:style/Theme.Light">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 

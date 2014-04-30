@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.mr_fit_v1.StatisticsActivity" >
+    tools:context="com.example.mr_fit_v1.TabsFragmentActivity" >
 
     <item
         android:id="@+id/action_settings"

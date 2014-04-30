@@ -1104,13 +1104,13 @@ containing a value of this type.
     }
     public static final class id {
         public static final int Button01=0x7f060050;
-        public static final int ProgressBar01=0x7f06005e;
-        public static final int ProgressBar02=0x7f060060;
-        public static final int RelativeLayout1=0x7f060057;
-        public static final int TextView01=0x7f060058;
-        public static final int TextView02=0x7f06005a;
-        public static final int TextView03=0x7f06005d;
-        public static final int TextView04=0x7f06005f;
+        public static final int ProgressBar01=0x7f06005d;
+        public static final int ProgressBar02=0x7f06005f;
+        public static final int RelativeLayout1=0x7f060056;
+        public static final int TextView01=0x7f060057;
+        public static final int TextView02=0x7f060059;
+        public static final int TextView03=0x7f06005c;
+        public static final int TextView04=0x7f06005e;
         public static final int action_bar=0x7f06001c;
         public static final int action_bar_activity_content=0x7f060015;
         public static final int action_bar_container=0x7f06001b;
@@ -1122,7 +1122,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f060069;
+        public static final int action_settings=0x7f060068;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1150,27 +1150,27 @@ containing a value of this type.
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
         public static final int imageView1=0x7f060051;
-        public static final int imageView2=0x7f060059;
-        public static final int imageView3=0x7f06005b;
-        public static final int imageView4=0x7f060061;
-        public static final int item0=0x7f060063;
-        public static final int item1=0x7f060064;
-        public static final int item2=0x7f060065;
-        public static final int item3=0x7f060066;
-        public static final int item4=0x7f060067;
-        public static final int item5=0x7f060068;
+        public static final int imageView2=0x7f060058;
+        public static final int imageView3=0x7f06005a;
+        public static final int imageView4=0x7f060060;
+        public static final int item0=0x7f060062;
+        public static final int item1=0x7f060063;
+        public static final int item2=0x7f060064;
+        public static final int item3=0x7f060065;
+        public static final int item4=0x7f060066;
+        public static final int item5=0x7f060067;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f060029;
         public static final int middle=0x7f060012;
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
-        public static final int pager=0x7f060056;
-        public static final int progressBar1=0x7f06005c;
-        public static final int progressBar2=0x7f060062;
+        public static final int progressBar1=0x7f06005b;
+        public static final int progressBar2=0x7f060061;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int radio=0x7f06002f;
+        public static final int realtabcontent=0x01010000;
         public static final int search_badge=0x7f060032;
         public static final int search_bar=0x7f060031;
         public static final int search_button=0x7f060033;
@@ -1268,28 +1268,33 @@ containing a value of this type.
         public static final int activity_second=0x7f03001d;
         public static final int activity_settings=0x7f03001e;
         public static final int activity_statistics=0x7f03001f;
-        public static final int activity_tracker=0x7f030020;
-        public static final int activity_trakcer_secondary=0x7f030021;
-        public static final int fragment_friends=0x7f030022;
-        public static final int fragment_main=0x7f030023;
-        public static final int fragment_map=0x7f030024;
-        public static final int fragment_month=0x7f030025;
-        public static final int fragment_report=0x7f030026;
-        public static final int fragment_search_friend=0x7f030027;
-        public static final int fragment_second=0x7f030028;
-        public static final int fragment_settings=0x7f030029;
-        public static final int fragment_statistic=0x7f03002a;
-        public static final int fragment_statistics=0x7f03002b;
-        public static final int fragment_tracker=0x7f03002c;
-        public static final int fragment_trakcer_secondary=0x7f03002d;
-        public static final int fragment_walking=0x7f03002e;
-        public static final int fragment_week=0x7f03002f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030030;
+        public static final int activity_tabs_fragment=0x7f030020;
+        public static final int activity_tracker=0x7f030021;
+        public static final int activity_trakcer_secondary=0x7f030022;
+        public static final int fragment_friends=0x7f030023;
+        public static final int fragment_main=0x7f030024;
+        public static final int fragment_map=0x7f030025;
+        public static final int fragment_month=0x7f030026;
+        public static final int fragment_report=0x7f030027;
+        public static final int fragment_search_friend=0x7f030028;
+        public static final int fragment_second=0x7f030029;
+        public static final int fragment_settings=0x7f03002a;
+        public static final int fragment_statistic=0x7f03002b;
+        public static final int fragment_statistics=0x7f03002c;
+        public static final int fragment_tabs=0x7f03002d;
+        public static final int fragment_tracker=0x7f03002e;
+        public static final int fragment_trakcer_secondary=0x7f03002f;
+        public static final int fragment_walking=0x7f030030;
+        public static final int fragment_week=0x7f030031;
+        public static final int support_simple_spinner_dropdown_item=0x7f030032;
+        public static final int tab_frag1_layout=0x7f030033;
+        public static final int tab_frag2_layout=0x7f030034;
+        public static final int tab_frag3_layout=0x7f030035;
     }
     public static final class menu {
         public static final int main=0x7f0e0000;
         public static final int map=0x7f0e0001;
-        public static final int statistics=0x7f0e0002;
+        public static final int tabs=0x7f0e0002;
         public static final int trakcer_secondary=0x7f0e0003;
     }
     public static final class string {
@@ -1342,36 +1347,37 @@ containing a value of this type.
         public static final int item2=0x7f0b0019;
         public static final int item3=0x7f0b001a;
         public static final int item4=0x7f0b001b;
-        public static final int pref_default_display_name=0x7f0b0029;
-        public static final int pref_description_social_recommendations=0x7f0b0027;
+        public static final int pref_default_display_name=0x7f0b002a;
+        public static final int pref_description_social_recommendations=0x7f0b0028;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f0b002b;
+        public static final int pref_header_data_sync=0x7f0b002c;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f0b0025;
+        public static final int pref_header_general=0x7f0b0026;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f0b002e;
-        public static final int pref_ringtone_silent=0x7f0b0031;
-        public static final int pref_title_add_friends_to_messages=0x7f0b002a;
-        public static final int pref_title_display_name=0x7f0b0028;
-        public static final int pref_title_new_message_notifications=0x7f0b002f;
-        public static final int pref_title_ringtone=0x7f0b0030;
-        public static final int pref_title_social_recommendations=0x7f0b0026;
-        public static final int pref_title_sync_frequency=0x7f0b002c;
-        public static final int pref_title_system_sync_settings=0x7f0b002d;
-        public static final int pref_title_vibrate=0x7f0b0032;
+        public static final int pref_header_notifications=0x7f0b002f;
+        public static final int pref_ringtone_silent=0x7f0b0032;
+        public static final int pref_title_add_friends_to_messages=0x7f0b002b;
+        public static final int pref_title_display_name=0x7f0b0029;
+        public static final int pref_title_new_message_notifications=0x7f0b0030;
+        public static final int pref_title_ringtone=0x7f0b0031;
+        public static final int pref_title_social_recommendations=0x7f0b0027;
+        public static final int pref_title_sync_frequency=0x7f0b002d;
+        public static final int pref_title_system_sync_settings=0x7f0b002e;
+        public static final int pref_title_vibrate=0x7f0b0033;
         public static final int title_activity_friends=0x7f0b0015;
         public static final int title_activity_map=0x7f0b001f;
         public static final int title_activity_report=0x7f0b0013;
         public static final int title_activity_search_friend=0x7f0b0016;
         public static final int title_activity_second=0x7f0b0010;
         public static final int title_activity_setting=0x7f0b0017;
-        public static final int title_activity_settings=0x7f0b0024;
+        public static final int title_activity_settings=0x7f0b0025;
         public static final int title_activity_statistic=0x7f0b0014;
         public static final int title_activity_statistics=0x7f0b0020;
+        public static final int title_activity_tabs_fragment=0x7f0b0024;
         public static final int title_activity_tracker=0x7f0b0011;
         public static final int title_activity_trakcer_secondary=0x7f0b001d;
         public static final int title_activity_walking=0x7f0b0012;
@@ -1400,7 +1406,7 @@ containing a value of this type.
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0c008c;
+        public static final int MyTheme=0x7f0c008c;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0c0063;
