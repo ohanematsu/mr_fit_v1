@@ -20,6 +20,13 @@ public class Report extends CurrentActivityStatistics {
 		this.endTime = Calendar.getInstance();
 	}
 	
+	public Report(CurrentActivityStatistics statistics, ArrayList<Location> path) {
+		super(statistics.getCurExerciseTime(), statistics.getCurBurnedCalorie(),
+			statistics.getDistance(), statistics.getSpeed(), statistics.getType());
+		this.path = path;
+		this.endTime = Calendar.getInstance();
+	}
+	
 	public ArrayList<Location> getPath() {
 		return path;
 	}

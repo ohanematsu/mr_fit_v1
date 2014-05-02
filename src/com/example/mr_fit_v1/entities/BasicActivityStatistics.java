@@ -1,6 +1,13 @@
 package com.example.mr_fit_v1.entities;
 
-public class BasicActivityStatistics {
+import java.io.Serializable;
+
+public class BasicActivityStatistics implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -155599592640101663L;
+	
 	protected int curExerciseTime;
 	protected int curBurnedCalorie;
 	

@@ -16,12 +16,14 @@ public class LocationReceiver extends BroadcastReceiver {
 			.getParcelableExtra(LocationManager.KEY_LOCATION_CHANGED);
 		// If the PendingIntent is sent due to the update of location, process the new location
 		if (location != null) {
+			Log.i(LOGTAG,  "Receive new location...");
 			onLocationReceived(context, location);
 			return ;
 		}
 		
 		// If the PendingIntent is sent due to the change of status of location provider
 		if (intent.hasExtra(LocationManager.KEY_PROVIDER_ENABLED)) {
+			Log.i(LOGTAG, "Location provider changes..");
 			boolean enabled = intent.getBooleanExtra(LocationManager.KEY_PROVIDER_ENABLED, false);
 			onProviderEnableChanged(enabled);
 		}
