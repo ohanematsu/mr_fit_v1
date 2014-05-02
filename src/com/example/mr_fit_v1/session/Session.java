@@ -1,5 +1,6 @@
 package com.example.mr_fit_v1.session;
 
+import java.util.Calendar;
 import java.util.Properties;
 import java.io.*;
 
@@ -21,14 +22,16 @@ public class Session {
 	private final boolean DEFAULT_RECEIVE_FRIEND_REMINDER = true;
 	private final int DEFAULT_AVARAT_ID                   = 1;			
 
-	private int userId;
 	private static Session instance;
 	
+	private int userId;
 	private Settings settings;
+	private Calendar lastExerciseTime;
 	
 	private Session(int userId, String account) {
 		this.userId = userId;
 		initSettings(account);
+		setLastExerciseTime(Calendar.getInstance());
 		Log.i(LOGTAG, "Initialize session succcess");
 	}
 	
@@ -90,5 +93,13 @@ public class Session {
 	
 	public Settings getSettings() {
 		return settings;
+	}
+
+	public Calendar getLastExerciseTime() {
+		return lastExerciseTime;
+	}
+
+	public void setLastExerciseTime(Calendar lastExerciseTime) {
+		this.lastExerciseTime = lastExerciseTime;
 	}
 }
