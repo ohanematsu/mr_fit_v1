@@ -14,18 +14,19 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "Friends";
 	private static final int DATABASE_VERSION = 1;
 	
-	public static final String STATISTICS_TABLE_NAME = "exercise_statistics";
-	public static final String STATISTICS_TABLE_COLUMN_EXERSIZE_ID = "exercise_statistics_id";
-	public static final String STATISTICS_TABLE_COLUMN_USERID = "userid";
-	public static final String STATISTICS_TABLE_COLUMN_DAY = "day";
-	public static final String STATISTICS_TABLE_COLUMN_WEEK = "week";
-	public static final String STATISTICS_TABLE_COLUMN_MONTH = "month";
-	public static final String STATISTICS_TABLE_COLUMN_YEAR = "year";
-	public static final String STATISTICS_TABLE_COLUMN_START_TIME = "start_time";
-	public static final String STATISTICS_TABLE_COLUMN_END_TIME = "end_time";
-	public static final String STATISTICS_TABLE_COLUMN_TYPE = "type";
-	public static final String STATISTICS_TABLE_COLUMN_DISTANCE = "distance";
-	public static final String STATISTICS_TABLE_COLUMN_SPEED = "speed";
+	public static final String STATISTICS_TABLE_NAME                  = "exercise_statistics";
+	public static final String STATISTICS_TABLE_COLUMN_EXERSIZE_ID    = "exercise_statistics_id";
+	public static final String STATISTICS_TABLE_COLUMN_USERID         = "userid";
+	public static final String STATISTICS_TABLE_COLUMN_DAY            = "day";
+	public static final String STATISTICS_TABLE_COLUMN_WEEK           = "week";
+	public static final String STATISTICS_TABLE_COLUMN_MONTH          = "month";
+	public static final String STATISTICS_TABLE_COLUMN_YEAR           = "year";
+	public static final String STATISTICS_TABLE_COLUMN_START_TIME     = "start_time";
+	public static final String STATISTICS_TABLE_COLUMN_END_TIME       = "end_time";
+	public static final String STATISTICS_TABLE_COLUMN_EXERCISE_TIME  = "exercise_time";
+	public static final String STATISTICS_TABLE_COLUMN_TYPE           = "type";
+	public static final String STATISTICS_TABLE_COLUMN_DISTANCE       = "distance";
+	public static final String STATISTICS_TABLE_COLUMN_SPEED          = "speed";
 	public static final String STATISTICS_TABLE_COLUMN_BURNED_CALORIE = "burned_calorie";
 	
 	private static final String STATISTICS_TABLE_CREATE_STATEMENT = 
@@ -38,6 +39,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 			STATISTICS_TABLE_COLUMN_YEAR           + " INTEGER, "             +
 			STATISTICS_TABLE_COLUMN_START_TIME     + " TEXT, "                +
 			STATISTICS_TABLE_COLUMN_END_TIME       + " TEXT, "                +
+			STATISTICS_TABLE_COLUMN_EXERCISE_TIME  + " INTEGER, "             +
 			STATISTICS_TABLE_COLUMN_TYPE           + " TEXT, "                +
 			STATISTICS_TABLE_COLUMN_DISTANCE       + " REAL, "                +
 			STATISTICS_TABLE_COLUMN_SPEED          + " REAL, "                + 
@@ -76,6 +78,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 		row.put(STATISTICS_TABLE_COLUMN_YEAR, statistics.getYear());
 		row.put(STATISTICS_TABLE_COLUMN_START_TIME, statistics.getStartTime());
 		row.put(STATISTICS_TABLE_COLUMN_END_TIME, statistics.getEndTime());
+		row.put(STATISTICS_TABLE_COLUMN_EXERCISE_TIME, statistics.getExerciseTime());
 		row.put(STATISTICS_TABLE_COLUMN_TYPE, statistics.getType());
 		row.put(STATISTICS_TABLE_COLUMN_DISTANCE, statistics.getDistance());
 		row.put(STATISTICS_TABLE_COLUMN_SPEED, statistics.getSpeed());
@@ -130,7 +133,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 			moveToFirst();
 		}
 		
-		public ExerciseStatistics getStudent() {
+		public ExerciseStatistics getExerciseStatistics() {
 			if (isBeforeFirst() || isAfterLast()) {
 				return null;
 			}
@@ -142,6 +145,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 			int year = getInt(getColumnIndex(STATISTICS_TABLE_COLUMN_YEAR));
 			String startTime = getString(getColumnIndex(STATISTICS_TABLE_COLUMN_START_TIME));
 			String endTime = getString(getColumnIndex(STATISTICS_TABLE_COLUMN_END_TIME));
+			int exertiseTime = getInt(getColumnIndex(STATISTICS_TABLE_COLUMN_EXERCISE_TIME));
 			String type = getString(getColumnIndex(STATISTICS_TABLE_COLUMN_TYPE));
 			float distance = getFloat(getColumnIndex(STATISTICS_TABLE_COLUMN_DISTANCE));
 			float speed = getFloat(getColumnIndex(STATISTICS_TABLE_COLUMN_SPEED));
@@ -149,8 +153,8 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 			
 			moveToNext();
 			
-			return new ExerciseStatistics(userId, day, week, month, year, startTime, 
-					                      endTime, type, distance, speed, burnedCalorie);
+			return new ExerciseStatistics(userId, day, week, month, year, startTime, endTime, 
+				exertiseTime, type, distance, speed, burnedCalorie);
 		}
 	}
 }

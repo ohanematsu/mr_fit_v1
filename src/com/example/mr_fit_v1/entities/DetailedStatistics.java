@@ -3,7 +3,7 @@ package com.example.mr_fit_v1.entities;
 import java.util.Date;
 
 public class DetailedStatistics extends DetailedActivityStatistics {
-	protected Date date;
+	protected String timePeriod;
 	protected String feedback;
 	
 	public DetailedStatistics() {
@@ -11,18 +11,17 @@ public class DetailedStatistics extends DetailedActivityStatistics {
 	}
 	
 	public DetailedStatistics(int curExerciseTime, int curBurnedCalorie, float distance, 
-							  Date date, String feedback) {
+							  String timePeriod) {
 		super(curExerciseTime, curBurnedCalorie, distance);
-		this.date = date;
-		this.feedback = feedback;
+		this.timePeriod = timePeriod;
 	}
 	
-	public Date getDate() {
-		return date;
+	public String getTimePeriod() {
+		return timePeriod;
 	}
 	
-	public void setDate(Date date) {
-		this.date = date;
+	public void setTimePeriod(String timePeriod) {
+		this.timePeriod = timePeriod;
 	}
 	
 	public String getFeedback() {

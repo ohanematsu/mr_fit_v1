@@ -21,6 +21,7 @@ public class ExerciseStatistics {
 	private int year;
 	private String startTime;
 	private String endTime;
+	private int exerciseTime;
 	private String type;
 	private float distance;
 	private float speed;
@@ -31,8 +32,8 @@ public class ExerciseStatistics {
 	}
 	
 	public ExerciseStatistics(int userId, int day, int week, int month, int year, 
-			                  String startTime, String endTime, String type,
-							  float distance, float speed, int burnedCalorie) {
+			                  String startTime, String endTime, int exerciseTime, 
+			                  String type, float distance, float speed, int burnedCalorie) {
 		this.userId = userId;
 		this.day = day;
 		this.week = week;
@@ -40,6 +41,7 @@ public class ExerciseStatistics {
 		this.year = year;
 		this.startTime = startTime;
 		this.endTime = endTime;
+		this.setExerciseTime(exerciseTime);
 		this.type = type;
 		this.distance = distance;
 		this.speed = speed;
@@ -54,6 +56,7 @@ public class ExerciseStatistics {
 		this.week = startTime.get(Calendar.WEEK_OF_YEAR);
 		this.month = startTime.get(Calendar.MONTH);
 		this.year = startTime.get(Calendar.YEAR);
+		this.setExerciseTime(report.getCurExerciseTime());
 		this.startTime = startTime.toString();
 		this.endTime = endTime.toString();
 		this.type = report.getType();
@@ -148,5 +151,13 @@ public class ExerciseStatistics {
 
 	public void setBurnedCalorie(int burnedCalorie) {
 		this.burnedCalorie = burnedCalorie;
+	}
+
+	public int getExerciseTime() {
+		return exerciseTime;
+	}
+
+	public void setExerciseTime(int exerciseTime) {
+		this.exerciseTime = exerciseTime;
 	}
 }
