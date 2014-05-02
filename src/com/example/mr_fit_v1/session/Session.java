@@ -1,11 +1,13 @@
 package com.example.mr_fit_v1.session;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Properties;
 import java.io.*;
 
 import com.example.mr_fit_v1.dblayout.DatabaseManager;
 import com.example.mr_fit_v1.entities.ExerciseSettings;
+import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.entities.Settings;
 
 import android.content.Context;
@@ -27,11 +29,13 @@ public class Session {
 	private int userId;
 	private Settings settings;
 	private Calendar lastExerciseTime;
+	private ArrayList<Friend> friendList;
 	
 	private Session(int userId, String account) {
 		this.userId = userId;
 		initSettings(account);
 		setLastExerciseTime(Calendar.getInstance());
+		setFriendList(new ArrayList<Friend>());
 		Log.i(LOGTAG, "Initialize session succcess");
 	}
 	
@@ -101,5 +105,13 @@ public class Session {
 
 	public void setLastExerciseTime(Calendar lastExerciseTime) {
 		this.lastExerciseTime = lastExerciseTime;
+	}
+
+	public ArrayList<Friend> getFriendList() {
+		return friendList;
+	}
+
+	public void setFriendList(ArrayList<Friend> friendList) {
+		this.friendList = friendList;
 	}
 }
