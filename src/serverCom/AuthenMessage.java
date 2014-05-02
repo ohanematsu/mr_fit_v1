@@ -7,6 +7,6 @@ public class AuthenMessage implements Serializable {
 	public int type;
 	public String userId;
 	public String password;
-	public boolean result1;
+	public boolean result;
 	List<Friend> friends;
 }

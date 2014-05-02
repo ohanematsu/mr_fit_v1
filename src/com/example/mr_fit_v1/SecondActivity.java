@@ -1,17 +1,17 @@
 package com.example.mr_fit_v1;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
-public class SecondActivity extends ActionBarActivity {
+public class SecondActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class SecondActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_second);
 
 		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
 	}
@@ -37,8 +37,33 @@ public class SecondActivity extends ActionBarActivity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
+		Intent intent = null;
 		int id = item.getItemId();
-		
+		/*if (id == R.id.action_settings) {
+			return true;
+		}*/
+		switch(id){
+		case R.id.item1:
+			intent = new Intent(this, SecondActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.item2:
+			intent = new Intent(this, TrackerActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.item3:
+			intent = new Intent(this, TabsFragmentActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.item4:
+			intent = new Intent(this, FriendsActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.item5:
+			intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+			break;
+		}
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -53,8 +78,8 @@ public class SecondActivity extends ActionBarActivity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_second,
-					container, false);
+			View rootView = inflater.inflate(
+					R.layout.fragment_second, container, false);
 			return rootView;
 		}
 	}

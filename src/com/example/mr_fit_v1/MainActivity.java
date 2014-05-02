@@ -4,12 +4,16 @@ package com.example.mr_fit_v1;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import serverCom.AuthenMessage;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	
 	private String serverHost = "ec2-54-186-249-133.us-west-2.compute.amazonaws.com";
 	@Override
@@ -26,7 +30,7 @@ public class MainActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_main);
 
 		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
+			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
 	}
@@ -70,11 +74,33 @@ public class MainActivity extends ActionBarActivity {
 		String userId = text1.getText().toString();
 		EditText text2 = (EditText) findViewById(R.id.editText2);
 		String password = text2.getText().toString();
+		AuthenMessage msg = new AuthenMessage();
+		msg.type = 1;
+		msg.userId  = userId;
+		msg.password = password;
 		
 		try {
+			@SuppressWarnings("resource")
 			Socket sock = new Socket(serverHost, 18641);
+			OutputStream os = sock.getOutputStream();
+			ObjectOutputStream oos = new ObjectOutputStream(os);
+			oos.writeObject(msg);
 			InputStream is = sock.getInputStream();
 			ObjectInputStream ois = new ObjectInputStream(is);
+			AuthenMessage res = null;
+			try {
+				res = (AuthenMessage) ois.readObject();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(res.result == true){
+				Intent intent = new Intent(this, SecondActivity.class);
+				startActivity(intent);
+			}
+			else{
+				
+			}
 			
 			
 		} catch (UnknownHostException e) {

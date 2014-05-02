@@ -12,11 +12,11 @@
     <string name="title_activity_friends">FriendsActivity</string>
     <string name="title_activity_search_friend">SearchFriendActivity</string>
     <string name="title_activity_setting">SettingsActivity</string>
-    <string name="item1">Tracker</string>
-    <string name="item2">Statistics</string>
-    <string name="item3">Friends</string>
-    <string name="item4">Settings</string>
-    <string name="Item5">Help</string>
+    <string name="item1">Main</string>
+    <string name="item2">Tracker</string>
+    <string name="item3">Statistics</string>
+    <string name="item4">Friends</string>
+    <string name="item5">Settings</string>
     <string name="title_activity_trakcer_secondary">TrakcerSecondaryActivity</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_map">MapActivity</string>

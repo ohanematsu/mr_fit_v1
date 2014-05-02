@@ -6,10 +6,13 @@ import tabs.Tab1Fragment;
 import tabs.Tab2Fragment;
 import tabs.Tab3Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
 import android.widget.TabHost.TabContentFactory;
@@ -74,6 +77,48 @@ public class TabsFragmentActivity extends FragmentActivity implements TabHost.On
             mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab")); //set the tab as per the saved state
         }
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		Intent intent = null;
+		int id = item.getItemId();
+		/*if (id == R.id.action_settings) {
+			return true;
+		}*/
+		switch(id){
+		case R.id.item1:
+			intent = new Intent(this, SecondActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.item2:
+			intent = new Intent(this, TrackerActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.item3:
+			intent = new Intent(this, TabsFragmentActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.item4:
+			intent = new Intent(this, FriendsActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.item5:
+			intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
  
     /** (non-Javadoc)
      * @see android.support.v4.app.FragmentActivity#onSaveInstanceState(android.os.Bundle)
@@ -101,6 +146,7 @@ public class TabsFragmentActivity extends FragmentActivity implements TabHost.On
         //
         mTabHost.setOnTabChangedListener(this);
     }
+    
  
     /**
      * @param activity

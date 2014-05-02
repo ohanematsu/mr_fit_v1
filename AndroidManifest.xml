@@ -28,6 +28,11 @@
         <activity
             android:name="com.example.mr_fit_v1.SecondActivity"
             android:label="@string/title_activity_second" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.example.mr_fit_v1.TrackerActivity"
@@ -54,14 +59,6 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name="com.example.mr_fit_v1.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:parentActivityName="android.preference.PreferenceActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="android.preference.PreferenceActivity" />
-        </activity>
         <activity
             android:name="com.example.mr_fit_v1.TrakcerSecondaryActivity"
             android:label="@string/title_activity_trakcer_secondary" >
