@@ -1,9 +1,9 @@
 package com.example.mr_fit_v1;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -81,6 +81,19 @@ public class TrackerActivity extends Activity {
 					container, false);
 			return rootView;
 		}
+	}
+	
+	public void WalkRequest(View view){
+		Intent intent = new Intent(this, TrackerSecondaryActivity.class);
+		//TODO
+		startActivity(intent);
+		
+	}
+	public void RunRequest(View view){
+		Intent intent = new Intent(this, TrackerSecondaryActivity.class);
+		//TODO
+		startActivity(intent);
+		
 	}
 
 }

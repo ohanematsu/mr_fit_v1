@@ -13,6 +13,7 @@
         android:layout_x="190dp"
         android:layout_y="155dp"
      	android:background="@drawable/button"
+     	android:onClick = "WalkRequest"
         android:text="Start Walking" />
 
     <Button
@@ -22,6 +23,7 @@
         android:layout_x="190dp"
         android:layout_y="385dp"
         android:background="@drawable/button"
+        android:onClick = "RunRequest"
         android:text="Start Running" />
 
 </AbsoluteLayout>

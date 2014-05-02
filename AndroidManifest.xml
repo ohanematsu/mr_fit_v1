@@ -60,7 +60,15 @@
         </receiver>
 
         <activity
-            android:name="com.example.mr_fit_v1.TrakcerSecondaryActivity"
+            android:name="com.example.mr_fit_v1.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="android.preference.PreferenceActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.preference.PreferenceActivity" />
+        </activity>
+        <activity
+            android:name="com.example.mr_fit_v1.TrackerSecondaryActivity"
             android:label="@string/title_activity_trakcer_secondary" >
         </activity>
         <activity
