@@ -46,21 +46,20 @@ public class ReportFragment extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-		Log.i(LOGTAG, "Create fragment...");
+		Log.i(LOGTAG, "Create fragment view...");
 		View view = inflater.inflate(R.layout.fragment_report, parent, false);
 		
 		// TODO: Set up UI based on Report
+		Log.i(LOGTAG, "Set up UI complete...");
+		
+		// Save statistics to database
+		ExerciseStatistics statistics = new ExerciseStatistics(
+				Session.getInstance().getUserId(), report);
+			DatabaseManager.insertStatistics(statistics);
+		Log.i(LOGTAG, "Save data to database complete...");
 		
 		Log.i(LOGTAG, "Create fragment complete...");
 		return view;
-	}
-	
-	@Override
-	public void onDestroy() {
-		ExerciseStatistics statistics = new ExerciseStatistics(
-			Session.getInstance().getUserId(), report);
-		DatabaseManager.insertStatistics(statistics);
-		super.onDestroy();
 	}
 	
 	public void showPath() {

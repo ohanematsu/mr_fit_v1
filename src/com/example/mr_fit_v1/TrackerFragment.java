@@ -7,6 +7,7 @@ import java.util.TimerTask;
 
 import com.example.mr_fit_v1.entities.CurrentActivityStatistics;
 import com.example.mr_fit_v1.entities.Report;
+import com.example.mr_fit_v1.session.Session;
 import com.example.mr_fit_v1.ws.local.ExerciseActivityManager;
 import com.example.mr_fit_v1.ws.local.LocationReceiver;
 
@@ -30,6 +31,7 @@ public class TrackerFragment extends Fragment {
 	private ArrayList<Location> path;
 	private Location lastLocation;
 	private ExerciseActivityManager activityManager;
+	private LocationManager locationManager;
 	
 	private Timer timer;
 	private TimerTask timerTask = new TimerTask() {
@@ -42,8 +44,7 @@ public class TrackerFragment extends Fragment {
 	private LocationReceiver locationReceiver = new LocationReceiver() {
 		@Override
 		protected void onLocationReceived(Context context, Location location) {
-			Log.i(LOGTAG, "Get location from " + location.getProvider() + ": " +
-		          location.getLatitude() + ", " + location.getLongitude());
+			super.onLocationReceived(context, location);
 			path.add(location);
 			float distance = lastLocation.distanceTo(location);
 			lastLocation = location;
@@ -54,6 +55,7 @@ public class TrackerFragment extends Fragment {
 		
 		@Override	
 		protected void onProviderEnableChanged(boolean enabled) {
+			super.onProviderEnableChanged(enabled);
 			String text = "Provider " + (enabled ? "Enabled" : "disabled");
 			Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
 		}
@@ -62,26 +64,27 @@ public class TrackerFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			                 Bundle savedInstanceState) {
-		Log.i(LOGTAG, "Creating fragment...");
+		Log.i(LOGTAG, "Creating fragment view...");
 		
 		// Initilize (not sure about if it is correct to use this fragment)
 		View view = inflater.inflate(R.layout.fragment_tracker, container, false);
-		// TODO: Initilize some other things on the screen
 		
 		// Initiate private variables
 		currentStatistics = new CurrentActivityStatistics(0, 0, 0.0f, 0.0f, 
 			CurrentActivityStatistics.WALK);
 		path = new ArrayList<Location>();
-		activityManager.startLocationUpdates();
 		
 		// Get initial location
 		Log.i(LOGTAG, "Require initial location...");
-		LocationManager locationManager = (LocationManager)getActivity().getApplicationContext()
+		locationManager = (LocationManager)getActivity().getApplicationContext()
 			.getSystemService(Context.LOCATION_SERVICE);		
 		lastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 		path.add(lastLocation);
 		Log.i(LOGTAG, "Initialize location complete...");
 		
+		// TODO: Setup UI
+		
+		Log.i(LOGTAG, "Creating fragment view complete...");
 		return view;
 	}
 	
@@ -90,8 +93,6 @@ public class TrackerFragment extends Fragment {
 		super.onStart();
 		getActivity().registerReceiver(locationReceiver, 
 			new IntentFilter(ExerciseActivityManager.ACTION_LOCATION));
-		timer = new Timer();
-		timer.schedule(timerTask, 1000);
 	}
 	
 	@Override
@@ -108,16 +109,42 @@ public class TrackerFragment extends Fragment {
 		// TODO: Update UI based on Statistics
 	}
 
+	private void onClickStart(View view) {
+		Log.i(LOGTAG, "User clicks start button");
+		
+		// Start timer so that the UI can update periodically even without any update of location
+		timer = new Timer();
+		timer.schedule(timerTask, 1000);
+		Log.i(LOGTAG, "Enable timer...");
+		
+		// Start tracking update of location
+		activityManager.startLocationUpdates();
+		Log.i(LOGTAG, "Start tracking activity...");
+	}
+	
 	private void onClickStop(View view) {
-		// Stop receiving location update
-		getActivity().unregisterReceiver(locationReceiver);
-		activityManager.stopLocationUpdates();
+		Log.i(LOGTAG, "User clicks stop button");
 		
 		// Stop timer
 		if (timer!=null){
 			timer.cancel();
 			timer = null;
 		}
+		Log.i(LOGTAG, "Disable timer...");
+		
+		// Stop receiving location update
+		getActivity().unregisterReceiver(locationReceiver);
+		if (activityManager.isTracking()) {
+			activityManager.stopLocationUpdates();
+		}
+		Log.i(LOGTAG, "stop receiving update of location...");
+		
+		// Update the last location and last exercise time
+		Location stopLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		float distance = lastLocation.distanceTo(stopLocation);
+		Calendar curTime = Calendar.getInstance();
+		currentStatistics.update(curTime, distance);
+		Session.getInstance().setLastExerciseTime(curTime);
 		
 		// Switch to ReportActivity
 		Intent intent = new Intent(getActivity(), ReportActivity.class);

@@ -35,6 +35,7 @@ public class StatisticsFragment extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		Log.i(LOGTAG, "Creating fragment view...");
 		View view = inflater.inflate(R.layout.fragment_statistic, container, false);
 		
 		// Judge statistics type (Day, Week or Month)
@@ -46,25 +47,31 @@ public class StatisticsFragment extends Fragment {
 		StatisticsCursor cursor = null;
 		String timePeriod = "";
 		if (type == DAY) {
+			Log.i(LOGTAG, "Retrieve day data...");
 			int day = bundle.getInt(StatisticActivity.DAY);
 			int month = bundle.getInt(StatisticActivity.MONTH);
 			int year = bundle.getInt(StatisticActivity.YEAR);
 			cursor = DatabaseManager.queryDayStatistics(day, month, year);
 		} else if (type == WEEK) {
+			Log.i(LOGTAG, "Retrieve week data...");
 			int weekOfYear = bundle.getInt(StatisticActivity.WEEK);
 			int year = bundle.getInt(StatisticActivity.YEAR);
 			cursor = DatabaseManager.queryWeekStatistics(weekOfYear, year);
 		} else {
+			Log.i(LOGTAG, "Retrieve month data...");
 			int month = bundle.getInt(StatisticActivity.MONTH);
 			int year = bundle.getInt(StatisticActivity.YEAR);
 			cursor = DatabaseManager.queryMonthStatistics(month, year);
 		}
+		Log.i(LOGTAG, "Retrieve data complete...");
 		
 		// Fill model
 		if (cursor.getCount() == 0) {
+			Log.i(LOGTAG, "No data fulfill the requirement...");
 			statistics = new DetailedStatistics(0, 0, 0.0f, timePeriod);
 			statistics.setFeedback(FeedbackGenerator.EXTREMELY_BAD);
 		} else {
+			Log.i(LOGTAG, "Filling UI model...");
 			statistics = new DetailedStatistics();
 			statistics.setTimePeriod(timePeriod);
 			ExerciseStatistics record = cursor.getExerciseStatistics();
@@ -88,7 +95,9 @@ public class StatisticsFragment extends Fragment {
 		}
 		
 		// TODO: Setup UI
+		Log.i(LOGTAG, "Set up UI complete...");
 		
+		Log.i(LOGTAG, "Creating fragment view complete...");
 		return view;
 	}
 }
