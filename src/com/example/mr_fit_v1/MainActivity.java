@@ -1,6 +1,12 @@
 package com.example.mr_fit_v1;
 
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -9,9 +15,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity {
-
+	
+	private String serverHost = "ec2-54-186-249-133.us-west-2.compute.amazonaws.com";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,5 +65,30 @@ public class MainActivity extends ActionBarActivity {
 			return rootView;
 		}
 	}
-
+	public void SignInRequest(View view) {
+		EditText text1 = (EditText) findViewById(R.id.editText1);
+		String userId = text1.getText().toString();
+		EditText text2 = (EditText) findViewById(R.id.editText2);
+		String password = text2.getText().toString();
+		
+		try {
+			Socket sock = new Socket(serverHost, 18641);
+			InputStream is = sock.getInputStream();
+			ObjectInputStream ois = new ObjectInputStream(is);
+			
+			
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return;
+	}
+	public void SignUpRequest(View view) {
+		
+		return;
+	}
 }

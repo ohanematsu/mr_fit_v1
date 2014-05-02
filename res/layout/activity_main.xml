@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    tools:context="com.example.mr_fit_v1.FriendsActivity"
+    >
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -59,6 +62,7 @@
         android:layout_x="215dp"
         android:layout_y="392dp"
         android:background="#ffffff"
+        android:onClick = "SignInRequest"
         android:text="Sign In" />
 
     <Button
@@ -68,6 +72,7 @@
         android:layout_x="224dp"
         android:layout_y="754dp"
         android:background="#ffffff"
-        android:text="Not a user? Sign up" />
+        android:text="Not a user? Sign up"
+        android:onClick = "SignUpRequest" />
 
 </AbsoluteLayout>
