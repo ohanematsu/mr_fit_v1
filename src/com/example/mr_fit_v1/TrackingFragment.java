@@ -146,7 +146,7 @@ public class TrackingFragment extends Fragment {
 		burnedCalorieText.setText(String.valueOf(currentStatistics.getCurBurnedCalorie()));
 	}
 	
-	private void onClickStop(View view) {
+	public void onClickStop(View view) {
 		Log.i(LOGTAG, "User clicks stop button");
 		
 		// Stop timer

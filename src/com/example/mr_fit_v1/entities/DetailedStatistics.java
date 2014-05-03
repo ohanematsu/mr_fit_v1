@@ -1,7 +1,5 @@
 package com.example.mr_fit_v1.entities;
 
-import java.util.Date;
-
 public class DetailedStatistics extends DetailedActivityStatistics {
 	protected String timePeriod;
 	protected String feedback;

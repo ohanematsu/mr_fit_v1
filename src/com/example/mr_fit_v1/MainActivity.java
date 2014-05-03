@@ -1,6 +1,7 @@
 package com.example.mr_fit_v1;
 
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -8,6 +9,9 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
+=======
+import com.example.mr_fit_v1.session.Session;
+>>>>>>> 6235e08b4a49d8cfaaf68b49bc5d3667c099ce98
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -18,7 +22,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import com.example.mr_fit_v1.session.Session;
 import com.example.mr_fit_v1.util.Packet;

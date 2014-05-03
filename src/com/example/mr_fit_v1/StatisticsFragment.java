@@ -1,7 +1,5 @@
 package com.example.mr_fit_v1;
 
-import java.util.Calendar;
-
 import com.example.mr_fit_v1.dblayout.DatabaseManager;
 import com.example.mr_fit_v1.dblayout.DatabaseOpenHelper.StatisticsCursor;
 import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
@@ -9,9 +7,7 @@ import com.example.mr_fit_v1.entities.DetailedStatistics;
 import com.example.mr_fit_v1.session.Session;
 import com.example.mr_fit_v1.util.FeedbackGenerator;
 
-import android.R.integer;
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;

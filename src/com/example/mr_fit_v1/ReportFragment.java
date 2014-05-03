@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.mr_fit_v1.dblayout.DatabaseManager;
 import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
@@ -49,13 +50,24 @@ public class ReportFragment extends Fragment {
 		Log.i(LOGTAG, "Create fragment view...");
 		View view = inflater.inflate(R.layout.fragment_report, parent, false);
 		
-		// TODO: Set up UI based on Report
+		// Set up UI based on Report
+		TextView elapsedTextView = (TextView)view.findViewById(R.id.elapsedTimeTextView);
+		elapsedTextView.setText(String.valueOf(report.getCurExerciseTime()));
+		
+		TextView distanceTextView = (TextView)view.findViewById(R.id.distanceTextView);
+		distanceTextView.setText(String.valueOf(report.getDistance()));
+		
+		TextView speedTextView = (TextView)view.findViewById(R.id.speedTextView);
+		speedTextView.setText(String.valueOf(report.getSpeed()));
+		
+		TextView burnedCalorieTextView = (TextView)view.findViewById(R.id.burnedCalorieTextView);
+		burnedCalorieTextView.setText(String.valueOf(report.getCurBurnedCalorie()));
 		Log.i(LOGTAG, "Set up UI complete...");
 		
 		// Save statistics to database
 		ExerciseStatistics statistics = new ExerciseStatistics(
 				Session.getInstance().getUserId(), report);
-			DatabaseManager.insertStatistics(statistics);
+		//DatabaseManager.insertStatistics(statistics);
 		Log.i(LOGTAG, "Save data to database complete...");
 		
 		Log.i(LOGTAG, "Create fragment complete...");
