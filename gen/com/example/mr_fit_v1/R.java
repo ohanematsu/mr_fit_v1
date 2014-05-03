@@ -1284,10 +1284,11 @@ containing a value of this type.
         public static final int fragment_trakcer_secondary=0x7f03002f;
         public static final int fragment_walking=0x7f030030;
         public static final int fragment_week=0x7f030031;
-        public static final int support_simple_spinner_dropdown_item=0x7f030032;
-        public static final int tab_frag1_layout=0x7f030033;
-        public static final int tab_frag2_layout=0x7f030034;
-        public static final int tab_frag3_layout=0x7f030035;
+        public static final int list_row=0x7f030032;
+        public static final int support_simple_spinner_dropdown_item=0x7f030033;
+        public static final int tab_frag1_layout=0x7f030034;
+        public static final int tab_frag2_layout=0x7f030035;
+        public static final int tab_frag3_layout=0x7f030036;
     }
     public static final class menu {
         public static final int main=0x7f0e0000;
