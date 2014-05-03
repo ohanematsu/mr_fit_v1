@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
+        
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="150dp"
@@ -34,7 +35,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/exerciseTimeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView1"
@@ -61,7 +62,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/burnedCalorieTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView3"
@@ -88,7 +89,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/distanceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView5"

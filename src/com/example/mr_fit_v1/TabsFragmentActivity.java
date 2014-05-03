@@ -2,9 +2,6 @@ package com.example.mr_fit_v1;
  
 import java.util.HashMap;
 
-import tabs.Tab1Fragment;
-import tabs.Tab2Fragment;
-import tabs.Tab3Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -135,11 +132,11 @@ public class TabsFragmentActivity extends FragmentActivity implements TabHost.On
         mTabHost = (TabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup();
         TabInfo tabInfo = null;
-        TabsFragmentActivity.addTab(this, this.mTabHost, this.mTabHost.newTabSpec("Tab1").setIndicator("Day"), ( tabInfo = new TabInfo("Tab1", Tab1Fragment.class, args)));
+        TabsFragmentActivity.addTab(this, this.mTabHost, this.mTabHost.newTabSpec("Tab1").setIndicator("Day"), ( tabInfo = new TabInfo("Tab1", DayTabFragment.class, args)));
         this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        TabsFragmentActivity.addTab(this, this.mTabHost, this.mTabHost.newTabSpec("Tab2").setIndicator("Week"), ( tabInfo = new TabInfo("Tab2", Tab2Fragment.class, args)));
+        TabsFragmentActivity.addTab(this, this.mTabHost, this.mTabHost.newTabSpec("Tab2").setIndicator("Week"), ( tabInfo = new TabInfo("Tab2", WeekTabFragment.class, args)));
         this.mapTabInfo.put(tabInfo.tag, tabInfo);
-        TabsFragmentActivity.addTab(this, this.mTabHost, this.mTabHost.newTabSpec("Tab3").setIndicator("Month"), ( tabInfo = new TabInfo("Tab3", Tab3Fragment.class, args)));
+        TabsFragmentActivity.addTab(this, this.mTabHost, this.mTabHost.newTabSpec("Tab3").setIndicator("Month"), ( tabInfo = new TabInfo("Tab3", MonthTabFragment.class, args)));
         this.mapTabInfo.put(tabInfo.tag, tabInfo);
         // Default to first tab
         this.onTabChanged("Tab1");
