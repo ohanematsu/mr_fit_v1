@@ -1,12 +1,8 @@
 package com.example.mr_fit_v1.dblayout.model;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import com.example.mr_fit_v1.entities.Report;
-
-import android.R.integer;
-import android.util.Log;
 
 public class ExerciseStatistics {
 	public static final String WALK = "WALK";

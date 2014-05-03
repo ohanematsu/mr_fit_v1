@@ -3,6 +3,7 @@ package com.example.mr_fit_v1;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,7 +22,8 @@ public class TrackerSecondaryActivity extends Activity {
 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
+			  					.add(R.id.container, new TrackingFragment())
+			  					.commit();
 		}
 	}
 

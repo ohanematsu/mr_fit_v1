@@ -2,10 +2,6 @@ package com.example.mr_fit_v1.ws.remote;
 
 import java.io.Serializable;
 
-import android.R.integer;
-import android.R.string;
-
-import com.example.mr_fit_v1.util.Packet;
 
 public class UserDataPacket implements Serializable {
 

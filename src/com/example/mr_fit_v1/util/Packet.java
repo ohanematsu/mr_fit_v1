@@ -2,8 +2,6 @@ package com.example.mr_fit_v1.util;
 
 import java.io.Serializable;
 
-import android.R.integer;
-
 public class Packet implements Serializable {
 
 	/**
