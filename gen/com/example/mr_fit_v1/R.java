@@ -1112,29 +1112,14 @@ containing a value of this type.
         public static final int noavatar_middle=0x7f02006b;
     }
     public static final class id {
-<<<<<<< HEAD
-        public static final int Button01=0x7f060051;
+        public static final int Button01=0x7f060056;
         public static final int ProgressBar01=0x7f06005e;
         public static final int ProgressBar02=0x7f060060;
-        public static final int RelativeLayout1=0x7f060058;
-        public static final int TextView01=0x7f060059;
-        public static final int TextView02=0x7f06005b;
+        public static final int RelativeLayout1=0x7f060057;
+        public static final int TextView01=0x7f060058;
+        public static final int TextView02=0x7f06005a;
         public static final int TextView03=0x7f06005f;
         public static final int TextView04=0x7f060061;
-=======
-<<<<<<< HEAD
-        public static final int Button01=0x7f0a001a;
-=======
-<<<<<<< HEAD
-        public static final int Button01=0x7f060050;
-        public static final int ProgressBar01=0x7f06005b;
-        public static final int ProgressBar02=0x7f06005d;
-        public static final int RelativeLayout1=0x7f060055;
-        public static final int TextView01=0x7f060056;
-        public static final int TextView02=0x7f060058;
-        public static final int TextView03=0x7f06005c;
-        public static final int TextView04=0x7f06005e;
->>>>>>> 6235e08b4a49d8cfaaf68b49bc5d3667c099ce98
         public static final int action_bar=0x7f06001c;
         public static final int action_bar_activity_content=0x7f060015;
         public static final int action_bar_container=0x7f06001b;
@@ -1146,7 +1131,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f060072;
+        public static final int action_settings=0x7f060071;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1154,20 +1139,21 @@ containing a value of this type.
         public static final int burnedCalorieTextView=0x7f060069;
         public static final int button1=0x7f06003e;
         public static final int button2=0x7f060046;
+        public static final int calorieTextView=0x7f060054;
         public static final int checkbox=0x7f06002d;
         public static final int chronometer=0x7f06006b;
         public static final int collapseActionView=0x7f06000d;
         public static final int container=0x7f06003c;
-        public static final int content=0x7f060053;
+        public static final int content=0x7f060049;
         public static final int default_activity_button=0x7f060028;
         public static final int dialog=0x7f06000e;
         public static final int disableHome=0x7f060008;
-        public static final int distanceTextView=0x7f06006a;
+        public static final int distanceTextView=0x7f060052;
         public static final int dropdown=0x7f06000f;
         public static final int editText1=0x7f06003d;
         public static final int editText2=0x7f060044;
         public static final int edit_query=0x7f060030;
-        public static final int elapsedTime=0x7f06004c;
+        public static final int elapsedTimeTextView=0x7f060051;
         public static final int end=0x7f060013;
         public static final int etEmail=0x7f060062;
         public static final int etPass=0x7f060064;
@@ -1175,30 +1161,30 @@ containing a value of this type.
         public static final int exerciseTimeTextView=0x7f060068;
         public static final int expand_activities_button=0x7f060026;
         public static final int expanded_menu=0x7f06002c;
-        public static final int fragment1=0x7f060056;
+        public static final int fragment1=0x7f060047;
         public static final int fragment_friend=0x7f060043;
-        public static final int friendList=0x7f060057;
+        public static final int friendList=0x7f06004c;
         public static final int home=0x7f060014;
         public static final int homeAsUp=0x7f060005;
         public static final int icon=0x7f06002a;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
-        public static final int imageView1=0x7f060052;
-        public static final int imageView2=0x7f06005a;
-        public static final int imageView3=0x7f06005c;
+        public static final int imageView1=0x7f060048;
+        public static final int imageView2=0x7f060059;
+        public static final int imageView3=0x7f06005b;
         public static final int imageView4=0x7f060066;
-        public static final int item1=0x7f06006d;
-        public static final int item2=0x7f06006e;
-        public static final int item3=0x7f06006f;
-        public static final int item4=0x7f060070;
-        public static final int item5=0x7f060071;
+        public static final int item1=0x7f06006c;
+        public static final int item2=0x7f06006d;
+        public static final int item3=0x7f06006e;
+        public static final int item4=0x7f06006f;
+        public static final int item5=0x7f060070;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f060029;
         public static final int middle=0x7f060012;
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
-        public static final int progressBar1=0x7f06005d;
+        public static final int progressBar1=0x7f06005c;
         public static final int progressBar2=0x7f060067;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
@@ -1214,14 +1200,15 @@ containing a value of this type.
         public static final int search_plate=0x7f060036;
         public static final int search_src_text=0x7f060037;
         public static final int search_voice_btn=0x7f06003b;
-        public static final int setpreference=0x7f060054;
-        public static final int setting_checkbox=0x7f060055;
+        public static final int setpreference=0x7f06004a;
+        public static final int setting_checkbox=0x7f06004b;
         public static final int shortcut=0x7f06002e;
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
-        public static final int speedTextView=0x7f06006c;
+        public static final int speedTextView=0x7f060053;
         public static final int split_action_bar=0x7f06001e;
+        public static final int stopButton=0x7f06006a;
         public static final int submit_area=0x7f060039;
         public static final int tabMode=0x7f060002;
         public static final int tableRow1=0x7f06003f;
@@ -1229,15 +1216,12 @@ containing a value of this type.
         public static final int tableRow3=0x7f060041;
         public static final int tableRow4=0x7f060042;
         public static final int textView1=0x7f060045;
-        public static final int textView10=0x7f060050;
-        public static final int textView2=0x7f060048;
-        public static final int textView3=0x7f060047;
-        public static final int textView4=0x7f060049;
-        public static final int textView5=0x7f06004a;
-        public static final int textView6=0x7f06004b;
-        public static final int textView7=0x7f06004d;
-        public static final int textView8=0x7f06004e;
-        public static final int textView9=0x7f06004f;
+        public static final int textView10=0x7f060055;
+        public static final int textView2=0x7f06004e;
+        public static final int textView3=0x7f06005d;
+        public static final int textView4=0x7f06004d;
+        public static final int textView5=0x7f06004f;
+        public static final int textView6=0x7f060050;
         public static final int title=0x7f06002b;
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
@@ -1317,7 +1301,6 @@ containing a value of this type.
         public static final int fragment_sign_up=0x7f03002c;
         public static final int fragment_statistic=0x7f03002d;
         public static final int fragment_statistics=0x7f03002e;
-<<<<<<< HEAD
         public static final int fragment_statistics_tab=0x7f03002f;
         public static final int fragment_tabs=0x7f030030;
         public static final int fragment_tracker=0x7f030031;
@@ -1326,101 +1309,6 @@ containing a value of this type.
         public static final int fragment_week=0x7f030034;
         public static final int list_row=0x7f030035;
         public static final int support_simple_spinner_dropdown_item=0x7f030036;
-=======
-        public static final int fragment_tabs=0x7f03002f;
-        public static final int fragment_tracker=0x7f030030;
-        public static final int fragment_trakcer_secondary=0x7f030031;
-        public static final int fragment_walking=0x7f030032;
-        public static final int fragment_week=0x7f030033;
-        public static final int list_row=0x7f030034;
-        public static final int support_simple_spinner_dropdown_item=0x7f030035;
-        public static final int tab_frag1_layout=0x7f030036;
-        public static final int tab_frag2_layout=0x7f030037;
-        public static final int tab_frag3_layout=0x7f030038;
-=======
-        public static final int Button01=0x7f0a0015;
->>>>>>> ea340e650cf848db4b2bfbb366fb705550fbc5e1
-        public static final int ProgressBar01=0x7f0a0022;
-        public static final int ProgressBar02=0x7f0a0024;
-        public static final int RelativeLayout1=0x7f0a001b;
-        public static final int TextView01=0x7f0a001c;
-        public static final int TextView02=0x7f0a001e;
-        public static final int TextView03=0x7f0a0023;
-        public static final int TextView04=0x7f0a0025;
-        public static final int burnedCalorieTextView=0x7f0a0029;
-        public static final int button1=0x7f0a0002;
-        public static final int button2=0x7f0a000a;
-        public static final int calorieTextView=0x7f0a0018;
-        public static final int chronometer=0x7f0a002b;
-        public static final int container=0x7f0a0000;
-        public static final int content=0x7f0a000d;
-        public static final int distanceTextView=0x7f0a0016;
-        public static final int editText1=0x7f0a0001;
-        public static final int editText2=0x7f0a0008;
-        public static final int elapsedTimeTextView=0x7f0a0015;
-        public static final int exerciseTimeTextView=0x7f0a0028;
-        public static final int fragment1=0x7f0a000b;
-        public static final int fragment_friend=0x7f0a0007;
-        public static final int friendList=0x7f0a0010;
-        public static final int imageView1=0x7f0a000c;
-        public static final int imageView2=0x7f0a001d;
-        public static final int imageView3=0x7f0a001f;
-        public static final int imageView4=0x7f0a0026;
-        public static final int item1=0x7f0a002c;
-        public static final int item2=0x7f0a002d;
-        public static final int item3=0x7f0a002e;
-        public static final int item4=0x7f0a002f;
-        public static final int item5=0x7f0a0030;
-        public static final int progressBar1=0x7f0a0020;
-        public static final int progressBar2=0x7f0a0027;
-        public static final int realtabcontent=0x01010000;
-        public static final int setpreference=0x7f0a000e;
-        public static final int setting_checkbox=0x7f0a000f;
-        public static final int speedTextView=0x7f0a0017;
-        public static final int stopButton=0x7f0a002a;
-        public static final int tableRow1=0x7f0a0003;
-        public static final int tableRow2=0x7f0a0004;
-        public static final int tableRow3=0x7f0a0005;
-        public static final int tableRow4=0x7f0a0006;
-        public static final int textView1=0x7f0a0009;
-        public static final int textView10=0x7f0a0019;
-        public static final int textView2=0x7f0a0012;
-        public static final int textView3=0x7f0a0021;
-        public static final int textView4=0x7f0a0011;
-        public static final int textView5=0x7f0a0013;
-        public static final int textView6=0x7f0a0014;
-    }
-    public static final class layout {
-        public static final int activity_friends=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int activity_map=0x7f030002;
-        public static final int activity_report=0x7f030003;
-        public static final int activity_search_friend=0x7f030004;
-        public static final int activity_second=0x7f030005;
-        public static final int activity_settings=0x7f030006;
-        public static final int activity_statistics=0x7f030007;
-        public static final int activity_tabs_fragment=0x7f030008;
-        public static final int activity_tracker=0x7f030009;
-        public static final int activity_trakcer_secondary=0x7f03000a;
-        public static final int fragment_friends=0x7f03000b;
-        public static final int fragment_main=0x7f03000c;
-        public static final int fragment_map=0x7f03000d;
-        public static final int fragment_month=0x7f03000e;
-        public static final int fragment_report=0x7f03000f;
-        public static final int fragment_search_friend=0x7f030010;
-        public static final int fragment_second=0x7f030011;
-        public static final int fragment_settings=0x7f030012;
-        public static final int fragment_statistic=0x7f030013;
-        public static final int fragment_statistics=0x7f030014;
-        public static final int fragment_statistics_tab=0x7f030015;
-        public static final int fragment_tabs=0x7f030016;
-        public static final int fragment_tracker=0x7f030017;
-        public static final int fragment_tracking=0x7f030018;
-        public static final int fragment_walking=0x7f030019;
-        public static final int fragment_week=0x7f03001a;
-        public static final int list_row=0x7f03001b;
->>>>>>> f0d3c4a3ef54b5d9e17fb19a35525b08da167692
->>>>>>> 6235e08b4a49d8cfaaf68b49bc5d3667c099ce98
     }
     public static final class menu {
         public static final int main=0x7f0e0000;
