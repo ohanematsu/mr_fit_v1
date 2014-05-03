@@ -52,7 +52,7 @@
         </activity>
 
         <receiver
-            android:name="com.example.mr_fit_v1.LocationReceiver"
+            android:name="com.example.mr_fit_v1.ws.local.LocationReceiver"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.example.mr_fit_v1.ws.local.ACTION_LOCATION" />

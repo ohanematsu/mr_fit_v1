@@ -81,7 +81,7 @@ public class TrackerSecondaryActivity extends Activity {
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(
-					R.layout.fragment_trakcer_secondary, container, false);
+					R.layout.fragment_tracking, container, false);
 			return rootView;
 		}
 	}
