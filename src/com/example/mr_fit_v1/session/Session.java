@@ -77,7 +77,7 @@ public class Session {
 	public static Session initSession(int userId, String account, Context context) {
 		if (instance == null) {
 			instance = new Session(userId, account);
-			DatabaseManager.open(context);
+			//DatabaseManager.open(context);
 		}
 		
 		return instance;

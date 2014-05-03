@@ -9,6 +9,8 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import com.example.mr_fit_v1.session.Session;
+
 import serverCom.AuthenMessage;
 import android.app.Activity;
 import android.content.Intent;
@@ -114,7 +116,7 @@ public class MainActivity extends Activity {
 		return;
 	}
 	public void SignUpRequest(View view) {
-		
+		Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
 		return;
 	}
 }

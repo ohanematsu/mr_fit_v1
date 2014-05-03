@@ -24,15 +24,15 @@
         <activity
             android:name="com.example.mr_fit_v1.MainActivity"
             android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.example.mr_fit_v1.SecondActivity"
-            android:label="@string/title_activity_second" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.mr_fit_v1.SecondActivity"
+            android:label="@string/title_activity_second" >
         </activity>
         <activity
             android:name="com.example.mr_fit_v1.TrackerActivity"
