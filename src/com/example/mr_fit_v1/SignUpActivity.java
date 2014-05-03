@@ -1,13 +1,10 @@
 package com.example.mr_fit_v1;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
-import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -93,6 +90,7 @@ public class SignUpActivity extends Activity {
 			dstport = port;
 		}
 		
+		@SuppressWarnings("resource")
 		protected Void doInBackground(Void... params){
 			Socket sock;
 			try {
@@ -117,6 +115,7 @@ public class SignUpActivity extends Activity {
 			oos.writeObject(pkt);
 			Packet recv = (Packet) ois.readObject();
 			RegisterResponsePacket rrp = (RegisterResponsePacket)recv.getPayload();
+			@SuppressWarnings("unused")
 			int userid =  rrp.getUserId();
 			Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
 			}catch (Exception e) {

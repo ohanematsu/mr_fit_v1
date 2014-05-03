@@ -1,10 +1,14 @@
 package com.example.mr_fit_v1.entities;
 
-import java.util.*;
+import java.util.Calendar;
 
 import com.example.mr_fit_v1.util.CalorieCalculator;
 
 public class CurrentActivityStatistics extends DetailedActivityStatistics {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String WALK = "WALK";
 	public static final String RUN = "RUN";
 	

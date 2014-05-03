@@ -9,11 +9,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnCreateContextMenuListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.mr_fit_v1.dblayout.DatabaseManager;
 import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
 import com.example.mr_fit_v1.entities.CurrentActivityStatistics;
 import com.example.mr_fit_v1.entities.Report;
@@ -36,6 +34,7 @@ public class ReportFragment extends Fragment {
 			Log.e(LOGTAG, "Parse statistics fail...");
 		}
 		
+		@SuppressWarnings("unchecked")
 		ArrayList<Location> path = (ArrayList<Location>)receivedIntent.
 			getSerializableExtra(TrackingFragment.TRACKER_FRAGMENT_PATH);
 		if (path == null) {
@@ -65,6 +64,7 @@ public class ReportFragment extends Fragment {
 		Log.i(LOGTAG, "Set up UI complete...");
 		
 		// Save statistics to database
+		@SuppressWarnings("unused")
 		ExerciseStatistics statistics = new ExerciseStatistics(
 				Session.getInstance().getUserId(), report);
 		//DatabaseManager.insertStatistics(statistics);

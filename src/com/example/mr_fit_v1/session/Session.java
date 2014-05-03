@@ -1,17 +1,17 @@
 package com.example.mr_fit_v1.session;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Properties;
-import java.io.*;
-
-import com.example.mr_fit_v1.dblayout.DatabaseManager;
-import com.example.mr_fit_v1.entities.ExerciseSettings;
-import com.example.mr_fit_v1.entities.Friend;
-import com.example.mr_fit_v1.entities.Settings;
 
 import android.content.Context;
 import android.util.Log;
+
+import com.example.mr_fit_v1.entities.ExerciseSettings;
+import com.example.mr_fit_v1.entities.Friend;
+import com.example.mr_fit_v1.entities.Settings;
 
 public class Session {
 	

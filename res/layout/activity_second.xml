@@ -6,7 +6,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context="com.example.mr_fit_v1.SecondActivity"
-    android:background="@drawable/yellow_bg"
+    
     tools:ignore="MergeRootFrame" >
 
     <TextView
@@ -21,8 +21,8 @@
         android:id="@+id/imageView1"
         android:layout_width="350dp"
         android:layout_height="350dp" 
-        android:backgroung="@drawable/button"     
-        android:src="@drawable/a1" />
+      
+        android:src="@drawable/avatar1" />
 
     <fragment
         android:id="@+id/content"

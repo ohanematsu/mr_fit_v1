@@ -5,6 +5,10 @@ import java.util.*;
 import android.location.Location;
 
 public class Report extends CurrentActivityStatistics {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected ArrayList<Location> path;
 	protected Calendar endTime;
 	

@@ -16,8 +16,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -25,6 +23,7 @@ import android.widget.TextView;
 
 import com.example.mr_fit_v1.session.Session;
 import com.example.mr_fit_v1.util.Packet;
+import com.example.mr_fit_v1.ws.remote.UserDataPacket;
 import com.example.mr_fit_v1.ws.remote.UserLoginPacket;
 import com.example.mr_fit_v1.ws.remote.UserLoginResponsePacket;
 
@@ -82,6 +81,7 @@ public class MainActivity extends Activity {
 			dstport = port;
 		}
 		
+		@SuppressWarnings("resource")
 		protected Void doInBackground(Void... params){
 			Socket sock;
 			try {
@@ -96,9 +96,9 @@ public class MainActivity extends Activity {
 			EditText text2 = (EditText) findViewById(R.id.editText2);
 			String password = text2.getText().toString();
 			Packet pkt = new Packet();
-			pkt.setType(pkt.USER_DATA);
+			pkt.setType(Packet.USER_DATA);
 			UserLoginPacket ulp = new UserLoginPacket(userId, password);
-			ulp.setType(ulp.LOGIN);
+			ulp.setType(UserDataPacket.LOGIN);
 			pkt.setPayload(ulp);
 			
 			Log.v("host", "here");

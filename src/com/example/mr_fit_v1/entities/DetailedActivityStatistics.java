@@ -1,6 +1,10 @@
 package com.example.mr_fit_v1.entities;
 
 public class DetailedActivityStatistics extends BasicActivityStatistics {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected float distance;
 	
 	public DetailedActivityStatistics() {

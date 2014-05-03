@@ -6,6 +6,7 @@ import android.location.*;
 
 // This class is used in the fragment which tracks current activity
 public class ExerciseActivityManager {	
+	@SuppressWarnings("unused")
 	private static final String LOGTAG = "ExerciseActivityManager";
 	
 	public static final String ACTION_LOCATION = "com.example.mr_fit_v1.ws.local.ACTION_LOCATION";

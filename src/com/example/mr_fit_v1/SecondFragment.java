@@ -2,20 +2,16 @@ package com.example.mr_fit_v1;
 
 import java.util.Calendar;
 
-import com.example.mr_fit_v1.dblayout.DatabaseManager;
-import com.example.mr_fit_v1.dblayout.DatabaseOpenHelper.StatisticsCursor;
-import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
-import com.example.mr_fit_v1.entities.DayCurrentStatistics;
-import com.example.mr_fit_v1.session.Session;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.mr_fit_v1.entities.DayCurrentStatistics;
+import com.example.mr_fit_v1.session.Session;
 
 public class SecondFragment extends Fragment {
 private static final String LOGTAG = "SecondFragment";

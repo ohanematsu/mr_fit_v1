@@ -1,12 +1,5 @@
 package com.example.mr_fit_v1;
 
-import com.example.mr_fit_v1.dblayout.DatabaseManager;
-import com.example.mr_fit_v1.dblayout.DatabaseOpenHelper.StatisticsCursor;
-import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
-import com.example.mr_fit_v1.entities.DetailedStatistics;
-import com.example.mr_fit_v1.session.Session;
-import com.example.mr_fit_v1.util.FeedbackGenerator;
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,12 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mr_fit_v1.dblayout.DatabaseManager;
+import com.example.mr_fit_v1.dblayout.DatabaseOpenHelper.StatisticsCursor;
+import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
+import com.example.mr_fit_v1.entities.DetailedStatistics;
+import com.example.mr_fit_v1.session.Session;
+import com.example.mr_fit_v1.util.FeedbackGenerator;
+
 public class StatisticsFragment extends Fragment {
 	
 	private static final String LOGTAG = "StatisticsFragment";
 	
 	private static final int DAY = 0;
 	private static final int WEEK = 1;
+	@SuppressWarnings("unused")
 	private static final int MONTH = 2;
 	
 	private DetailedStatistics statistics;	

@@ -2,25 +2,27 @@ package com.example.mr_fit_v1;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import com.example.mr_fit_v1.entities.CurrentActivityStatistics;
-import com.example.mr_fit_v1.entities.Report;
-import com.example.mr_fit_v1.session.Session;
-import com.example.mr_fit_v1.ws.local.ExerciseActivityManager;
-import com.example.mr_fit_v1.ws.local.LocationReceiver;
-
-import android.app.*;
-import android.content.*;
-import android.location.*;
+import android.app.Fragment;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.mr_fit_v1.entities.CurrentActivityStatistics;
+import com.example.mr_fit_v1.session.Session;
+import com.example.mr_fit_v1.ws.local.ExerciseActivityManager;
+import com.example.mr_fit_v1.ws.local.LocationReceiver;
 
 public class TrackingFragment extends Fragment {
 	public static final String TRACKER_FRAGMENT_STATISTICS = 

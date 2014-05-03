@@ -1,12 +1,9 @@
 package com.example.mr_fit_v1;
 
-import com.example.mr_fit_v1.MapActivity.PlaceholderFragment;
-
 import android.app.Activity;
-import android.app.FragmentManager;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;

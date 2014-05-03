@@ -1,6 +1,10 @@
 package com.example.mr_fit_v1.entities;
 
 public class DayCurrentStatistics extends BasicActivityStatistics {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int timeElapasedSinceLastExercise;
 	protected ExerciseSettings exerciseSettings;
 	

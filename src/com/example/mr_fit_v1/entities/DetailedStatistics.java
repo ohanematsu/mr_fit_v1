@@ -1,6 +1,10 @@
 package com.example.mr_fit_v1.entities;
 
 public class DetailedStatistics extends DetailedActivityStatistics {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected String timePeriod;
 	protected String feedback;
 	

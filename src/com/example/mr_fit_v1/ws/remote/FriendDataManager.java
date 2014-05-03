@@ -2,8 +2,6 @@ package com.example.mr_fit_v1.ws.remote;
 
 import java.util.ArrayList;
 
-import android.util.Log;
-
 import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.util.Packet;
 

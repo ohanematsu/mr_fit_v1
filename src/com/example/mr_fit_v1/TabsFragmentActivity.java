@@ -23,15 +23,18 @@ import android.widget.TabHost.TabContentFactory;
 public class TabsFragmentActivity extends FragmentActivity implements TabHost.OnTabChangeListener {
  
     private TabHost mTabHost;
-    private HashMap mapTabInfo = new HashMap();
+    @SuppressWarnings("rawtypes")
+	private HashMap mapTabInfo = new HashMap();
     private TabInfo mLastTab = null;
  
     private class TabInfo {
          private String tag;
-         private Class clss;
+         @SuppressWarnings("rawtypes")
+		private Class clss;
          private Bundle args;
          private Fragment fragment;
-         TabInfo(String tag, Class clazz, Bundle args) {
+         @SuppressWarnings("rawtypes")
+		TabInfo(String tag, Class clazz, Bundle args) {
              this.tag = tag;
              this.clss = clazz;
              this.args = args;
@@ -128,7 +131,8 @@ public class TabsFragmentActivity extends FragmentActivity implements TabHost.On
     /**
      * Step 2: Setup TabHost
      */
-    private void initialiseTabHost(Bundle args) {
+    @SuppressWarnings("unchecked")
+	private void initialiseTabHost(Bundle args) {
         mTabHost = (TabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup();
         TabInfo tabInfo = null;

@@ -1,17 +1,24 @@
 package com.example.mr_fit_v1;
 
-import java.util.*;
+import java.util.ArrayList;
 
-import com.example.mr_fit_v1.entities.Friend;
-import com.example.mr_fit_v1.session.Session;
-
-import android.app.*;
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.*;
-import android.widget.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.mr_fit_v1.entities.Friend;
+import com.example.mr_fit_v1.session.Session;
 
 public class FriendsFragment extends Fragment {
 	private static final String LOGTAG = "FriendFragment";
@@ -20,6 +27,7 @@ public class FriendsFragment extends Fragment {
 	
 	private ArrayList<Friend> friendList;
 	
+	@SuppressWarnings("unused")
 	private Thread friendRetrievingTask = new Thread() {
 		@Override
 		public void run() {
@@ -103,7 +111,8 @@ public class FriendsFragment extends Fragment {
 	
 	private class FriendAdapter extends BaseAdapter {
 		 
-	    private Activity activity;
+	    @SuppressWarnings("unused")
+		private Activity activity;
 	    private ArrayList<Friend> data;
 	    private LayoutInflater inflater;
 	 
@@ -141,11 +150,11 @@ public class FriendsFragment extends Fragment {
 	        // Set friend avatar image on UI
 	        ImageView image = (ImageView)view.findViewById(R.id.imageView1);
 	        if (friend.getStatus() == Friend.JUST_FINISH_EXERCISE) {
-	        	image.setImageResource(R.drawable.a1);
+	        	image.setImageResource(R.drawable.avatar1);
 	        } else if (friend.getStatus() == Friend.FINISH_EXERCISE_FOR_A_WHILE) {
-	        	image.setImageResource(R.drawable.a1);
+	        	image.setImageResource(R.drawable.avatar1);
 	        } else {
-	        	image.setImageResource(R.drawable.a1);
+	        	image.setImageResource(R.drawable.avatar2);
 	        }
 	 
 	        return view;

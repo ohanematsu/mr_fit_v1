@@ -2,19 +2,16 @@ package com.example.mr_fit_v1;
 
 import java.util.Calendar;
 
-import com.example.mr_fit_v1.R;
-import com.example.mr_fit_v1.dblayout.DatabaseManager;
-import com.example.mr_fit_v1.entities.DetailedStatistics;
-import com.example.mr_fit_v1.util.FeedbackGenerator;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.mr_fit_v1.entities.DetailedStatistics;
+import com.example.mr_fit_v1.util.FeedbackGenerator;
  
 public class WeekTabFragment extends Fragment {
 

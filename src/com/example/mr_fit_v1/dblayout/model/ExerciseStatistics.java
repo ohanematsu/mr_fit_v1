@@ -8,6 +8,7 @@ public class ExerciseStatistics {
 	public static final String WALK = "WALK";
 	public static final String RUN = "RUN";
 	
+	@SuppressWarnings("unused")
 	private static final String LOGTAG = "ExerciseStatistics";
 	
 	private int userId;

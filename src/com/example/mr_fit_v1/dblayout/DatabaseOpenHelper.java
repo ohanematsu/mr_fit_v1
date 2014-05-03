@@ -1,12 +1,14 @@
 package com.example.mr_fit_v1.dblayout;
 
-import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
-
-import android.R.integer;
-import android.content.*;
-import android.database.*;
-import android.database.sqlite.*;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.CursorWrapper;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
 
 public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	private static final String LOGTAG = "FriendDatabaseOpenHelper";

@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="17dp"
-        android:src="@drawable/a1" />
+        android:src="@drawable/avatar1" />
 
     <TextView
         android:id="@+id/textView1"
