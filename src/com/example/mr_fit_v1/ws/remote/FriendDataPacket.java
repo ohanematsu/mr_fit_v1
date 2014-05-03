@@ -1,8 +1,9 @@
 package com.example.mr_fit_v1.ws.remote;
 
-import com.example.mr_fit_v1.util.Packet;
+import java.io.Serializable;
 
-public class FriendDataPacket {
+
+public abstract class FriendDataPacket implements Serializable {
 
 	/**
 	 * 

@@ -3,7 +3,7 @@ package com.example.mr_fit_v1.ws.remote;
 import java.io.Serializable;
 
 
-public class UserDataPacket implements Serializable {
+public abstract class UserDataPacket implements Serializable {
 
 	/**
 	 * 
@@ -18,6 +18,7 @@ public class UserDataPacket implements Serializable {
 	public static final int UPDATE_NAME         = 5;
 	public static final int UPDATE_AVATAR_IMAGE = 6;
 	public static final int UPDATE_STATUS       = 7;
+	public static final int RESPONSE            = 8;
 	
 	protected int type;	
 	
