@@ -11,7 +11,6 @@ import java.net.UnknownHostException;
 
 import com.example.mr_fit_v1.session.Session;
 
-import serverCom.AuthenMessage;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -101,33 +100,16 @@ public class MainActivity extends Activity {
 		String userId = text1.getText().toString();
 		EditText text2 = (EditText) findViewById(R.id.editText2);
 		String password = text2.getText().toString();
-		AuthenMessage msg = new AuthenMessage();
-		msg.type = 1;
-		msg.userId  = userId;
-		msg.password = password;
+		
 		
 		try {
 			@SuppressWarnings("resource")
 			Socket sock = new Socket(serverHost, 18641);
 			OutputStream os = sock.getOutputStream();
 			ObjectOutputStream oos = new ObjectOutputStream(os);
-			oos.writeObject(msg);
+			//oos.writeObject(msg);
 			InputStream is = sock.getInputStream();
 			ObjectInputStream ois = new ObjectInputStream(is);
-			AuthenMessage res = null;
-			try {
-				res = (AuthenMessage) ois.readObject();
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(res.result == true){
-				Intent intent = new Intent(this, SecondActivity.class);
-				startActivity(intent);
-			}
-			else{
-				
-			}
 			
 			
 		} catch (UnknownHostException e) {
