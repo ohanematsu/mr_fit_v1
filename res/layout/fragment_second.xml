@@ -71,14 +71,6 @@
         android:layout_toRightOf="@+id/imageView2"
         android:text="TextView" />
 
-    <ProgressBar
-        android:id="@+id/ProgressBar01"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView03"
-        android:layout_toRightOf="@+id/imageView2" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -86,14 +78,6 @@
         android:layout_alignLeft="@+id/TextView02"
         android:layout_below="@+id/TextView02"
         android:text="TextView" />
-
-    <ProgressBar
-        android:id="@+id/ProgressBar02"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView04"
-        android:layout_toRightOf="@+id/imageView3" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -112,5 +96,21 @@
         android:layout_below="@+id/imageView2"
         android:layout_marginTop="17dp"
         android:src="@drawable/ic_action_good" />
+
+    <ProgressBar
+        android:id="@+id/ProgressBar01"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_toRightOf="@+id/imageView2" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_toRightOf="@+id/imageView3" />
 
 </RelativeLayout>

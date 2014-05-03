@@ -18,24 +18,25 @@
             android:layout_height="wrap_content" >
 
             <EditText
-                android:id="@+id/editText1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Find New Friend"
-                android:inputType="textPersonName" >
+            android:id="@+id/etAddFriend"
+            android:layout_width="520dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/edittext_top_bg"
+            android:drawableLeft="@drawable/ic_action_add_person"
+            android:hint="Search New Friend"
+            android:padding="10dp"
+            android:textColorHint="#bbbbbb" >
 
-                <requestFocus />
-            </EditText>
+            <requestFocus />
+        	</EditText>
 
-            <Button
-                android:id="@+id/button1"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:text="Search" />
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_action_search" />
 
         </LinearLayout>
 
