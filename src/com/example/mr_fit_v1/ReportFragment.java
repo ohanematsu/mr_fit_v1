@@ -30,13 +30,13 @@ public class ReportFragment extends Fragment {
 		Intent receivedIntent = getActivity().getIntent();
 		
 		CurrentActivityStatistics statistics = (CurrentActivityStatistics)receivedIntent.
-			getSerializableExtra(TrackerFragment.TRACKER_FRAGMENT_STATISTICS);
+			getSerializableExtra(TrackingFragment.TRACKER_FRAGMENT_STATISTICS);
 		if (statistics == null) {
 			Log.e(LOGTAG, "Parse statistics fail...");
 		}
 		
 		ArrayList<Location> path = (ArrayList<Location>)receivedIntent.
-			getSerializableExtra(TrackerFragment.TRACKER_FRAGMENT_PATH);
+			getSerializableExtra(TrackingFragment.TRACKER_FRAGMENT_PATH);
 		if (path == null) {
 			Log.e(LOGTAG, "Parse path fail...");
 		}

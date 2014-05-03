@@ -15,11 +15,14 @@ import android.app.*;
 import android.content.*;
 import android.location.*;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.*;
+import android.widget.Chronometer;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class TrackerFragment extends Fragment {
+public class TrackingFragment extends Fragment {
 	public static final String TRACKER_FRAGMENT_STATISTICS = 
 		"com.example.mr_fit_v1.TrackerFragment.statistics";
 	public static final String TRACKER_FRAGMENT_PATH = 
@@ -32,25 +35,36 @@ public class TrackerFragment extends Fragment {
 	private Location lastLocation;
 	private ExerciseActivityManager activityManager;
 	private LocationManager locationManager;
+	private Chronometer chronometer;
 	
+	private View view;
+	
+	/*
 	private Timer timer;
 	private TimerTask timerTask = new TimerTask() {
 		@Override
 		public void run() {
 			currentStatistics.update(Calendar.getInstance());
 		}
-	};
+	};*/
 	
 	private LocationReceiver locationReceiver = new LocationReceiver() {
 		@Override
 		protected void onLocationReceived(Context context, Location location) {
 			super.onLocationReceived(context, location);
 			path.add(location);
+			Log.i(LOGTAG, "Add to path list");
+			if (lastLocation == null) {
+				lastLocation = location;
+			}
+			Log.i(LOGTAG, "Check last know location complete...");
 			float distance = lastLocation.distanceTo(location);
 			lastLocation = location;
 			if (isVisible()) {
+				Log.i(LOGTAG, "Prepare to update ui");
 				updateUI(distance);
 			}
+			Log.i(LOGTAG, "Update ~~~");
 		}
 		
 		@Override	
@@ -65,14 +79,13 @@ public class TrackerFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			                 Bundle savedInstanceState) {
 		Log.i(LOGTAG, "Creating fragment view...");
-		
-		// Initilize (not sure about if it is correct to use this fragment)
-		View view = inflater.inflate(R.layout.fragment_tracker, container, false);
+		view = inflater.inflate(R.layout.fragment_tracking, container, false);
 		
 		// Initiate private variables
 		currentStatistics = new CurrentActivityStatistics(0, 0, 0.0f, 0.0f, 
 			CurrentActivityStatistics.WALK);
 		path = new ArrayList<Location>();
+		activityManager = ExerciseActivityManager.getInstance(getActivity().getApplicationContext());
 		
 		// Get initial location
 		Log.i(LOGTAG, "Require initial location...");
@@ -82,7 +95,9 @@ public class TrackerFragment extends Fragment {
 		path.add(lastLocation);
 		Log.i(LOGTAG, "Initialize location complete...");
 		
-		// TODO: Setup UI
+		// Setup UI
+		chronometer = (Chronometer)view.findViewById(R.id.chronometer);
+		updateUI(0.0f);
 		
 		Log.i(LOGTAG, "Creating fragment view complete...");
 		return view;
@@ -93,6 +108,20 @@ public class TrackerFragment extends Fragment {
 		super.onStart();
 		getActivity().registerReceiver(locationReceiver, 
 			new IntentFilter(ExerciseActivityManager.ACTION_LOCATION));
+		
+		// Start timer so that the UI can update periodically even without any update of location
+		chronometer.setBase(SystemClock.elapsedRealtime());
+		chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+			@Override
+			public void onChronometerTick(Chronometer chronometer) {
+				currentStatistics.update(Calendar.getInstance());
+			}
+		});
+		chronometer.start();
+						
+		// Start tracking update of location
+		activityManager.startLocationUpdates();
+		Log.i(LOGTAG, "Start tracking activity...");
 	}
 	
 	@Override
@@ -106,30 +135,22 @@ public class TrackerFragment extends Fragment {
 		Calendar curTime = Calendar.getInstance();
 		currentStatistics.update(curTime, distance);
 		
-		// TODO: Update UI based on Statistics
-	}
-
-	private void onClickStart(View view) {
-		Log.i(LOGTAG, "User clicks start button");
+		// Update UI based on Statistics
+		TextView distanceText = (TextView)view.findViewById(R.id.distanceTextView);
+		distanceText.setText(String.valueOf(currentStatistics.getDistance()));
 		
-		// Start timer so that the UI can update periodically even without any update of location
-		timer = new Timer();
-		timer.schedule(timerTask, 1000);
-		Log.i(LOGTAG, "Enable timer...");
+		TextView speedText = (TextView)view.findViewById(R.id.speedTextView);
+		speedText.setText(String.valueOf(currentStatistics.getSpeed()));
 		
-		// Start tracking update of location
-		activityManager.startLocationUpdates();
-		Log.i(LOGTAG, "Start tracking activity...");
+		TextView burnedCalorieText = (TextView)view.findViewById(R.id.burnedCalorieTextView);
+		burnedCalorieText.setText(String.valueOf(currentStatistics.getCurBurnedCalorie()));
 	}
 	
 	private void onClickStop(View view) {
 		Log.i(LOGTAG, "User clicks stop button");
 		
 		// Stop timer
-		if (timer!=null){
-			timer.cancel();
-			timer = null;
-		}
+		chronometer.stop();
 		Log.i(LOGTAG, "Disable timer...");
 		
 		// Stop receiving location update

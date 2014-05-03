@@ -96,11 +96,19 @@ public class MainActivity extends Activity {
 		}
 	}
 	public void SignInRequest(View view) {
+		/*
 		EditText text1 = (EditText) findViewById(R.id.editText1);
 		String userId = text1.getText().toString();
 		EditText text2 = (EditText) findViewById(R.id.editText2);
 		String password = text2.getText().toString();
+<<<<<<< HEAD
 		
+=======
+		//AuthenMessage msg = new AuthenMessage();
+		msg.type = 1;
+		msg.userId  = userId;
+		msg.password = password;
+>>>>>>> f0d3c4a3ef54b5d9e17fb19a35525b08da167692
 		
 		try {
 			@SuppressWarnings("resource")
@@ -110,6 +118,23 @@ public class MainActivity extends Activity {
 			//oos.writeObject(msg);
 			InputStream is = sock.getInputStream();
 			ObjectInputStream ois = new ObjectInputStream(is);
+<<<<<<< HEAD
+=======
+			//AuthenMessage res = null;
+			try {
+				//res = (AuthenMessage) ois.readObject();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(res.result == true){
+				Intent intent = new Intent(this, SecondActivity.class);
+				startActivity(intent);
+			}
+			else{
+				
+			}
+>>>>>>> f0d3c4a3ef54b5d9e17fb19a35525b08da167692
 			
 			
 		} catch (UnknownHostException e) {
@@ -120,7 +145,7 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 		
-		return;
+		return;*/
 	}
 	public void SignUpRequest(View view) {
 		Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());

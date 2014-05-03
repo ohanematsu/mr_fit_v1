@@ -3,6 +3,7 @@ package com.example.mr_fit_v1;
 import com.example.mr_fit_v1.MapActivity.PlaceholderFragment;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -18,7 +19,7 @@ public class FriendsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_friends);
-
+		
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
