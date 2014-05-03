@@ -12,13 +12,16 @@ import java.net.UnknownHostException;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.mr_fit_v1.session.Session;
 import com.example.mr_fit_v1.util.Packet;
@@ -100,32 +103,71 @@ public class MainActivity extends Activity {
 	}
 	public void SignInRequest(View view) throws UnknownHostException, IOException, ClassNotFoundException {
 		
-		EditText text1 = (EditText) findViewById(R.id.editText1);
-		String userId = text1.getText().toString();
-		EditText text2 = (EditText) findViewById(R.id.editText2);
-		String password = text2.getText().toString();
-		Packet pkt = new Packet();
-		pkt.setType(pkt.USER_DATA);
-		UserLoginPacket ulp = new UserLoginPacket(userId, password);
-		ulp.setType(ulp.LOGIN);
-		pkt.setPayload(ulp);
-		Socket sock = new Socket(serverHost, 18641);
-		OutputStream os = sock.getOutputStream();
-		ObjectOutputStream oos = new ObjectOutputStream(os);
-		InputStream is = sock.getInputStream();
-		ObjectInputStream ois = new ObjectInputStream(is);
-		oos.writeObject(pkt);
-		Packet recv = (Packet) ois.readObject();
-		UserLoginResponsePacket ulrp = (UserLoginResponsePacket)recv.getPayload();
-		if(ulrp.getPermit() == true){
-			Intent intent = new Intent(this, SecondActivity.class);
-			Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
-			startActivity(intent);
-		}
+		MySignUpTask at = new MySignUpTask(serverHost, 18641);
+		at.execute();
+		
 	}
 	public void SignUpRequest(View view) {
 		Intent intent = new Intent(this, SignUpActivity.class);
 		startActivity(intent);
 		return;
+	}
+	
+	public class MySignUpTask extends AsyncTask<Void, Void, Void>{
+		String destAddress;
+		int dstport;
+		String response;
+		boolean perm = false;
+		MySignUpTask(String addr, int port){
+			destAddress = addr;
+			dstport = port;
+		}
+		
+		protected Void doInBackground(Void... params){
+			Socket sock;
+			try {
+				sock = new Socket(destAddress, dstport);
+			
+			OutputStream os = sock.getOutputStream();
+			ObjectOutputStream oos = new ObjectOutputStream(os);
+			InputStream is = sock.getInputStream();
+			ObjectInputStream ois = new ObjectInputStream(is);
+			EditText text1 = (EditText) findViewById(R.id.editText1);
+			String userId = text1.getText().toString();
+			EditText text2 = (EditText) findViewById(R.id.editText2);
+			String password = text2.getText().toString();
+			Packet pkt = new Packet();
+			pkt.setType(pkt.USER_DATA);
+			UserLoginPacket ulp = new UserLoginPacket(userId, password);
+			ulp.setType(ulp.LOGIN);
+			pkt.setPayload(ulp);
+			
+			Log.v("host", "here");
+			oos.writeObject(pkt);
+			Packet recv = (Packet) ois.readObject();
+			UserLoginResponsePacket rrp = (UserLoginResponsePacket)recv.getPayload();
+			boolean permit =  rrp.getPermit();
+			
+			perm = permit;
+			}catch (Exception e) {
+				
+			}
+			return null;
+			
+		}
+		protected void onPostExecute(Void result){
+			
+			if(perm == true){
+				Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
+				Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+				startActivity(intent);
+			}
+			else{
+				TextView tv = (TextView) findViewById(R.id.error);
+				tv.setText("password and username don't match");
+			}
+			
+			
+		}
 	}
 }

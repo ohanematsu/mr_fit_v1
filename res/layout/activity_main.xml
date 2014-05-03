@@ -76,4 +76,12 @@
         android:text="Not a user? Sign up"
         android:onClick = "SignUpRequest" />
 
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="109dp"
+        android:layout_y="368dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </AbsoluteLayout>

@@ -5,13 +5,16 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,9 +26,10 @@ import com.example.mr_fit_v1.session.Session;
 import com.example.mr_fit_v1.util.Packet;
 import com.example.mr_fit_v1.ws.remote.RegisterPacket;
 import com.example.mr_fit_v1.ws.remote.RegisterResponsePacket;
+import com.example.mr_fit_v1.ws.remote.UserDataPacket;
 
 public class SignUpActivity extends Activity {
-	private String serverHost = "ec2-54-186-249-133.us-west-2.compute.amazonaws.com";
+	private String serverHost = "54.186.249.133";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -74,30 +78,63 @@ public class SignUpActivity extends Activity {
 		}
 	}
 	
-	public void SignUp(View view) throws UnknownHostException, IOException, ClassNotFoundException{
-		EditText etEmail = (EditText)findViewById(R.id.etEmail);
-		EditText etUserName = (EditText)findViewById(R.id.etUserName);
-		EditText etPass = (EditText)findViewById(R.id.etPass);
-		String email = etEmail.toString();
-		String userName = etUserName.toString();
-		String password = etPass.toString();
-		Packet pkt = new Packet();
-		pkt.setType(pkt.USER_DATA);
-		RegisterPacket rp = new RegisterPacket(email, password, userName, 1, "default");
-		rp.setType(rp.REGISTER);
-		Socket sock = new Socket(serverHost, 18641);
-		OutputStream os = sock.getOutputStream();
-		ObjectOutputStream oos = new ObjectOutputStream(os);
-		InputStream is = sock.getInputStream();
-		ObjectInputStream ois = new ObjectInputStream(is);
-		oos.writeObject(pkt);
-		Packet recv = (Packet) ois.readObject();
-		RegisterResponsePacket rrp = (RegisterResponsePacket)recv.getPayload();
-		int userid =  rrp.getUserId();
-		Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
-		Intent intent = new Intent(this, SecondActivity.class);
-		startActivity(intent);
+	public void signUp(View view) throws ClassNotFoundException{
+		MySignUpTask at = new MySignUpTask(serverHost, 18641);
+		at.execute();
 		
 	}
+	
+	public class MySignUpTask extends AsyncTask<Void, Void, Void>{
+		String destAddress;
+		int dstport;
+		String response;
+		MySignUpTask(String addr, int port){
+			destAddress = addr;
+			dstport = port;
+		}
+		
+		protected Void doInBackground(Void... params){
+			Socket sock;
+			try {
+				sock = new Socket(destAddress, dstport);
+			
+			OutputStream os = sock.getOutputStream();
+			ObjectOutputStream oos = new ObjectOutputStream(os);
+			InputStream is = sock.getInputStream();
+			ObjectInputStream ois = new ObjectInputStream(is);
+			EditText etEmail = (EditText)findViewById(R.id.etEmail);
+			EditText etUserName = (EditText)findViewById(R.id.etUserName);
+			EditText etPass = (EditText)findViewById(R.id.etPass);
+			String email = etEmail.getText().toString();
+			String userName = etUserName.getText().toString();
+			String password = etPass.getText().toString();
+			Packet pkt = new Packet();
+			pkt.setType(Packet.USER_DATA);
+			RegisterPacket rp = new RegisterPacket(email, password, userName, 1, "default");
+			rp.setType(UserDataPacket.REGISTER);
+			pkt.setPayload(rp);
+			Log.v("host", "here");
+			oos.writeObject(pkt);
+			Packet recv = (Packet) ois.readObject();
+			RegisterResponsePacket rrp = (RegisterResponsePacket)recv.getPayload();
+			int userid =  rrp.getUserId();
+			Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
+			}catch (Exception e) {
+				
+			}
+			return null;
+			
+		}
+		protected void onPostExecute(Void result){
+			Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+			startActivity(intent);
+			
+			
+		}
+
+
+	}
+
+		
 
 }
