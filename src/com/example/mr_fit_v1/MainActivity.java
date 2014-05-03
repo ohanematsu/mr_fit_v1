@@ -92,19 +92,25 @@ public class MainActivity extends Activity {
 		String userId = text1.getText().toString();
 		EditText text2 = (EditText) findViewById(R.id.editText2);
 		String password = text2.getText().toString();
+<<<<<<< HEAD
+		
+=======
 		//AuthenMessage msg = new AuthenMessage();
 		msg.type = 1;
 		msg.userId  = userId;
 		msg.password = password;
+>>>>>>> f0d3c4a3ef54b5d9e17fb19a35525b08da167692
 		
 		try {
 			@SuppressWarnings("resource")
 			Socket sock = new Socket(serverHost, 18641);
 			OutputStream os = sock.getOutputStream();
 			ObjectOutputStream oos = new ObjectOutputStream(os);
-			oos.writeObject(msg);
+			//oos.writeObject(msg);
 			InputStream is = sock.getInputStream();
 			ObjectInputStream ois = new ObjectInputStream(is);
+<<<<<<< HEAD
+=======
 			//AuthenMessage res = null;
 			try {
 				//res = (AuthenMessage) ois.readObject();
@@ -119,6 +125,7 @@ public class MainActivity extends Activity {
 			else{
 				
 			}
+>>>>>>> f0d3c4a3ef54b5d9e17fb19a35525b08da167692
 			
 			
 		} catch (UnknownHostException e) {

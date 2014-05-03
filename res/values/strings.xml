@@ -25,5 +25,6 @@
     <string name="title_section2">Week</string>
     <string name="title_section3">Month</string>
     <string name="title_activity_tabs_fragment">TabsFragmentActivity</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
 
 </resources>

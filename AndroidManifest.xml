@@ -75,7 +75,6 @@
             android:name="com.example.mr_fit_v1.MapActivity"
             android:label="@string/title_activity_map" >
         </activity>
-       
         <activity
             android:name="com.example.mr_fit_v1.TabsFragmentActivity"
             android:label="@string/title_activity_tabs_fragment"
@@ -83,11 +82,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="android.support.v4.app.FragmentActivity" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.mr_fit_v1.SignUpActivity"
+            android:label="@string/title_activity_sign_up" >
         </activity>
     </application>
 
