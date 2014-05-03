@@ -11,7 +11,6 @@ import java.net.UnknownHostException;
 
 import com.example.mr_fit_v1.session.Session;
 
-import serverCom.AuthenMessage;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -97,11 +96,12 @@ public class MainActivity extends Activity {
 		}
 	}
 	public void SignInRequest(View view) {
+		/*
 		EditText text1 = (EditText) findViewById(R.id.editText1);
 		String userId = text1.getText().toString();
 		EditText text2 = (EditText) findViewById(R.id.editText2);
 		String password = text2.getText().toString();
-		AuthenMessage msg = new AuthenMessage();
+		//AuthenMessage msg = new AuthenMessage();
 		msg.type = 1;
 		msg.userId  = userId;
 		msg.password = password;
@@ -114,9 +114,9 @@ public class MainActivity extends Activity {
 			oos.writeObject(msg);
 			InputStream is = sock.getInputStream();
 			ObjectInputStream ois = new ObjectInputStream(is);
-			AuthenMessage res = null;
+			//AuthenMessage res = null;
 			try {
-				res = (AuthenMessage) ois.readObject();
+				//res = (AuthenMessage) ois.readObject();
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -138,7 +138,7 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 		
-		return;
+		return;*/
 	}
 	public void SignUpRequest(View view) {
 		Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
