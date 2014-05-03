@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background = "@drawable/login_bg"
     tools:context="com.example.mr_fit_v1.FriendsActivity"
     >
 
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_x="102dp"
         android:layout_y="252dp"
-        android:background="#000000" >
+        android:background="#C0C0C0" >
 
         <TableRow
             android:id="@+id/tableRow2"
@@ -61,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_x="215dp"
         android:layout_y="392dp"
-        android:background="#ffffff"
+        android:background="@android:color/transparent"
         android:onClick = "SignInRequest"
         android:text="Sign In" />
 
@@ -71,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_x="224dp"
         android:layout_y="754dp"
-        android:background="#ffffff"
+        android:background="@android:color/transparent"
         android:text="Not a user? Sign up"
         android:onClick = "SignUpRequest" />
 

@@ -10,54 +10,61 @@
 
     android:background="#ffffff">
 
-    <LinearLayout 
-        android:orientation="vertical"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:padding="10dp"
-        >
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="252dp"
+        android:orientation="vertical"
+        android:padding="10dp" >
 
-        <EditText 
-                android:id="@+id/etEmail"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-              android:background="@drawable/edittext_top_bg"
-            android:padding="10dp"
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/edittext_top_bg"
+            android:drawableLeft="@drawable/ic_action_email"
             android:hint="Email"
-            android:textColorHint="#bbbbbb"
-            android:drawableLeft="@drawable/email"/>
-        <EditText 
-                android:id="@+id/etUserName"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:background="@drawable/edittext_default_bg"
-               android:layout_marginTop="-2dp"
             android:padding="10dp"
+            android:textColorHint="#bbbbbb" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/etUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/edittext_default_bg"
+            android:drawableLeft="@drawable/ic_action_person"
             android:hint="User Name"
-            android:textColorHint="#bbbbbb"
-            android:drawableLeft="@drawable/user"/>
-        <EditText 
-                android:id="@+id/etPass"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:background="@drawable/edittext_bottom_bg"
-               android:layout_marginTop="-2dp"
             android:padding="10dp"
+            android:textColorHint="#bbbbbb" />
+
+        <EditText
+            android:id="@+id/etPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/edittext_bottom_bg"
+            android:drawableLeft="@drawable/ic_action_secure"
             android:hint="Password"
-            android:textColorHint="#bbbbbb"
-            android:password="true"
-            android:drawableLeft="@drawable/password"/>
-        <Button 
-               android:id="@+id/btnSingIn"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
             android:padding="10dp"
-            android:layout_margin="4dp"
-               android:text="Sign Up"
+            android:password="true"
+            android:textColorHint="#bbbbbb" />
+
+        <Button
+            android:id="@+id/btnSingIn"
             style="@style/DefaultButtonText"
-               android:background="@drawable/button_default_bg"
-           />
-        </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_default_bg"
+            android:padding="10dp"
+            android:text="Sign Up" />
+    </LinearLayout>
 
 </RelativeLayout>

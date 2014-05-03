@@ -9,18 +9,21 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import com.example.mr_fit_v1.session.Session;
-
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+
+import com.example.mr_fit_v1.session.Session;
+import com.example.mr_fit_v1.util.Packet;
+import com.example.mr_fit_v1.ws.remote.UserLoginPacket;
+import com.example.mr_fit_v1.ws.remote.UserLoginResponsePacket;
 
 public class MainActivity extends Activity {
 	
@@ -95,60 +98,34 @@ public class MainActivity extends Activity {
 			return rootView;
 		}
 	}
-	public void SignInRequest(View view) {
-		/*
+	public void SignInRequest(View view) throws UnknownHostException, IOException, ClassNotFoundException {
+		
 		EditText text1 = (EditText) findViewById(R.id.editText1);
 		String userId = text1.getText().toString();
 		EditText text2 = (EditText) findViewById(R.id.editText2);
 		String password = text2.getText().toString();
-<<<<<<< HEAD
-		
-=======
-		//AuthenMessage msg = new AuthenMessage();
-		msg.type = 1;
-		msg.userId  = userId;
-		msg.password = password;
->>>>>>> f0d3c4a3ef54b5d9e17fb19a35525b08da167692
-		
-		try {
-			@SuppressWarnings("resource")
-			Socket sock = new Socket(serverHost, 18641);
-			OutputStream os = sock.getOutputStream();
-			ObjectOutputStream oos = new ObjectOutputStream(os);
-			//oos.writeObject(msg);
-			InputStream is = sock.getInputStream();
-			ObjectInputStream ois = new ObjectInputStream(is);
-<<<<<<< HEAD
-=======
-			//AuthenMessage res = null;
-			try {
-				//res = (AuthenMessage) ois.readObject();
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(res.result == true){
-				Intent intent = new Intent(this, SecondActivity.class);
-				startActivity(intent);
-			}
-			else{
-				
-			}
->>>>>>> f0d3c4a3ef54b5d9e17fb19a35525b08da167692
-			
-			
-		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		Packet pkt = new Packet();
+		pkt.setType(pkt.USER_DATA);
+		UserLoginPacket ulp = new UserLoginPacket(userId, password);
+		ulp.setType(ulp.LOGIN);
+		pkt.setPayload(ulp);
+		Socket sock = new Socket(serverHost, 18641);
+		OutputStream os = sock.getOutputStream();
+		ObjectOutputStream oos = new ObjectOutputStream(os);
+		InputStream is = sock.getInputStream();
+		ObjectInputStream ois = new ObjectInputStream(is);
+		oos.writeObject(pkt);
+		Packet recv = (Packet) ois.readObject();
+		UserLoginResponsePacket ulrp = (UserLoginResponsePacket)recv.getPayload();
+		if(ulrp.getPermit() == true){
+			Intent intent = new Intent(this, SecondActivity.class);
+			Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
+			startActivity(intent);
 		}
-		
-		return;*/
 	}
 	public void SignUpRequest(View view) {
-		Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
+		Intent intent = new Intent(this, SignUpActivity.class);
+		startActivity(intent);
 		return;
 	}
 }
