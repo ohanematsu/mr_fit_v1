@@ -30,7 +30,7 @@ private static final String LOGTAG = "SecondFragment";
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		Log.i(LOGTAG, "Creating Fragment view...");
-		View view = inflater.inflate(R.layout.fragment_statistic, container, false);
+		View view = inflater.inflate(R.layout.fragment_second, container, false);
 		
 		// Calculate how much time has passed since last exercise
 		Calendar curTime = Calendar.getInstance();
@@ -58,13 +58,13 @@ private static final String LOGTAG = "SecondFragment";
 		Log.i(LOGTAG, "Set up UI model complete...");
 		
 		// TODO: Setup UI
-		TextView sinceLastExerciseTime = (TextView)getView().findViewById(R.id.TextView02);
+		TextView sinceLastExerciseTime = (TextView)view.findViewById(R.id.textView2);
 		sinceLastExerciseTime.setText(String.valueOf(statistics.getTimeElapasedSinceLastExercise()));
 				
-		TextView exerciseTime = (TextView)getView().findViewById(R.id.TextView03);
+		TextView exerciseTime = (TextView)view.findViewById(R.id.textView3);
 		exerciseTime.setText(String.valueOf(statistics.getCurExerciseTime()));
 		
-		TextView burnedCalorie = (TextView)getView().findViewById(R.id.TextView04);
+		TextView burnedCalorie = (TextView)view.findViewById(R.id.textView4);
 		burnedCalorie.setText(String.valueOf(statistics.getCurBurnedCalorie()));
 		Log.i(LOGTAG, "Set up UI complete...");
 		
