@@ -13,6 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="17dp"
+        android:contentDescription="@string/avatar"
         android:src="@drawable/avatar1" />
 
     <TextView
@@ -22,7 +23,6 @@
         android:layout_alignTop="@+id/imageView1"
         android:layout_marginLeft="42dp"
         android:layout_toRightOf="@+id/imageView1"
-        android:text="UserName"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView

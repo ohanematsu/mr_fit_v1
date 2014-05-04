@@ -39,5 +39,12 @@
         <item name="android:shadowDy">1</item>
         <item name="android:shadowRadius">1</item>
     </style>
+    <string name="sincelastexercise">Since Last Exercise</string>
+    <string name="exercisetime">Exercise Time</string>
+    <string name="distance">Distance</string>
+    <string name="calorieburned">Calorie Burned</string>
+    <string name="avatar">Avatar</string>
+    <string name="email">Email</string>
+    <string name="username">UserName</string>
 
 </resources>
