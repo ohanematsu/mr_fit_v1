@@ -14,7 +14,9 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,9 +39,10 @@ public class TrackingFragment extends Fragment {
 	private Location lastLocation;
 	private ExerciseActivityManager activityManager;
 	private LocationManager locationManager;
-	private Chronometer chronometer;
 	
 	private View view;
+	private Chronometer chronometer;
+	private Button stopButton;
 	
 	/*
 	private Timer timer;
@@ -49,33 +52,6 @@ public class TrackingFragment extends Fragment {
 			currentStatistics.update(Calendar.getInstance());
 		}
 	};*/
-	
-	private LocationReceiver locationReceiver = new LocationReceiver() {
-		@Override
-		protected void onLocationReceived(Context context, Location location) {
-			super.onLocationReceived(context, location);
-			path.add(location);
-			Log.i(LOGTAG, "Add to path list");
-			if (lastLocation == null) {
-				lastLocation = location;
-			}
-			Log.i(LOGTAG, "Check last know location complete...");
-			float distance = lastLocation.distanceTo(location);
-			lastLocation = location;
-			if (isVisible()) {
-				Log.i(LOGTAG, "Prepare to update ui");
-				updateUI(distance);
-			}
-			Log.i(LOGTAG, "Update ~~~");
-		}
-		
-		@Override	
-		protected void onProviderEnableChanged(boolean enabled) {
-			super.onProviderEnableChanged(enabled);
-			String text = "Provider " + (enabled ? "Enabled" : "disabled");
-			Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
-		}
-	};
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -88,6 +64,10 @@ public class TrackingFragment extends Fragment {
 			CurrentActivityStatistics.WALK);
 		path = new ArrayList<Location>();
 		activityManager = ExerciseActivityManager.getInstance(getActivity().getApplicationContext());
+		
+		// Setup stop button
+		stopButton = (Button)view.findViewById(R.id.stopButton);
+		stopButton.setOnClickListener(stopButtonClickListener);
 		
 		// Get initial location
 		Log.i(LOGTAG, "Require initial location...");
@@ -148,30 +128,61 @@ public class TrackingFragment extends Fragment {
 		burnedCalorieText.setText(String.valueOf(currentStatistics.getCurBurnedCalorie()));
 	}
 	
-	public void onClickStop(View view) {
-		Log.i(LOGTAG, "User clicks stop button");
-		
-		// Stop timer
-		chronometer.stop();
-		Log.i(LOGTAG, "Disable timer...");
-		
-		// Stop receiving location update
-		getActivity().unregisterReceiver(locationReceiver);
-		if (activityManager.isTracking()) {
-			activityManager.stopLocationUpdates();
+	private LocationReceiver locationReceiver = new LocationReceiver() {
+		@Override
+		protected void onLocationReceived(Context context, Location location) {
+			super.onLocationReceived(context, location);
+			path.add(location);
+			Log.i(LOGTAG, "Add to path list");
+			if (lastLocation == null) {
+				lastLocation = location;
+			}
+			Log.i(LOGTAG, "Check last know location complete...");
+			float distance = lastLocation.distanceTo(location);
+			lastLocation = location;
+			if (isVisible()) {
+				Log.i(LOGTAG, "Prepare to update ui");
+				updateUI(distance);
+			}
+			Log.i(LOGTAG, "Update ~~~");
 		}
-		Log.i(LOGTAG, "stop receiving update of location...");
 		
-		// Update the last location and last exercise time
-		Location stopLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		float distance = lastLocation.distanceTo(stopLocation);
-		Calendar curTime = Calendar.getInstance();
-		currentStatistics.update(curTime, distance);
-		Session.getInstance().setLastExerciseTime(curTime);
-		
-		// Switch to ReportActivity
-		Intent intent = new Intent(getActivity(), ReportActivity.class);
-		intent.putExtra(TRACKER_FRAGMENT_STATISTICS, currentStatistics);
-		startActivity(intent);
-	}
+		@Override	
+		protected void onProviderEnableChanged(boolean enabled) {
+			super.onProviderEnableChanged(enabled);
+			String text = "Provider " + (enabled ? "Enabled" : "disabled");
+			Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
+		}
+	};
+	
+	private OnClickListener stopButtonClickListener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Log.i(LOGTAG, "User clicks stop button");
+			
+			// Stop timer
+			chronometer.stop();
+			Log.i(LOGTAG, "Disable timer...");
+			
+			// Stop receiving location update
+			// Unregister will be done in OnStop() method to avoid unregister twice
+			if (activityManager.isTracking()) {
+				activityManager.stopLocationUpdates();
+			}
+			Log.i(LOGTAG, "stop receiving update of location...");
+			
+			/*
+			// Update the last location and last exercise time
+			Location stopLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+			float distance = lastLocation.distanceTo(stopLocation);
+			Calendar curTime = Calendar.getInstance();
+			currentStatistics.update(curTime, distance);
+			Session.getInstance().setLastExerciseTime(curTime);*/
+			
+			// Switch to ReportActivity
+			Intent intent = new Intent(getActivity(), ReportActivity.class);
+			intent.putExtra(TRACKER_FRAGMENT_STATISTICS, currentStatistics);
+			startActivity(intent);		
+		}
+	};
 }

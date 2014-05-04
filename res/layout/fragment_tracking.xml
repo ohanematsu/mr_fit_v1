@@ -57,7 +57,7 @@
         android:layout_marginLeft="62dp"
         android:layout_marginTop="60dp"
         android:fontFamily="serif"
-        android:text="Walking/Running"
+        android:text="Running"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50dp"
         android:textStyle="italic" />
@@ -71,15 +71,6 @@
         android:layout_marginBottom="35dp"
         android:text="Stop"
         android:onClick="onClickStop" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/error"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="66dp"
-        android:text="Map" />
 
     <Chronometer
         android:id="@+id/chronometer"
