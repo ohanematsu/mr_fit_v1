@@ -9,6 +9,7 @@ import java.util.Properties;
 import android.content.Context;
 import android.util.Log;
 
+import com.example.mr_fit_v1.dblayout.DatabaseManager;
 import com.example.mr_fit_v1.entities.ExerciseSettings;
 import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.entities.Settings;
@@ -77,7 +78,7 @@ public class Session {
 	public static Session initSession(int userId, String account, Context context) {
 		if (instance == null) {
 			instance = new Session(userId, account);
-			//DatabaseManager.open(context);
+			DatabaseManager.open(context);
 		}
 		
 		return instance;

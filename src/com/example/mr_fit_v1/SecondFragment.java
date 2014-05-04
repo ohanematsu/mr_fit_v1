@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.mr_fit_v1.dblayout.DatabaseManager;
+import com.example.mr_fit_v1.dblayout.DatabaseOpenHelper.StatisticsCursor;
+import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
 import com.example.mr_fit_v1.entities.DayCurrentStatistics;
 import com.example.mr_fit_v1.session.Session;
 
@@ -36,21 +39,21 @@ private static final String LOGTAG = "SecondFragment";
 		Log.i(LOGTAG, "Calculate time difference complete...");
 		
 		// Retrieve data from database
-		/*StatisticsCursor cursor = DatabaseManager.queryDayStatistics(curTime.get(Calendar.DATE),
+		StatisticsCursor cursor = DatabaseManager.queryDayStatistics(curTime.get(Calendar.DATE),
 			curTime.get(Calendar.MONTH),curTime.get(Calendar.YEAR));
-		Log.i(LOGTAG, "Retrieve today's data success...");*/
+		Log.i(LOGTAG, "Retrieve today's data success...");
 		
 		// Setup UI Model
 		statistics = new DayCurrentStatistics(0, 0, (int)diffMin, 
 			Session.getInstance().getSettings().getExerciseSettings());
-		/*if (cursor.getCount() != 0) {
+		if (cursor.getCount() != 0) {
 			ExerciseStatistics record = cursor.getExerciseStatistics();
 			while (record != null) {
 				statistics.setCurBurnedCalorie(statistics.getCurBurnedCalorie() + record.getBurnedCalorie());
 				statistics.setCurExerciseTime(statistics.getCurExerciseTime() + record.getExerciseTime());
 				record = cursor.getExerciseStatistics();
 			}
-		}*/
+		}
 		Log.i(LOGTAG, "Set up UI model complete...");
 		
 		// TODO: Setup UI
