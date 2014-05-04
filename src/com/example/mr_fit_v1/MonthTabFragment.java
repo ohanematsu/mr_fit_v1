@@ -3,7 +3,11 @@ package com.example.mr_fit_v1;
 import java.util.Calendar;
 
 import com.example.mr_fit_v1.R;
+import com.example.mr_fit_v1.dblayout.DatabaseManager;
+import com.example.mr_fit_v1.dblayout.DatabaseOpenHelper.StatisticsCursor;
+import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
 import com.example.mr_fit_v1.entities.DetailedStatistics;
+import com.example.mr_fit_v1.session.Session;
 import com.example.mr_fit_v1.util.FeedbackGenerator;
 
 import android.os.Bundle;
@@ -38,15 +42,15 @@ public class MonthTabFragment extends Fragment {
 		Log.i(LOGTAG, "Time period: " + timePeriod);
 		
 		// Retrieve data from database
-		//StatisticsCursor cursor = DatabaseManager.queryMonthStatistics(month, year);
+		StatisticsCursor cursor = DatabaseManager.queryMonthStatistics(month, year);
 		Log.i(LOGTAG, "Retrieve data complete...");
 		
 		// Fill model
-		//if (cursor.getCount() == 0) {
+		if (cursor.getCount() == 0) {
 			Log.i(LOGTAG, "No data fulfill the requirement...");
 			statistics = new DetailedStatistics(0, 0, 0.0f, timePeriod);
 			statistics.setFeedback(FeedbackGenerator.EXTREMELY_BAD);
-		/*} else {
+		} else {
 			Log.i(LOGTAG, "Filling UI model...");
 			statistics = new DetailedStatistics();
 			statistics.setTimePeriod(timePeriod);
@@ -60,7 +64,7 @@ public class MonthTabFragment extends Fragment {
 			int burnedCalorieGoal = Session.getInstance().getSettings().getDayBurnedCaloriesGoal();
 			statistics.setFeedback(FeedbackGenerator.getFeedback(
 				burnedCalorieGoal, statistics.getCurBurnedCalorie()));
-		}*/
+		}
 		
 		// Setup UI
 		TextView exerciseTime = (TextView)view.findViewById(R.id.exerciseTimeTextView); 
