@@ -5,5 +5,26 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="table_margin">3dp</dimen>
     <dimen name="tracker_text_size">35dp</dimen>
+    <dimen name="ten_margin">10dp</dimen>
+    <dimen name="standardwidth">520dp</dimen>
+    <dimen name="margin_top">2dp</dimen>
+    <dimen name="padding_ten">10dp</dimen>
+    <color name="hint_color">#bbbbbb</color>
+    <dimen name="height_90">90dp</dimen>
+    <dimen name="login_margin_top">130dp</dimen>
+    <dimen name="login_text_size">55dp</dimen>
+    <dimen name="rela_margin">16dp</dimen>
+    <dimen name="rela_width">350dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="button_width">200dp</dimen>
+    <dimen name="button_height">110dp</dimen>
+    <dimen name="button_top1">160dp</dimen>
+    <dimen name="button_top2">260dp</dimen>
+    <dimen name="margin_left">44dp</dimen>
+    <dimen name="image_size">150dp</dimen>
+    <dimen name="margin_right">16dp</dimen>
+    <dimen name="image_size2">115dp</dimen>
+    <dimen name="first_icon_margin">22dp</dimen>
+    
 
 </resources>

@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginLeft="@dimen/rela_margin"
+        android:layout_marginTop="@dimen/rela_margin"
         android:contentDescription="@string/avatar"
         android:src="@drawable/avatar1" />
 
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView1"
-        android:layout_marginLeft="42dp"
+        android:layout_marginLeft="@dimen/margin_left"
         android:layout_toRightOf="@+id/imageView1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="@dimen/ten_margin"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

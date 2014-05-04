@@ -18,6 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="33dp"
         android:layout_marginTop="22dp"
+        android:contentDescription="@string/exercisetime"
         android:src="@drawable/ic_action_data_usage" />
 
     <TextView
@@ -27,7 +28,8 @@
         android:layout_alignTop="@+id/imageView1"
         android:layout_marginTop="25dp"
         android:layout_toRightOf="@+id/imageView1"
-        android:text="Since Last Exercise" />
+        android:text="@string/sincelastexercise"></TextView>
+        
 
     <TextView
         android:id="@+id/TextView01"
@@ -36,7 +38,7 @@
         android:layout_alignTop="@+id/imageView2"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/imageView2"
-        android:text="Exercise Time" />
+        android:text="@string/exercisetime" />
 
     <TextView
         android:id="@+id/TextView02"
@@ -45,7 +47,7 @@
         android:layout_alignLeft="@+id/TextView01"
         android:layout_alignTop="@+id/imageView3"
         android:layout_marginTop="27dp"
-        android:text="Calorie Burn" />
+        android:text="@string/calorieburned" />
 
     <TextView
         android:id="@+id/error"
@@ -53,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
-        android:text="TextView" />
+        android:text="" />
 
     <ProgressBar
         android:id="@+id/progressBar1"
@@ -69,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextView01"
         android:layout_toRightOf="@+id/imageView2"
-        android:text="TextView" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textView4"
@@ -77,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/TextView02"
         android:layout_below="@+id/TextView02"
-        android:text="TextView" />
+        android:text="" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -86,6 +88,7 @@
         android:layout_alignLeft="@+id/imageView1"
         android:layout_below="@+id/imageView1"
         android:layout_marginTop="18dp"
+        android:contentDescription="@string/exercisetime"
         android:src="@drawable/ic_action_time" />
 
     <ImageView
@@ -95,6 +98,7 @@
         android:layout_alignLeft="@+id/imageView2"
         android:layout_below="@+id/imageView2"
         android:layout_marginTop="17dp"
+        android:contentDescription="@string/calorieburned"
         android:src="@drawable/ic_action_good" />
 
     <ProgressBar

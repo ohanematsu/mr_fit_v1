@@ -10,25 +10,14 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="@dimen/first_icon_margin"
             android:contentDescription="@string/exercisetime"
             android:src="@drawable/ic_action_data_usage" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageView1"
-            android:layout_marginLeft="11dp"
-            android:layout_marginTop="34dp"
-            android:layout_toRightOf="@+id/imageView1"
-            android:text="@string/exercisetime"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/exerciseTimeTextView"
@@ -43,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/imageView3"
-            android:layout_marginTop="43dp"
+            android:layout_marginTop="@dimen/margin_left"
             android:layout_toRightOf="@+id/imageView3"
             android:text="@string/calorieburned"
             android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -58,24 +47,14 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
+            android:layout_width="@dimen/image_size2"
+            android:layout_height="@dimen/image_size2"
             android:layout_alignRight="@+id/imageView1"
             android:layout_below="@+id/imageView1"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="124dp"
+            android:layout_marginRight="@dimen/margin_right"
+            android:layout_marginTop="@dimen/login_margin_top"
             android:contentDescription="@string/distance"
             android:src="@drawable/ic_action_shuffle" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_below="@+id/imageView2"
-            android:layout_marginTop="124dp"
-            android:layout_toLeftOf="@+id/textView1"
-            android:contentDescription="@string/calorieburned"
-            android:src="@drawable/ic_action_good" />
 
         <ProgressBar
             android:id="@+id/progressBar1"
@@ -119,6 +98,24 @@
             android:layout_below="@+id/textView5"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-  
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_below="@+id/imageView2"
+            android:layout_marginTop="122dp"
+            android:contentDescription="@string/calorieburned"
+            android:src="@drawable/ic_action_good" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp"
+            android:text="@string/exercisetime"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

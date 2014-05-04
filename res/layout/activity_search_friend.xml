@@ -1,12 +1,11 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.mr_fit_v1.SearchFriendActivity"
-    tools:ignore="MergeRootFrame" >
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+   
+    tools:context="com.example.mr_fit_v1.SearchFriendActivity"
+    tools:ignore="MergeRootFrame" 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
@@ -19,14 +18,14 @@
 
             <EditText
             android:id="@+id/etAddFriend"
-            android:layout_width="520dp"
+            android:layout_width="@dimen/standardwidth"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-2dp"
+            android:layout_marginTop="@dimen/margin_top"
             android:background="@drawable/edittext_top_bg"
             android:drawableLeft="@drawable/ic_action_add_person"
-            android:hint="Search New Friend"
-            android:padding="10dp"
-            android:textColorHint="#bbbbbb" >
+            android:hint="@string/searchnewfriend"
+            android:padding="@dimen/padding_ten"
+            android:textColorHint="@color/hint_color" >
 
             <requestFocus />
         	</EditText>
@@ -36,10 +35,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/button"
                 android:src="@drawable/ic_action_search" />
 
         </LinearLayout>
 
+        <fragment
+            android:id="@+id/fragment1"
+            android:name="com.example.mr_fit_v1.FriendsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
-</FrameLayout>
+

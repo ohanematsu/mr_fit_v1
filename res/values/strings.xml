@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">mr_fit_v1</string>
+    <string name="app_name">Mr. Fit</string>
     <string name="hello_world">Hello world!</string>
     <string name="item0">Home</string>
     <string name="title_activity_second">SecondActivity</string>
@@ -46,5 +46,14 @@
     <string name="avatar">Avatar</string>
     <string name="email">Email</string>
     <string name="username">UserName</string>
+    <string name="password">Password</string>
+    <string name="signup">Sign Up</string>
+    <string name="startwalking">Start Walking</string>
+    <string name="startrunning">Start Running</string>
+    <string name="setpreference">Set Preference</string>
+    <string name="searchnewfriend">Search New Friend</string>
+    <string name="button">Button</string>
+    <string name="signin">Sign In</string>
+    <string name="notuser">Not a user? Sign Up</string>
 
 </resources>
