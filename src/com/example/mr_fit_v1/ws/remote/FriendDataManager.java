@@ -34,7 +34,7 @@ class FriendDataManager extends BaseRemoteDatabaseManager implements ManageFrien
 	}
 
 	@Override
-	public ArrayList<String> receiveFriendSearchResult() {
+	public ArrayList<Friend> receiveFriendSearchResult() {
 		FriendDataPacket packet = receiveFriendDataPacket();
 		if (packet.type == FriendDataPacket.SEARCH_RESPONSE) {
 			FriendSearchResponsePacket newPacket = (FriendSearchResponsePacket)packet;

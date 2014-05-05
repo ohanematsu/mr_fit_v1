@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import com.example.mr_fit_v1.entities.Friend;
 
 public class FriendListResponsePacket extends FriendDataPacket {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	protected ArrayList<Friend> friendList;
 	
 	public FriendListResponsePacket(ArrayList<Friend> friendList) {

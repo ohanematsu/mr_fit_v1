@@ -1,24 +1,19 @@
 package com.example.mr_fit_v1.entities;
 
 public class Friend {
-	
-	public static final int JUST_FINISH_EXERCISE = 0;
-	public static final int FINISH_EXERCISE_FOR_A_WHILE = 1;
-	public static final int NEED_EXERCISE_NOW = 2;
-	
 	private int userId;
 	private String userName;
-	private int avatarId;
+	private String phoneNum;
 	private int status;
 
 	public Friend() {
 		
 	}
 	
-	public Friend(int userId, String userName, int avatarId, int status) {
+	public Friend(int userId, String userName, String phoneNum, int status) {
 		this.setUserId(userId);
 		this.setUserName(userName);
-		this.setAvatarId(avatarId);
+		this.setPhoneNum(phoneNum);
 		this.setStatus(status);
 	}
 
@@ -38,12 +33,12 @@ public class Friend {
 		this.userName = userName;
 	}
 
-	public int getAvatarId() {
-		return avatarId;
+	public String getPhoneNum() {
+		return phoneNum;
 	}
 
-	public void setAvatarId(int avatarId) {
-		this.avatarId = avatarId;
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
 	}
 
 	public int getStatus() {

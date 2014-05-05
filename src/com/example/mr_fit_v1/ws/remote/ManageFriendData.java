@@ -8,5 +8,5 @@ interface ManageFriendData {
 	public boolean searchFriend(String name);
 	public boolean requestFriendList(int userID);
 	public ArrayList<Friend> receiveFriendList();
-	public ArrayList<String> receiveFriendSearchResult();
+	public ArrayList<Friend> receiveFriendSearchResult();
 }

@@ -79,7 +79,7 @@ public class ServerDataManager implements ManageFriendData, ManageUserData {
 	}
 
 	@Override
-	public ArrayList<String> receiveFriendSearchResult() {
+	public ArrayList<Friend> receiveFriendSearchResult() {
 		return friendDataManager.receiveFriendSearchResult();
 	}
 }
