@@ -67,8 +67,8 @@ public class FriendsFragment extends Fragment {
 		}
 		// Hardcode some data for test
 		if (friendList.isEmpty()) {
-			friendList.add(new Friend(1, "jiawen", 1, Friend.FINISH_EXERCISE_FOR_A_WHILE));
-			friendList.add(new Friend(2, "xiaolin", 2, Friend.FINISH_EXERCISE_FOR_A_WHILE));
+			friendList.add(new Friend(1, "jiawen", "4125513739", Friend.FINISH_EXERCISE_FOR_A_WHILE));
+			friendList.add(new Friend(2, "xiaolin", "4129997674", Friend.FINISH_EXERCISE_FOR_A_WHILE));
 		}
 		Log.i(LOGTAG, "Parse friend list complete...");
 					
