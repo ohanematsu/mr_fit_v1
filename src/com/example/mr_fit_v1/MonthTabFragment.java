@@ -59,6 +59,7 @@ public class MonthTabFragment extends Fragment {
 				statistics.setCurBurnedCalorie(statistics.getCurBurnedCalorie() + record.getBurnedCalorie());
 				statistics.setCurExerciseTime(statistics.getCurExerciseTime() + record.getExerciseTime());
 				statistics.setDistance(statistics.getDistance() + record.getDistance());
+				record = cursor.getExerciseStatistics();
 			}
 			
 			int burnedCalorieGoal = Session.getInstance().getSettings().getDayBurnedCaloriesGoal();

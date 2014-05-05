@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.mr_fit_v1.dblayout.DatabaseManager;
 import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
 import com.example.mr_fit_v1.entities.CurrentActivityStatistics;
 import com.example.mr_fit_v1.entities.Report;
@@ -68,7 +69,7 @@ public class ReportFragment extends Fragment {
 		@SuppressWarnings("unused")
 		ExerciseStatistics statistics = new ExerciseStatistics(
 				Session.getInstance().getUserId(), report);
-		//DatabaseManager.insertStatistics(statistics);
+		DatabaseManager.insertStatistics(statistics);
 		Log.i(LOGTAG, "Save data to database complete...");
 		
 		Log.i(LOGTAG, "Create fragment complete...");
