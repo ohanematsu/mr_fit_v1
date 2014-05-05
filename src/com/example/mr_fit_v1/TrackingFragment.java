@@ -171,17 +171,19 @@ public class TrackingFragment extends Fragment {
 			}
 			Log.i(LOGTAG, "stop receiving update of location...");
 			
-			/*
+			
 			// Update the last location and last exercise time
 			Location stopLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+			path.add(stopLocation);
 			float distance = lastLocation.distanceTo(stopLocation);
 			Calendar curTime = Calendar.getInstance();
 			currentStatistics.update(curTime, distance);
-			Session.getInstance().setLastExerciseTime(curTime);*/
+			Session.getInstance().setLastExerciseTime(curTime);
 			
 			// Switch to ReportActivity
 			Intent intent = new Intent(getActivity(), ReportActivity.class);
 			intent.putExtra(TRACKER_FRAGMENT_STATISTICS, currentStatistics);
+			intent.putExtra(TRACKER_FRAGMENT_PATH, path);
 			startActivity(intent);		
 		}
 	};

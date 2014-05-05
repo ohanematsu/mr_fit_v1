@@ -25,7 +25,7 @@ public class ReportFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.i(LOGTAG, "Initilizing ReportFragment...");
-		/*
+		
 		Intent receivedIntent = getActivity().getIntent();
 		
 		CurrentActivityStatistics statistics = (CurrentActivityStatistics)receivedIntent.
@@ -41,7 +41,7 @@ public class ReportFragment extends Fragment {
 			Log.e(LOGTAG, "Parse path fail...");
 		}
 		
-		report = new Report(statistics, path);*/
+		report = new Report(statistics, path);
 	}
 	
 	@Override
@@ -49,7 +49,7 @@ public class ReportFragment extends Fragment {
 		Log.i(LOGTAG, "Create fragment view...");
 		View view = inflater.inflate(R.layout.fragment_report, parent, false);
 		
-		/*
+		
 		// Set up UI based on Report
 		TextView elapsedTextView = (TextView)view.findViewById(R.id.elapsedTimeTextView);
 		elapsedTextView.setText(String.valueOf(report.getCurExerciseTime()));
@@ -60,7 +60,7 @@ public class ReportFragment extends Fragment {
 		TextView speedTextView = (TextView)view.findViewById(R.id.speedTextView);
 		speedTextView.setText(String.valueOf(report.getSpeed()));
 		
-		TextView burnedCalorieTextView = (TextView)view.findViewById(R.id.burnedCalorieTextView);
+		TextView burnedCalorieTextView = (TextView)view.findViewById(R.id.calorieTextView);
 		burnedCalorieTextView.setText(String.valueOf(report.getCurBurnedCalorie()));
 		Log.i(LOGTAG, "Set up UI complete...");
 		
@@ -71,7 +71,7 @@ public class ReportFragment extends Fragment {
 		//DatabaseManager.insertStatistics(statistics);
 		Log.i(LOGTAG, "Save data to database complete...");
 		
-		Log.i(LOGTAG, "Create fragment complete...");*/
+		Log.i(LOGTAG, "Create fragment complete...");
 		return view;
 	}
 	
