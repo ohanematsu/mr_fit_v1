@@ -69,8 +69,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
-        android:text="Stop"
-        android:onClick="onClickStop" />
+        android:text="Stop" />
 
     <Chronometer
         android:id="@+id/chronometer"
