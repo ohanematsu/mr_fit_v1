@@ -58,7 +58,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		if (!isStatisticsTableExisting()) {
+		if (!isStatisticsTableExisting(db)) {
 			db.execSQL(STATISTICS_TABLE_CREATE_STATEMENT);
 			Log.i(LOGTAG, "Table created");
 		}
@@ -116,9 +116,9 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 		return new StatisticsCursor(wrapped);
 	}
 	
-	private boolean isStatisticsTableExisting() {
+	private boolean isStatisticsTableExisting(SQLiteDatabase db) {
         String query = CHECK_TABLE_EXIST_STATEMENT + "'" + STATISTICS_TABLE_NAME + "'";
-        Cursor cursor = getReadableDatabase().rawQuery(query, null);
+        Cursor cursor = db.rawQuery(query, null);
         if(cursor.moveToNext()) {
         	int count = cursor.getInt(0);
             if (count > 0) {

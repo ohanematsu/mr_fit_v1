@@ -44,11 +44,27 @@
         android:layout_marginLeft="@dimen/tracker_margin_left"
         android:layout_marginTop="@dimen/tracker_margin_top2"
         android:fontFamily="serif"
+<<<<<<< HEAD
         android:text=""
+=======
+        android:text="Running"
+>>>>>>> 031520cc2567a2b7ee160d7dd1a373cf4f074882
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="@dimen/tracker_text_size2"
         android:textStyle="italic" />
 
+<<<<<<< HEAD
+=======
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:text="Stop" />
+
+>>>>>>> 031520cc2567a2b7ee160d7dd1a373cf4f074882
     <Chronometer
         android:id="@+id/chronometer"
         android:layout_width="wrap_content"

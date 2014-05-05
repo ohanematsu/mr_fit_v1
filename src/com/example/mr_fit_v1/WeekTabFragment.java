@@ -10,7 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.mr_fit_v1.dblayout.DatabaseManager;
+import com.example.mr_fit_v1.dblayout.DatabaseOpenHelper.StatisticsCursor;
+import com.example.mr_fit_v1.dblayout.model.ExerciseStatistics;
 import com.example.mr_fit_v1.entities.DetailedStatistics;
+import com.example.mr_fit_v1.session.Session;
 import com.example.mr_fit_v1.util.FeedbackGenerator;
  
 public class WeekTabFragment extends Fragment {
@@ -37,15 +41,15 @@ public class WeekTabFragment extends Fragment {
 		Log.i(LOGTAG, "Time period: " + timePeriod);
 		
 		// Retrieve data from database
-		//StatisticsCursor cursor = DatabaseManager.queryWeekStatistics(weekOfYear, year);
+		StatisticsCursor cursor = DatabaseManager.queryWeekStatistics(weekOfYear, year);
 		Log.i(LOGTAG, "Retrieve data complete...");
 		
 		// Fill model
-		//if (cursor.getCount() == 0) {
+		if (cursor.getCount() == 0) {
 			Log.i(LOGTAG, "No data fulfill the requirement...");
 			statistics = new DetailedStatistics(0, 0, 0.0f, timePeriod);
 			statistics.setFeedback(FeedbackGenerator.EXTREMELY_BAD);
-		/*} else {
+		} else {
 			Log.i(LOGTAG, "Filling UI model...");
 			statistics = new DetailedStatistics();
 			statistics.setTimePeriod(timePeriod);
@@ -54,12 +58,13 @@ public class WeekTabFragment extends Fragment {
 				statistics.setCurBurnedCalorie(statistics.getCurBurnedCalorie() + record.getBurnedCalorie());
 				statistics.setCurExerciseTime(statistics.getCurExerciseTime() + record.getExerciseTime());
 				statistics.setDistance(statistics.getDistance() + record.getDistance());
+				record = cursor.getExerciseStatistics();
 			}
 			
 			int burnedCalorieGoal = Session.getInstance().getSettings().getDayBurnedCaloriesGoal();
 			statistics.setFeedback(FeedbackGenerator.getFeedback(
 				burnedCalorieGoal, statistics.getCurBurnedCalorie()));
-		}*/
+		}
 		
 		// Setup UI
 		TextView exerciseTime = (TextView)view.findViewById(R.id.exerciseTimeTextView); 
