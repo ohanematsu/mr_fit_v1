@@ -13,6 +13,7 @@ import com.example.mr_fit_v1.dblayout.DatabaseManager;
 import com.example.mr_fit_v1.entities.ExerciseSettings;
 import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.entities.Settings;
+import com.example.mr_fit_v1.ws.local.SMSServiceManager;
 
 public class Session {
 	
@@ -79,6 +80,7 @@ public class Session {
 		if (instance == null) {
 			instance = new Session(userId, account);
 			DatabaseManager.open(context);
+			SMSServiceManager.init(context);
 		}
 		
 		return instance;

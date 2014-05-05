@@ -3,8 +3,11 @@ package com.example.mr_fit_v1;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +22,7 @@ import android.widget.TextView;
 
 import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.session.Session;
+import com.example.mr_fit_v1.ws.local.SMSServiceManager;
 
 public class FriendsFragment extends Fragment {
 	private static final String LOGTAG = "FriendFragment";
@@ -91,18 +95,15 @@ public class FriendsFragment extends Fragment {
         Log.i(LOGTAG, "Setup adapter complete...");
  
         // Click event for single list row
-        listView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View view, int position,
-					long id) {
-				// TODO: Pop-up dialog to send reminder
-				
-				
-			}
-		});
+        listView.setOnItemClickListener(listItemClickListener);
 		
 		Log.i(LOGTAG, "Update UI complete...");
+	}
+	
+	private void sendReminder(Friend selectedFriend) {
+		String message = "A reminder from your friend " + selectedFriend.getUserName() + ":\n" + 
+			"Hi My dear friend, I know you are very busy in these days. However, for your fitness, please don't forget to do exercise lol";
+		SMSServiceManager.sendSmsMessage(selectedFriend.getPhoneNum(), message);
 	}
 	
 	private void updateFriendList(ArrayList<Friend> list) {
@@ -161,4 +162,25 @@ public class FriendsFragment extends Fragment {
 	        return view;
 	    }
 	}
+	
+	private OnItemClickListener listItemClickListener = new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, final View view, int position,
+				long id) {
+			final Friend selectedFriend = (Friend)parent.getItemAtPosition(position);
+			
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+			alertDialogBuilder.setTitle("Send reminder");
+			alertDialogBuilder.setMessage("Do you want to send reminder to your friend " + selectedFriend.getUserName())
+					          .setCancelable(true)
+					          .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+					        	  public void onClick(DialogInterface dialog,int id) {
+					        		  sendReminder(selectedFriend);
+					        	  }
+					          });
+			AlertDialog alertDialog = alertDialogBuilder.create();
+			alertDialog.show();
+		}
+	};
 }
