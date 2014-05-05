@@ -25,6 +25,21 @@
     <dimen name="margin_right">16dp</dimen>
     <dimen name="image_size2">115dp</dimen>
     <dimen name="first_icon_margin">22dp</dimen>
+    <dimen name="layout_margin_top">82dp</dimen>
+    <dimen name="dimen_left">32dp</dimen>
+    <dimen name="layout_margin_top20">20dp</dimen>
+    <dimen name="margin_top_over100">122dp</dimen>
+    <dimen name="third_margin_top">37dp</dimen>
+	<dimen name="tracker_margin_top">82dp</dimen>
+	<dimen name="tracker_margin_left">62dp</dimen>
+	<dimen name="tracker_margin_top2">60dp</dimen>
+	<dimen name="tracker_text_size2">50dp</dimen>
+	<dimen name="small_margin_top">15dp</dimen>
+	<dimen name="medium_margin_top">26dp</dimen>
+	<dimen name="margin_right2">28dp</dimen>
+	<dimen name="margin_top2">44dp</dimen>	
+			    
     
-
+    
+	
 </resources>

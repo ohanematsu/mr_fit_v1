@@ -14,7 +14,7 @@
             android:layout_height="@dimen/image_size"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="32dp"
+            android:layout_marginLeft="@dimen/dimen_left"
             android:layout_marginTop="@dimen/first_icon_margin"
             android:contentDescription="@string/exercisetime"
             android:src="@drawable/ic_action_data_usage" />
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/progressBar1"
             android:layout_alignTop="@+id/imageView2"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/layout_margin_top20"
             android:text="@string/distance"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -104,7 +104,7 @@
             android:layout_height="@dimen/image_size"
             android:layout_alignLeft="@+id/imageView1"
             android:layout_below="@+id/imageView2"
-            android:layout_marginTop="122dp"
+            android:layout_marginTop="@dimen/margin_top_over100"
             android:contentDescription="@string/calorieburned"
             android:src="@drawable/ic_action_good" />
 
@@ -112,9 +112,9 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView3"
             android:layout_alignTop="@+id/imageView1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="@dimen/third_margin_top"
             android:text="@string/exercisetime"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 

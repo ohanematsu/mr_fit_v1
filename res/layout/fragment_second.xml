@@ -50,7 +50,7 @@
         android:text="@string/calorieburned" />
 
     <TextView
-        android:id="@+id/error"
+        android:id="@+id/elapsed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
@@ -62,7 +62,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/error"
+        android:layout_below="@+id/elapsed"
         android:layout_toRightOf="@+id/imageView1" />
 
     <TextView

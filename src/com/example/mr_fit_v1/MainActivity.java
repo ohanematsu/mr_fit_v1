@@ -122,7 +122,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 			else{
-				TextView tv = (TextView) findViewById(R.id.error);
+				TextView tv = (TextView) findViewById(R.id.elapsed);
 				tv.setText("password and username don't match");
 			}
 			
