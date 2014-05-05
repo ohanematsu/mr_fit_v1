@@ -62,15 +62,6 @@
         android:textSize="50dp"
         android:textStyle="italic" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/error"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="66dp"
-        android:text="Map" />
-
     <TextView
         android:id="@+id/elapsedTimeTextView"
         android:layout_width="wrap_content"
@@ -123,22 +114,13 @@
         android:textSize="@dimen/tracker_text_size"
         android:textStyle="italic" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="150dp"
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_alignLeft="@+id/textView10"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="18dp"
-        android:text="Return" />
-
-    <Button
-        android:id="@+id/Button01"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignRight="@+id/button2"
-        android:text="Restart" />
+        android:layout_below="@+id/calorieTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp"
+        android:src="@drawable/ic_action_map" />
 
 </RelativeLayout>
