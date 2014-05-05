@@ -18,6 +18,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,7 +43,7 @@ public class TrackingFragment extends Fragment {
 	
 	private View view;
 	private Chronometer chronometer;
-	private Button stopButton;
+	private ImageButton stopButton;
 	
 	/*
 	private Timer timer;
@@ -66,7 +67,7 @@ public class TrackingFragment extends Fragment {
 		activityManager = ExerciseActivityManager.getInstance(getActivity().getApplicationContext());
 		
 		// Setup stop button
-		stopButton = (Button)view.findViewById(R.id.stopButton);
+		stopButton = (ImageButton)view.findViewById(R.id.stopButton);
 		stopButton.setOnClickListener(stopButtonClickListener);
 		
 		// Get initial location
