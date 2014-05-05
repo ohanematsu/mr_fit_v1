@@ -98,6 +98,7 @@ public class FriendsFragment extends Fragment {
 					long id) {
 				// TODO: Pop-up dialog to send reminder
 				
+				
 			}
 		});
 		

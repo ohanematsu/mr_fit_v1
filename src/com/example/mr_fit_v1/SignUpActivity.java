@@ -117,7 +117,8 @@ public class SignUpActivity extends Activity {
 			RegisterResponsePacket rrp = (RegisterResponsePacket)recv.getPayload();
 			@SuppressWarnings("unused")
 			int userid =  rrp.getUserId();
-			Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
+			
+			Session.initSession(userid, email, getApplicationContext());
 			}catch (Exception e) {
 				
 			}

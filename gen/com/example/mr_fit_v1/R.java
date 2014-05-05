@@ -1192,9 +1192,9 @@ containing a value of this type.
         public static final int editText1=0x7f060048;
         public static final int editText2=0x7f060049;
         public static final int edit_query=0x7f060030;
-        public static final int elapsed=0x7f06004a;
         public static final int elapsedTimeTextView=0x7f060052;
         public static final int end=0x7f060013;
+        public static final int error=0x7f06004a;
         public static final int etAddFriend=0x7f06003d;
         public static final int etEmail=0x7f060061;
         public static final int etPass=0x7f060063;

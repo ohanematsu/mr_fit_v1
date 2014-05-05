@@ -13,8 +13,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/elapsed"
-        android:layout_below="@+id/elapsed"
+        android:layout_alignLeft="@+id/error"
+        android:layout_below="@+id/error"
         android:layout_marginTop="@dimen/layout_margin_top"
         android:fontFamily="serif"
         android:text="@string/distance"
@@ -54,13 +54,13 @@
         android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/elapsed"
-        android:layout_below="@+id/elapsed"
+        android:layout_alignLeft="@+id/error"
+        android:layout_below="@+id/error"
         android:layout_marginTop="@dimen/small_margin_top"
         android:text="" />
 
     <TextView
-        android:id="@+id/elapsed"
+        android:id="@+id/error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"

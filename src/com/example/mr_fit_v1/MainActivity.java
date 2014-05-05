@@ -76,6 +76,8 @@ public class MainActivity extends Activity {
 		int dstport;
 		String response;
 		boolean perm = false;
+		int id = 0;
+		String email = null;
 		MySignUpTask(String addr, int port){
 			destAddress = addr;
 			dstport = port;
@@ -93,6 +95,7 @@ public class MainActivity extends Activity {
 			ObjectInputStream ois = new ObjectInputStream(is);
 			EditText text1 = (EditText) findViewById(R.id.editText1);
 			String userId = text1.getText().toString();
+			email = userId;
 			EditText text2 = (EditText) findViewById(R.id.editText2);
 			String password = text2.getText().toString();
 			Packet pkt = new Packet();
@@ -108,6 +111,7 @@ public class MainActivity extends Activity {
 			boolean permit =  rrp.getPermit();
 			
 			perm = permit;
+			id = rrp.getId();
 			}catch (Exception e) {
 				
 			}
@@ -117,12 +121,13 @@ public class MainActivity extends Activity {
 		protected void onPostExecute(Void result){
 			
 			if(perm == true){
-				Session.initSession(10000, "zengjw1990@gmail.com", getApplicationContext());
+				Session.initSession(id, email, getApplicationContext());
+				
 				Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
 				startActivity(intent);
 			}
 			else{
-				TextView tv = (TextView) findViewById(R.id.elapsed);
+				TextView tv = (TextView) findViewById(R.id.error);
 				tv.setText("password and username don't match");
 			}
 			

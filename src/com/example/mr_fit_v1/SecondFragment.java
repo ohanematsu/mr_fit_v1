@@ -57,7 +57,7 @@ private static final String LOGTAG = "SecondFragment";
 		Log.i(LOGTAG, "Set up UI model complete...");
 		
 		// TODO: Setup UI
-		TextView sinceLastExerciseTime = (TextView)view.findViewById(R.id.elapsed);
+		TextView sinceLastExerciseTime = (TextView)view.findViewById(R.id.error);
 		sinceLastExerciseTime.setText(String.valueOf(statistics.getTimeElapasedSinceLastExercise()));
 				
 		TextView exerciseTime = (TextView)view.findViewById(R.id.textView3);

@@ -8,6 +8,7 @@ public class UserLoginResponsePacket extends UserDataPacket {
 	 */
 	private static final long serialVersionUID = 1L;
 	private boolean permit = false;
+	private int id;
 
 	public UserLoginResponsePacket(int type) {
 		super(type);
@@ -26,6 +27,14 @@ public class UserLoginResponsePacket extends UserDataPacket {
 	}
 	public boolean getPermit(){
 		return permit;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

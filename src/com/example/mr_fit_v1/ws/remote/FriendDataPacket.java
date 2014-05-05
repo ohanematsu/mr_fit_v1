@@ -13,6 +13,8 @@ public class FriendDataPacket {
 	public static int REQUEST_FRIEND_LIST = 1;
 	public static int SEARCH_RESPONSE = 2;
 	public static int REQUEST_FRIEND_LIST_REPOSNE = 3;
+	public static int ADD = 4;
+	public static int ADD_RESPONSE = 5;
 	
 	protected int type;
 	
