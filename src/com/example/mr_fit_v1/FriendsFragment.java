@@ -1,10 +1,16 @@
 package com.example.mr_fit_v1;
 
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
 import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,8 +25,14 @@ import android.widget.TextView;
 
 import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.session.Session;
+import com.example.mr_fit_v1.util.Packet;
+import com.example.mr_fit_v1.ws.remote.FriendDataPacket;
+import com.example.mr_fit_v1.ws.remote.FriendListRequestPacket;
+import com.example.mr_fit_v1.ws.remote.FriendListResponsePacket;
 
 public class FriendsFragment extends Fragment {
+	private String serverHost = "ec2-54-186-249-133.us-west-2.compute.amazonaws.com";
+	
 	private static final String LOGTAG = "FriendFragment";
 	
 	private ListView listView;
@@ -61,31 +73,28 @@ public class FriendsFragment extends Fragment {
 		listView = (ListView)view.findViewById(R.id.friendList);
 		
 		// Parse received data
-		friendList = Session.getInstance().getFriendList();
-		if (friendList == null) {
-			friendList = new ArrayList<Friend>();
-		}
+		
 		// Hardcode some data for test
-		if (friendList.isEmpty()) {
-			friendList.add(new Friend(1, "jiawen", "4125513739", Friend.FINISH_EXERCISE_FOR_A_WHILE));
-			friendList.add(new Friend(2, "xiaolin", "4129997674", Friend.FINISH_EXERCISE_FOR_A_WHILE));
-		}
+
 		Log.i(LOGTAG, "Parse friend list complete...");
 					
 		// Update UI
-		updateUI(friendList);
+		
 		Log.i(LOGTAG, "Set up UI complete...");
 		
 		// Start a thread to get updated friendlist, when done, it will update UI
 		//friendRetrievingTask.start();
-		
-		
+		int id = Session.getInstance().getUserId();
+		MyListFriendTask mlft = new MyListFriendTask(serverHost, 18641, id);
+		mlft.execute();
 		Log.i(LOGTAG, "Create Fragment view complete...");
 		return view;
 	}
 	
 	private void updateUI(ArrayList<Friend> friendList) {		
 		// Getting adapter
+		if(friendList == null)
+			return;
         FriendAdapter adapter = new FriendAdapter(getActivity(), friendList);
         listView.setAdapter(adapter);
         Log.i(LOGTAG, "Setup adapter complete...");
@@ -161,4 +170,49 @@ public class FriendsFragment extends Fragment {
 	        return view;
 	    }
 	}
+	public class MyListFriendTask extends AsyncTask<Void, Void, Void>{
+		String destAddress;
+		int dstport;
+		int userId;
+		ArrayList<Friend> friends; 
+		MyListFriendTask(String addr, int port, int userId){
+			destAddress = addr;
+			dstport = port;
+			this.userId = userId;
+		}
+		
+		@SuppressWarnings("resource")
+		protected Void doInBackground(Void... params){
+			Socket sock;
+			try {
+				sock = new Socket(destAddress, dstport);
+			
+			OutputStream os = sock.getOutputStream();
+			ObjectOutputStream oos = new ObjectOutputStream(os);
+			InputStream is = sock.getInputStream();
+			ObjectInputStream ois = new ObjectInputStream(is);
+			Packet pkt = new Packet();
+			pkt.setType(Packet.FRIEND_DATA);
+			FriendListRequestPacket ulp = new FriendListRequestPacket(userId);
+			ulp.setType(FriendDataPacket.REQUEST_FRIEND_LIST);
+			pkt.setPayload(ulp);
+			
+			Log.v("host", "here");
+			oos.writeObject(pkt);
+			Packet recv = (Packet) ois.readObject();
+			FriendListResponsePacket rrp = (FriendListResponsePacket)recv.getPayload();
+			ArrayList<Friend> friendlist = rrp.getFriendList();
+			this.friends = friendlist;
+			}catch (Exception e) {
+				
+			}
+			return null;
+			
+		}
+		protected void onPostExecute(Void result){
+			updateUI(friends);		
+		}
+	}
+
+	
 }
