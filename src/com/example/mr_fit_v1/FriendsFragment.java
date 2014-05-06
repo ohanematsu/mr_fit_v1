@@ -8,9 +8,15 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
+<<<<<<< HEAD
 import android.os.AsyncTask;
+=======
+import android.content.DialogInterface;
+import android.content.Intent;
+>>>>>>> 591d4a2216eace99eb54e3791dd76bdab5f50146
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,10 +31,14 @@ import android.widget.TextView;
 
 import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.session.Session;
+<<<<<<< HEAD
 import com.example.mr_fit_v1.util.Packet;
 import com.example.mr_fit_v1.ws.remote.FriendDataPacket;
 import com.example.mr_fit_v1.ws.remote.FriendListRequestPacket;
 import com.example.mr_fit_v1.ws.remote.FriendListResponsePacket;
+=======
+import com.example.mr_fit_v1.ws.local.SMSServiceManager;
+>>>>>>> 591d4a2216eace99eb54e3791dd76bdab5f50146
 
 public class FriendsFragment extends Fragment {
 	private String serverHost = "ec2-54-186-249-133.us-west-2.compute.amazonaws.com";
@@ -100,18 +110,15 @@ public class FriendsFragment extends Fragment {
         Log.i(LOGTAG, "Setup adapter complete...");
  
         // Click event for single list row
-        listView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View view, int position,
-					long id) {
-				// TODO: Pop-up dialog to send reminder
-				
-				
-			}
-		});
+        listView.setOnItemClickListener(listItemClickListener);
 		
 		Log.i(LOGTAG, "Update UI complete...");
+	}
+	
+	private void sendReminder(Friend selectedFriend) {
+		String message = "A reminder from your friend " + selectedFriend.getUserName() + ":\n" + 
+			"Hi My dear friend, I know you are very busy in these days. However, for your fitness, please don't forget to do exercise lol";
+		SMSServiceManager.sendSmsMessage(selectedFriend.getPhoneNum(), message);
 	}
 	
 	private void updateFriendList(ArrayList<Friend> list) {
@@ -170,6 +177,7 @@ public class FriendsFragment extends Fragment {
 	        return view;
 	    }
 	}
+<<<<<<< HEAD
 	public class MyListFriendTask extends AsyncTask<Void, Void, Void>{
 		String destAddress;
 		int dstport;
@@ -215,4 +223,27 @@ public class FriendsFragment extends Fragment {
 	}
 
 	
+=======
+	
+	private OnItemClickListener listItemClickListener = new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, final View view, int position,
+				long id) {
+			final Friend selectedFriend = (Friend)parent.getItemAtPosition(position);
+			
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+			alertDialogBuilder.setTitle("Send reminder");
+			alertDialogBuilder.setMessage("Do you want to send reminder to your friend " + selectedFriend.getUserName())
+					          .setCancelable(true)
+					          .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+					        	  public void onClick(DialogInterface dialog,int id) {
+					        		  sendReminder(selectedFriend);
+					        	  }
+					          });
+			AlertDialog alertDialog = alertDialogBuilder.create();
+			alertDialog.show();
+		}
+	};
+>>>>>>> 591d4a2216eace99eb54e3791dd76bdab5f50146
 }
