@@ -126,10 +126,10 @@ public class TrackingFragment extends Fragment {
 		
 		// Update UI based on Statistics
 		TextView distanceText = (TextView)view.findViewById(R.id.distanceTextView);
-		distanceText.setText(df.format(currentStatistics.getDistance()));
+		distanceText.setText(df.format(currentStatistics.getDistance()) + " meters");
 		
 		TextView speedText = (TextView)view.findViewById(R.id.speedTextView);
-		speedText.setText(df.format(currentStatistics.getSpeed()));
+		speedText.setText(df.format(currentStatistics.getSpeed()) + " m/s");
 		
 		TextView burnedCalorieText = (TextView)view.findViewById(R.id.burnedCalorieTextView);
 		burnedCalorieText.setText(df.format(currentStatistics.getCurBurnedCalorie()));

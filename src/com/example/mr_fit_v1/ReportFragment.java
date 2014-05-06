@@ -75,10 +75,10 @@ public class ReportFragment extends Fragment {
 		elapsedTextView.setText(hours + "h " + minutes + "min " + seconds + "s");
 		
 		TextView distanceTextView = (TextView)view.findViewById(R.id.distanceTextView);
-		distanceTextView.setText(df.format(report.getDistance()));
+		distanceTextView.setText(df.format(report.getDistance()) + " meters");
 		
 		TextView speedTextView = (TextView)view.findViewById(R.id.speedTextView);
-		speedTextView.setText(df.format(report.getSpeed()));
+		speedTextView.setText(df.format(report.getSpeed()) + " m/s");
 		
 		TextView burnedCalorieTextView = (TextView)view.findViewById(R.id.calorieTextView);
 		burnedCalorieTextView.setText(df.format(report.getCurBurnedCalorie()));

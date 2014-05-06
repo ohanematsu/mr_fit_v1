@@ -2,6 +2,7 @@ package com.example.mr_fit_v1;
 
 import java.util.Calendar;
 
+import android.R.integer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -56,12 +57,23 @@ private static final String LOGTAG = "SecondFragment";
 		}
 		Log.i(LOGTAG, "Set up UI model complete...");
 		
-		// TODO: Setup UI
+		// Setup UI
+		int hours = 0, min = statistics.getTimeElapasedSinceLastExercise();
+		if (min > 60) {
+			hours = min / 60;
+			min = min - hours * 60;
+		}
 		TextView sinceLastExerciseTime = (TextView)view.findViewById(R.id.error);
-		sinceLastExerciseTime.setText(String.valueOf(statistics.getTimeElapasedSinceLastExercise()));
-				
+		sinceLastExerciseTime.setText("" + hours + "h " + min + "min");
+		
+		hours = 0;
+		min = statistics.getCurExerciseTime();
+		if (min > 60) {
+			hours = min / 60;
+			min = min - hours * 60;
+		}
 		TextView exerciseTime = (TextView)view.findViewById(R.id.textView3);
-		exerciseTime.setText(String.valueOf(statistics.getCurExerciseTime()));
+		exerciseTime.setText("" + hours + "h " + min + "min");
 		
 		TextView burnedCalorie = (TextView)view.findViewById(R.id.textView4);
 		burnedCalorie.setText(String.valueOf(statistics.getCurBurnedCalorie()));

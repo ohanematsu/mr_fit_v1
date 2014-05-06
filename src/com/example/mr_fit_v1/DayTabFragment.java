@@ -86,7 +86,7 @@ public class DayTabFragment extends Fragment {
 		df.applyPattern("0.0000");
 		
 		TextView distance = (TextView)view.findViewById(R.id.distanceTextView);
-		distance.setText(df.format(statistics.getDistance()));
+		distance.setText(df.format(statistics.getDistance()) + " meters");
 		
 		TextView burnedCalorie = (TextView)view.findViewById(R.id.burnedCalorieTextView);
 		burnedCalorie.setText(df.format(statistics.getCurBurnedCalorie()));
