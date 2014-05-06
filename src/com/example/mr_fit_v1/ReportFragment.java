@@ -24,6 +24,9 @@ import com.example.mr_fit_v1.session.Session;
 
 public class ReportFragment extends Fragment {
 	private static final String LOGTAG = "ReportFragment";
+	
+	public static final String REPORT_FRAGMENT_PATH = "com.example.mr_fit_v1.ReportFragment.REPORT_FRAGMENT_PATH";
+	
 	private Report report;
 	
 	@Override
@@ -86,10 +89,9 @@ public class ReportFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				/*
-				Log.i(LOGTAG, "Prepare to show map...");
-				Intent intent = new Intent(getActivity(), TestMapActivity.class);
-				startActivity(intent);*/
+				Intent intent = new Intent(getActivity(), MapActivity.class);
+				intent.putExtra(REPORT_FRAGMENT_PATH, report.getPath());
+				startActivity(intent);
 			}
 		});
 		
