@@ -213,6 +213,7 @@ public class FriendsFragment extends Fragment {
 			
 		}
 		protected void onPostExecute(Void result){
+			Log.v("ui", "update");
 			updateUI(friends);		
 		}
 	}

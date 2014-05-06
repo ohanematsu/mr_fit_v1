@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -38,6 +39,13 @@ public class FriendsActivity extends Activity {
 		}
 	}
 
+	protected void onResume(Bundle savedInstanceState) {
+		FriendsFragment ff = new FriendsFragment();
+		FragmentTransaction ft = getFragmentManager().beginTransaction();
+		ft.add(R.id.container, ff);
+		ft.commit();
+		
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
