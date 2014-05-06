@@ -138,7 +138,7 @@ public class FriendsActivity extends Activity {
 			
 		}
 		protected void onPostExecute(Void result){
-			Intent intent = new Intent(, SearchFriendActivity.class);
+			//Intent intent = new Intent(, SearchFriendActivity.class);
 			
 		}
 	}
