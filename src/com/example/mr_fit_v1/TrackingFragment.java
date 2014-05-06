@@ -1,5 +1,7 @@
 package com.example.mr_fit_v1;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -118,15 +120,19 @@ public class TrackingFragment extends Fragment {
 		Calendar curTime = Calendar.getInstance();
 		currentStatistics.update(curTime, distance);
 		
+		// Setup number format
+		DecimalFormat df = (DecimalFormat)NumberFormat.getInstance();
+		df.applyPattern("#.0000");
+		
 		// Update UI based on Statistics
 		TextView distanceText = (TextView)view.findViewById(R.id.distanceTextView);
-		distanceText.setText(String.valueOf(currentStatistics.getDistance()));
+		distanceText.setText(df.format(currentStatistics.getDistance()));
 		
 		TextView speedText = (TextView)view.findViewById(R.id.speedTextView);
-		speedText.setText(String.valueOf(currentStatistics.getSpeed()));
+		speedText.setText(df.format(currentStatistics.getSpeed()));
 		
 		TextView burnedCalorieText = (TextView)view.findViewById(R.id.burnedCalorieTextView);
-		burnedCalorieText.setText(String.valueOf(currentStatistics.getCurBurnedCalorie()));
+		burnedCalorieText.setText(df.format(currentStatistics.getCurBurnedCalorie()));
 	}
 	
 	private LocationReceiver locationReceiver = new LocationReceiver() {
