@@ -11,7 +11,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.mr_fit_v1.dblayout.DatabaseManager;
@@ -78,6 +80,18 @@ public class ReportFragment extends Fragment {
 		TextView burnedCalorieTextView = (TextView)view.findViewById(R.id.calorieTextView);
 		burnedCalorieTextView.setText(df.format(report.getCurBurnedCalorie()));
 		Log.i(LOGTAG, "Set up UI complete...");
+		
+		Button mapButton = (Button)view.findViewById(R.id.mapButton);
+		mapButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				/*
+				Log.i(LOGTAG, "Prepare to show map...");
+				Intent intent = new Intent(getActivity(), TestMapActivity.class);
+				startActivity(intent);*/
+			}
+		});
 		
 		// Save statistics to database
 		@SuppressWarnings("unused")

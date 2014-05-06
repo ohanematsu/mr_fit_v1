@@ -61,5 +61,6 @@
     <string name="elapsedtime">Elapsed Time</string>
     <string name="stop">Stop</string>
     <string name="title_activity_add_friend">AddFriendActivity</string>
+    <string name="title_activity_test_map">TestMapActivity</string>
 
 </resources>
