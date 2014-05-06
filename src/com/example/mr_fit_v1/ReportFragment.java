@@ -59,7 +59,7 @@ public class ReportFragment extends Fragment {
 		
 		// Setup number format
 		DecimalFormat df = (DecimalFormat)NumberFormat.getInstance();
-		df.applyPattern("#.0000");
+		df.applyPattern("0.0000");
 		
 		// Set up UI based on Report
 		int hours = 0, minutes = 0, seconds = report.getCurExerciseTime();
@@ -72,7 +72,7 @@ public class ReportFragment extends Fragment {
 			minutes = minutes - hours * 60;
 		}
 		TextView elapsedTextView = (TextView)view.findViewById(R.id.elapsedTimeTextView);
-		elapsedTextView.setText(hours + "h" + minutes + "min" + seconds + "s");
+		elapsedTextView.setText(hours + "h " + minutes + "min " + seconds + "s");
 		
 		TextView distanceTextView = (TextView)view.findViewById(R.id.distanceTextView);
 		distanceTextView.setText(df.format(report.getDistance()));

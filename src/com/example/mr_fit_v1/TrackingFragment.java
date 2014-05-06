@@ -122,7 +122,7 @@ public class TrackingFragment extends Fragment {
 		
 		// Setup number format
 		DecimalFormat df = (DecimalFormat)NumberFormat.getInstance();
-		df.applyPattern("#.0000");
+		df.applyPattern("0.0000");
 		
 		// Update UI based on Statistics
 		TextView distanceText = (TextView)view.findViewById(R.id.distanceTextView);

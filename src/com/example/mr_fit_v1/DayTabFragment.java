@@ -80,10 +80,10 @@ public class DayTabFragment extends Fragment {
 			minutes = minutes - hours * 60;
 		}
 		TextView exerciseTime = (TextView)view.findViewById(R.id.exerciseTimeTextView);
-		exerciseTime.setText(hours + "h" + minutes + "min" + seconds + "s");
+		exerciseTime.setText(hours + "h " + minutes + "min " + seconds + "s");
 		
 		DecimalFormat df = (DecimalFormat)NumberFormat.getInstance();
-		df.applyPattern("#.0000");
+		df.applyPattern("0.0000");
 		
 		TextView distance = (TextView)view.findViewById(R.id.distanceTextView);
 		distance.setText(df.format(statistics.getDistance()));

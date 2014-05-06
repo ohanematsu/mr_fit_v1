@@ -57,7 +57,8 @@
         android:layout_alignLeft="@+id/error"
         android:layout_below="@+id/error"
         android:layout_marginTop="@dimen/small_margin_top"
-        android:text="" />
+        android:text="" 
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/error"

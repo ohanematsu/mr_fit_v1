@@ -69,7 +69,8 @@
         android:layout_alignLeft="@+id/error"
         android:layout_below="@+id/error"
         android:layout_marginTop="15dp"
-        android:text="Chronometer" />
+        android:text="Chronometer"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/distanceTextView"
