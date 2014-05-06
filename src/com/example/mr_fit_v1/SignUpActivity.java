@@ -85,6 +85,8 @@ public class SignUpActivity extends Activity {
 		String destAddress;
 		int dstport;
 		String response;
+		int userId;
+		String emailAddr;
 		MySignUpTask(String addr, int port){
 			destAddress = addr;
 			dstport = port;
@@ -105,6 +107,7 @@ public class SignUpActivity extends Activity {
 			EditText etPass = (EditText)findViewById(R.id.etPass);
 			String email = etEmail.getText().toString();
 			String userName = etUserName.getText().toString();
+			this.emailAddr = email;
 			String password = etPass.getText().toString();
 			Packet pkt = new Packet();
 			pkt.setType(Packet.USER_DATA);
@@ -115,10 +118,9 @@ public class SignUpActivity extends Activity {
 			oos.writeObject(pkt);
 			Packet recv = (Packet) ois.readObject();
 			RegisterResponsePacket rrp = (RegisterResponsePacket)recv.getPayload();
-			@SuppressWarnings("unused")
-			int userid =  rrp.getUserId();
+			this.userId =  rrp.getUserId();
 			
-			Session.initSession(userid, email, getApplicationContext());
+			
 			}catch (Exception e) {
 				
 			}
@@ -126,6 +128,7 @@ public class SignUpActivity extends Activity {
 			
 		}
 		protected void onPostExecute(Void result){
+			Session.initSession(userId, emailAddr, getApplicationContext());
 			Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
 			startActivity(intent);
 			
