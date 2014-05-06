@@ -1169,7 +1169,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f06006d;
+        public static final int action_settings=0x7f060068;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1201,7 +1201,6 @@ containing a value of this type.
         public static final int exerciseTimeTextView=0x7f060063;
         public static final int expand_activities_button=0x7f060026;
         public static final int expanded_menu=0x7f06002c;
-        public static final int fragment1=0x7f06004b;
         public static final int fragment_friend=0x7f060043;
         public static final int friendList=0x7f06004e;
         public static final int home=0x7f060014;
@@ -1213,11 +1212,11 @@ containing a value of this type.
         public static final int imageView1=0x7f06004c;
         public static final int imageView2=0x7f060058;
         public static final int imageView3=0x7f06005a;
-        public static final int item1=0x7f060068;
-        public static final int item2=0x7f060069;
-        public static final int item3=0x7f06006a;
-        public static final int item4=0x7f06006b;
-        public static final int item5=0x7f06006c;
+        public static final int item1=0x7f060069;
+        public static final int item2=0x7f06006a;
+        public static final int item3=0x7f06006b;
+        public static final int item4=0x7f06006c;
+        public static final int item5=0x7f06006d;
         public static final int linearLayout1=0x7f060046;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f060029;
@@ -1242,6 +1241,7 @@ containing a value of this type.
         public static final int search_plate=0x7f060036;
         public static final int search_src_text=0x7f060037;
         public static final int search_voice_btn=0x7f06003b;
+        public static final int searchresult=0x7f06004b;
         public static final int shortcut=0x7f06002e;
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
@@ -1318,38 +1318,41 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int activity_friends=0x7f030018;
-        public static final int activity_main=0x7f030019;
-        public static final int activity_map=0x7f03001a;
-        public static final int activity_report=0x7f03001b;
-        public static final int activity_search_friend=0x7f03001c;
-        public static final int activity_second=0x7f03001d;
-        public static final int activity_sign_up=0x7f03001e;
-        public static final int activity_statistics=0x7f03001f;
-        public static final int activity_tabs_fragment=0x7f030020;
-        public static final int activity_tracker=0x7f030021;
-        public static final int activity_trakcer_secondary=0x7f030022;
-        public static final int fragment_friends=0x7f030023;
-        public static final int fragment_main=0x7f030024;
-        public static final int fragment_map=0x7f030025;
-        public static final int fragment_month=0x7f030026;
-        public static final int fragment_report=0x7f030027;
-        public static final int fragment_search_friend=0x7f030028;
-        public static final int fragment_second=0x7f030029;
-        public static final int fragment_settings=0x7f03002a;
-        public static final int fragment_sign_up=0x7f03002b;
-        public static final int fragment_statistic=0x7f03002c;
-        public static final int fragment_statistics_tab=0x7f03002d;
-        public static final int fragment_tabs=0x7f03002e;
-        public static final int fragment_tracker=0x7f03002f;
-        public static final int fragment_tracking=0x7f030030;
-        public static final int fragment_tracking_v2=0x7f030031;
-        public static final int list_row=0x7f030032;
-        public static final int support_simple_spinner_dropdown_item=0x7f030033;
+        public static final int activity_add_friend=0x7f030018;
+        public static final int activity_friends=0x7f030019;
+        public static final int activity_main=0x7f03001a;
+        public static final int activity_map=0x7f03001b;
+        public static final int activity_report=0x7f03001c;
+        public static final int activity_search_friend=0x7f03001d;
+        public static final int activity_second=0x7f03001e;
+        public static final int activity_sign_up=0x7f03001f;
+        public static final int activity_statistics=0x7f030020;
+        public static final int activity_tabs_fragment=0x7f030021;
+        public static final int activity_tracker=0x7f030022;
+        public static final int activity_trakcer_secondary=0x7f030023;
+        public static final int fragment_add_friend=0x7f030024;
+        public static final int fragment_friends=0x7f030025;
+        public static final int fragment_main=0x7f030026;
+        public static final int fragment_map=0x7f030027;
+        public static final int fragment_month=0x7f030028;
+        public static final int fragment_report=0x7f030029;
+        public static final int fragment_search_friend=0x7f03002a;
+        public static final int fragment_second=0x7f03002b;
+        public static final int fragment_settings=0x7f03002c;
+        public static final int fragment_sign_up=0x7f03002d;
+        public static final int fragment_statistic=0x7f03002e;
+        public static final int fragment_statistics_tab=0x7f03002f;
+        public static final int fragment_tabs=0x7f030030;
+        public static final int fragment_tracker=0x7f030031;
+        public static final int fragment_tracking=0x7f030032;
+        public static final int fragment_tracking_v2=0x7f030033;
+        public static final int list_row=0x7f030034;
+        public static final int support_simple_spinner_dropdown_item=0x7f030035;
     }
     public static final class menu {
-        public static final int main=0x7f0e0000;
-        public static final int sign_up=0x7f0e0001;
+        public static final int add_friend=0x7f0e0000;
+        public static final int main=0x7f0e0001;
+        public static final int sign_up=0x7f0e0002;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1410,27 +1413,27 @@ containing a value of this type.
         public static final int item5=0x7f0b001c;
         public static final int notuser=0x7f0b0035;
         public static final int password=0x7f0b002d;
-        public static final int pref_default_display_name=0x7f0b003e;
-        public static final int pref_description_social_recommendations=0x7f0b003c;
+        public static final int pref_default_display_name=0x7f0b003f;
+        public static final int pref_description_social_recommendations=0x7f0b003d;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f0b0040;
+        public static final int pref_header_data_sync=0x7f0b0041;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f0b003a;
+        public static final int pref_header_general=0x7f0b003b;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f0b0043;
-        public static final int pref_ringtone_silent=0x7f0b0046;
-        public static final int pref_title_add_friends_to_messages=0x7f0b003f;
-        public static final int pref_title_display_name=0x7f0b003d;
-        public static final int pref_title_new_message_notifications=0x7f0b0044;
-        public static final int pref_title_ringtone=0x7f0b0045;
-        public static final int pref_title_social_recommendations=0x7f0b003b;
-        public static final int pref_title_sync_frequency=0x7f0b0041;
-        public static final int pref_title_system_sync_settings=0x7f0b0042;
-        public static final int pref_title_vibrate=0x7f0b0047;
+        public static final int pref_header_notifications=0x7f0b0044;
+        public static final int pref_ringtone_silent=0x7f0b0047;
+        public static final int pref_title_add_friends_to_messages=0x7f0b0040;
+        public static final int pref_title_display_name=0x7f0b003e;
+        public static final int pref_title_new_message_notifications=0x7f0b0045;
+        public static final int pref_title_ringtone=0x7f0b0046;
+        public static final int pref_title_social_recommendations=0x7f0b003c;
+        public static final int pref_title_sync_frequency=0x7f0b0042;
+        public static final int pref_title_system_sync_settings=0x7f0b0043;
+        public static final int pref_title_vibrate=0x7f0b0048;
         public static final int searchnewfriend=0x7f0b0032;
         public static final int setpreference=0x7f0b0031;
         public static final int signin=0x7f0b0034;
@@ -1440,13 +1443,14 @@ containing a value of this type.
         public static final int startrunning=0x7f0b0030;
         public static final int startwalking=0x7f0b002f;
         public static final int stop=0x7f0b0038;
+        public static final int title_activity_add_friend=0x7f0b0039;
         public static final int title_activity_friends=0x7f0b0015;
         public static final int title_activity_map=0x7f0b001f;
         public static final int title_activity_report=0x7f0b0013;
         public static final int title_activity_search_friend=0x7f0b0016;
         public static final int title_activity_second=0x7f0b0010;
         public static final int title_activity_setting=0x7f0b0017;
-        public static final int title_activity_settings=0x7f0b0039;
+        public static final int title_activity_settings=0x7f0b003a;
         public static final int title_activity_sign_up=0x7f0b0025;
         public static final int title_activity_statistic=0x7f0b0014;
         public static final int title_activity_statistics=0x7f0b0020;

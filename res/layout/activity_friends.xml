@@ -35,6 +35,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/avatar"
+                android:onClick="sendRequest"
                 android:src="@drawable/ic_action_search" />
 
         </LinearLayout>

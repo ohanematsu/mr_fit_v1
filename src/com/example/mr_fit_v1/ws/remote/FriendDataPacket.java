@@ -2,7 +2,7 @@ package com.example.mr_fit_v1.ws.remote;
 
 import java.io.Serializable;
 
-public class FriendDataPacket implements Serializable {
+public class FriendDataPacket implements Serializable{
 
 	/**
 	 * 

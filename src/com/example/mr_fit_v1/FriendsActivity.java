@@ -18,12 +18,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.util.Packet;
-import com.example.mr_fit_v1.ws.remote.FriendDataPacket;
-import com.example.mr_fit_v1.ws.remote.FriendListRequestPacket;
-import com.example.mr_fit_v1.ws.remote.FriendListResponsePacket;
+import com.example.mr_fit_v1.ws.remote.FriendSearchRequestPacket;
+import com.example.mr_fit_v1.ws.remote.FriendSearchResponsePacket;
 
 public class FriendsActivity extends Activity {
 	private String serverHost = "ec2-54-186-249-133.us-west-2.compute.amazonaws.com";
@@ -45,6 +45,7 @@ public class FriendsActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -98,15 +99,23 @@ public class FriendsActivity extends Activity {
 			return rootView;
 		}
 	}
-	public class MyListFriendTask extends AsyncTask<Void, Void, Void>{
+	
+	public void sendRequest(View view){
+		EditText et = (EditText)findViewById(R.id.etAddFriend);
+		String search = et.getText().toString();
+		MySearchFriendTask at = new MySearchFriendTask(serverHost, 18641, search);
+		at.execute();
+	}
+	
+	public class MySearchFriendTask extends AsyncTask<Void, Void, Void>{
 		String destAddress;
 		int dstport;
-		int userId;
 		ArrayList<Friend> friends; 
-		MyListFriendTask(String addr, int port, int userId){
+		String search;
+		MySearchFriendTask(String addr, int port, String str){
 			destAddress = addr;
 			dstport = port;
-			this.userId = userId;
+			this.search = str;
 		}
 		
 		@SuppressWarnings("resource")
@@ -121,15 +130,15 @@ public class FriendsActivity extends Activity {
 			ObjectInputStream ois = new ObjectInputStream(is);
 			Packet pkt = new Packet();
 			pkt.setType(Packet.FRIEND_DATA);
-			FriendListRequestPacket ulp = new FriendListRequestPacket(userId);
-			ulp.setType(FriendDataPacket.REQUEST_FRIEND_LIST);
-			pkt.setPayload(ulp);
+			FriendSearchRequestPacket fsp = new FriendSearchRequestPacket(search);
+			
+			pkt.setPayload(fsp);
 			
 			Log.v("host", "here");
 			oos.writeObject(pkt);
 			Packet recv = (Packet) ois.readObject();
-			FriendListResponsePacket rrp = (FriendListResponsePacket)recv.getPayload();
-			ArrayList<Friend> friendlist = rrp.getFriendList();
+			FriendSearchResponsePacket rrp = (FriendSearchResponsePacket)recv.getPayload();
+			ArrayList<Friend> friendlist = rrp.getList();
 			this.friends = friendlist;
 			}catch (Exception e) {
 				
@@ -138,8 +147,9 @@ public class FriendsActivity extends Activity {
 			
 		}
 		protected void onPostExecute(Void result){
-			//Intent intent = new Intent(, SearchFriendActivity.class);
-			
+			Intent intent = new Intent(getApplicationContext(), SearchFriendActivity.class);
+			intent.putExtra("friends",friends);
+			startActivity(intent);
 		}
 	}
 

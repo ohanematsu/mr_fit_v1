@@ -26,8 +26,9 @@
     <string name="title_section3">Month</string>
     <string name="title_activity_tabs_fragment">TabsFragmentActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+
     <style name="DefaultButtonText">
-       <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#979797</item>
         <item name="android:gravity">center</item>
@@ -39,6 +40,7 @@
         <item name="android:shadowDy">1</item>
         <item name="android:shadowRadius">1</item>
     </style>
+
     <string name="sincelastexercise">Since Last Exercise</string>
     <string name="exercisetime">Exercise Time</string>
     <string name="distance">Distance</string>
@@ -58,5 +60,6 @@
     <string name="speed">Speed</string>
     <string name="elapsedtime">Elapsed Time</string>
     <string name="stop">Stop</string>
+    <string name="title_activity_add_friend">AddFriendActivity</string>
 
 </resources>

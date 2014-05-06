@@ -1,10 +1,15 @@
 package com.example.mr_fit_v1.entities;
 
-public class Friend {
+import java.io.Serializable;
+
+public class Friend implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final int JUST_FINISH_EXERCISE = 0;
 	public static final int FINISH_EXERCISE_FOR_A_WHILE = 1;
 	public static final int LONG_TIME_NO_EXERCISE = 2;
-
 	private int userId;
 	private String userName;
 	private String phoneNum;

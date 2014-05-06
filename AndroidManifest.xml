@@ -93,6 +93,10 @@
             android:name="com.example.mr_fit_v1.SignUpActivity"
             android:label="@string/title_activity_sign_up" >
         </activity>
+        <activity
+            android:name="com.example.mr_fit_v1.AddFriendActivity"
+            android:label="@string/title_activity_add_friend" >
+        </activity>
     </application>
 
 </manifest>
