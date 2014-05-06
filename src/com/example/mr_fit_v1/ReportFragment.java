@@ -1,5 +1,7 @@
 package com.example.mr_fit_v1;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import android.app.Fragment;
@@ -50,19 +52,22 @@ public class ReportFragment extends Fragment {
 		Log.i(LOGTAG, "Create fragment view...");
 		View view = inflater.inflate(R.layout.fragment_report, parent, false);
 		
+		// Setup number format
+		DecimalFormat df = (DecimalFormat)NumberFormat.getInstance();
+		df.applyPattern("#.0000");
 		
 		// Set up UI based on Report
 		TextView elapsedTextView = (TextView)view.findViewById(R.id.elapsedTimeTextView);
 		elapsedTextView.setText(String.valueOf(report.getCurExerciseTime()));
 		
 		TextView distanceTextView = (TextView)view.findViewById(R.id.distanceTextView);
-		distanceTextView.setText(String.valueOf(report.getDistance()));
+		distanceTextView.setText(df.format(report.getDistance()));
 		
 		TextView speedTextView = (TextView)view.findViewById(R.id.speedTextView);
-		speedTextView.setText(String.valueOf(report.getSpeed()));
+		speedTextView.setText(df.format(report.getSpeed()));
 		
 		TextView burnedCalorieTextView = (TextView)view.findViewById(R.id.calorieTextView);
-		burnedCalorieTextView.setText(String.valueOf(report.getCurBurnedCalorie()));
+		burnedCalorieTextView.setText(df.format(report.getCurBurnedCalorie()));
 		Log.i(LOGTAG, "Set up UI complete...");
 		
 		// Save statistics to database

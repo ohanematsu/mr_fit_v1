@@ -30,7 +30,7 @@ public class CalorieCalculator {
 		} else {
 			scale = FAST_RUN_CONSUMPTION;
 		}
-		int calorie = (int)duration / 3600 * scale;
+		int calorie = (int)((float)duration / 3600 * scale);
 		return calorie; 
 	}
 }
