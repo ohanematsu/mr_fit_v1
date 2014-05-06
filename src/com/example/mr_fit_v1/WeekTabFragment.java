@@ -1,5 +1,7 @@
 package com.example.mr_fit_v1;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Calendar;
 
 import android.os.Bundle;
@@ -67,14 +69,26 @@ public class WeekTabFragment extends Fragment {
 		}
 		
 		// Setup UI
-		TextView exerciseTime = (TextView)view.findViewById(R.id.exerciseTimeTextView); 
-		exerciseTime.setText(String.valueOf(statistics.getCurExerciseTime()));
+		int hours = 0, minutes = 0, seconds = statistics.getCurExerciseTime();
+		if (seconds > 60) {
+			minutes = seconds / 60;
+			seconds = seconds - minutes * 60;
+		}
+		if (minutes > 60) {
+			hours = minutes / 60;
+			minutes = minutes - hours * 60;
+		}
+		TextView exerciseTime = (TextView)view.findViewById(R.id.exerciseTimeTextView);
+		exerciseTime.setText(hours + "h" + minutes + "min" + seconds + "s");
+		
+		DecimalFormat df = (DecimalFormat)NumberFormat.getInstance();
+		df.applyPattern("#.0000");
 		
 		TextView distance = (TextView)view.findViewById(R.id.distanceTextView);
-		distance.setText(String.valueOf(statistics.getDistance()));
+		distance.setText(df.format(statistics.getDistance()));
 		
 		TextView burnedCalorie = (TextView)view.findViewById(R.id.burnedCalorieTextView);
-		burnedCalorie.setText(String.valueOf(statistics.getCurBurnedCalorie()));
+		burnedCalorie.setText(df.format(statistics.getCurBurnedCalorie()));
 		Log.i(LOGTAG, "Set up UI complete...");
 		
 		Log.i(LOGTAG, "Creating fragment view complete...");

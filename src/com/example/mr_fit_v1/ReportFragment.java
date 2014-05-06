@@ -57,8 +57,17 @@ public class ReportFragment extends Fragment {
 		df.applyPattern("#.0000");
 		
 		// Set up UI based on Report
+		int hours = 0, minutes = 0, seconds = report.getCurExerciseTime();
+		if (seconds > 60) {
+			minutes = seconds / 60;
+			seconds = seconds - minutes * 60;
+		}
+		if (minutes > 60) {
+			hours = minutes / 60;
+			minutes = minutes - hours * 60;
+		}
 		TextView elapsedTextView = (TextView)view.findViewById(R.id.elapsedTimeTextView);
-		elapsedTextView.setText(String.valueOf(report.getCurExerciseTime()));
+		elapsedTextView.setText(hours + "h" + minutes + "min" + seconds + "s");
 		
 		TextView distanceTextView = (TextView)view.findViewById(R.id.distanceTextView);
 		distanceTextView.setText(df.format(report.getDistance()));
