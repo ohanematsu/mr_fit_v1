@@ -21,7 +21,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.example.mr_fit_v1.FriendsActivity.MySearchFriendTask;
 import com.example.mr_fit_v1.entities.Friend;
 import com.example.mr_fit_v1.util.Packet;
 import com.example.mr_fit_v1.ws.remote.FriendDataPacket;
@@ -151,6 +150,7 @@ public class SearchFriendActivity extends Activity {
 			ArrayList<Friend> friendlist = rrp.getList();
 			this.friends = friendlist;
 			Log.v("friends", String.valueOf(friends.size()));
+			sock.close();
 			}catch (Exception e) {
 				
 			}

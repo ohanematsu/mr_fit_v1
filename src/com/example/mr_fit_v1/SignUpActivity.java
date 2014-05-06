@@ -120,7 +120,7 @@ public class SignUpActivity extends Activity {
 			RegisterResponsePacket rrp = (RegisterResponsePacket)recv.getPayload();
 			this.userId =  rrp.getUserId();
 			
-			
+			sock.close();
 			}catch (Exception e) {
 				
 			}

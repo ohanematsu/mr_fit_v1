@@ -112,6 +112,7 @@ public class MainActivity extends Activity {
 			
 			perm = permit;
 			id = rrp.getId();
+			sock.close();
 			}catch (Exception e) {
 				
 			}

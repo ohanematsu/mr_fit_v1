@@ -1,17 +1,8 @@
 package com.example.mr_fit_v1;
 
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,13 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.example.mr_fit_v1.entities.Friend;
-import com.example.mr_fit_v1.util.Packet;
-import com.example.mr_fit_v1.ws.remote.FriendSearchRequestPacket;
-import com.example.mr_fit_v1.ws.remote.FriendSearchResponsePacket;
-
 public class FriendsActivity extends Activity {
-	private String serverHost = "ec2-54-186-249-133.us-west-2.compute.amazonaws.com";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,17 +21,10 @@ public class FriendsActivity extends Activity {
 		
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
+					.add(R.id.container, new FriendsFragment()).commit();
 		}
 	}
 
-	protected void onResume(Bundle savedInstanceState) {
-		FriendsFragment ff = new FriendsFragment();
-		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.add(R.id.container, ff);
-		ft.commit();
-		
-	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -109,56 +88,17 @@ public class FriendsActivity extends Activity {
 	}
 	
 	public void sendRequest(View view){
+		Log.v("button", "from friend to search");
 		EditText et = (EditText)findViewById(R.id.etAddFriend);
 		String search = et.getText().toString();
-		MySearchFriendTask at = new MySearchFriendTask(serverHost, 18641, search);
-		at.execute();
+		Intent intent = new Intent(this, SearchFriendActivity.class);	
+		startActivity(intent);
+		Log.v("after activity started", "here");
+		//MySearchFriendTask at = new MySearchFriendTask(serverHost, 18641, search);
+		//at.execute();
 	}
 	
-	public class MySearchFriendTask extends AsyncTask<Void, Void, Void>{
-		String destAddress;
-		int dstport;
-		ArrayList<Friend> friends; 
-		String search;
-		MySearchFriendTask(String addr, int port, String str){
-			destAddress = addr;
-			dstport = port;
-			this.search = str;
-		}
 		
-		@SuppressWarnings("resource")
-		protected Void doInBackground(Void... params){
-			Socket sock;
-			try {
-				sock = new Socket(destAddress, dstport);
-			
-			OutputStream os = sock.getOutputStream();
-			ObjectOutputStream oos = new ObjectOutputStream(os);
-			InputStream is = sock.getInputStream();
-			ObjectInputStream ois = new ObjectInputStream(is);
-			Packet pkt = new Packet();
-			pkt.setType(Packet.FRIEND_DATA);
-			FriendSearchRequestPacket fsp = new FriendSearchRequestPacket(search);
-			
-			pkt.setPayload(fsp);
-			
-			Log.v("host", "here");
-			oos.writeObject(pkt);
-			Packet recv = (Packet) ois.readObject();
-			FriendSearchResponsePacket rrp = (FriendSearchResponsePacket)recv.getPayload();
-			ArrayList<Friend> friendlist = rrp.getList();
-			this.friends = friendlist;
-			}catch (Exception e) {
-				
-			}
-			return null;
-			
-		}
-		protected void onPostExecute(Void result){
-			Intent intent = new Intent(getApplicationContext(), SearchFriendActivity.class);
-			intent.putExtra("friends",friends);
-			startActivity(intent);
-		}
-	}
+	
 
 }

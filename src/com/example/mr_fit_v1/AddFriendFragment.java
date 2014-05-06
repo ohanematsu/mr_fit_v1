@@ -42,27 +42,7 @@ public class AddFriendFragment extends Fragment {
 	
 	private ArrayList<Friend> friendList = null;
 	
-	@SuppressWarnings("unused")
-	private Thread friendRetrievingTask = new Thread() {
-		@Override
-		public void run() {
-			// TODO:Send message to server to retrieve friend list
-			Log.i(LOGTAG, "Send request to server...");
-			
-			// Parse received data
-			//ArrayList<Friend> friendList = new ArrayList<Friend>();
-			Log.i(LOGTAG, "Parse friend list complete...");
-			
-			// Update UI
-			//updateUI(friendList);
-			Log.i(LOGTAG, "Set up UI complete...");
-			//updateFriendList(friendList);
-			// Update friend list
-			
-			
-			super.run();
-		}
-	};
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -112,6 +92,7 @@ public class AddFriendFragment extends Fragment {
 		int targetuser = selectedFriend.getUserId();
 		AddFriendTask aft = new AddFriendTask(serverHost, 18641, targetuser);
 		aft.execute();
+		
 		
 	}
 	
@@ -203,12 +184,12 @@ public class AddFriendFragment extends Fragment {
 			
 			Log.v("host", "here");
 			oos.writeObject(pkt);
-			Packet recv = (Packet) ois.readObject();
-			FriendAddResponsePacket rrp = (FriendAddResponsePacket)recv.getPayload();
-			this.isPermit = rrp.isPermit();
-			
+			//Packet recv = (Packet) ois.readObject();
+			//FriendAddResponsePacket rrp = (FriendAddResponsePacket)recv.getPayload();
+			//this.isPermit = rrp.isPermit();
+			sock.close();
 			}catch (Exception e) {
-				
+				e.printStackTrace();
 			}
 			return null;
 			
@@ -221,6 +202,7 @@ public class AddFriendFragment extends Fragment {
 					   
 			AlertDialog alertDialog = alertDialogBuilder.create();
 			alertDialog.show();
+			//getActivity().finish();
 			
 		}
 	}

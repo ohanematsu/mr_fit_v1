@@ -45,27 +45,8 @@ public class FriendsFragment extends Fragment {
 	
 	private ArrayList<Friend> friendList;
 	
-	@SuppressWarnings("unused")
-	private Thread friendRetrievingTask = new Thread() {
-		@Override
-		public void run() {
-			// TODO:Send message to server to retrieve friend list
-			Log.i(LOGTAG, "Send request to server...");
-			
-			// Parse received data
-			ArrayList<Friend> friendList = new ArrayList<Friend>();
-			Log.i(LOGTAG, "Parse friend list complete...");
-			
-			// Update UI
-			updateUI(friendList);
-			Log.i(LOGTAG, "Set up UI complete...");
-			
-			// Update friend list
-			updateFriendList(friendList);
-			
-			super.run();
-		}
-	};
+	
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -93,6 +74,7 @@ public class FriendsFragment extends Fragment {
 		int id = Session.getInstance().getUserId();
 		MyListFriendTask mlft = new MyListFriendTask(serverHost, 18641, id);
 		mlft.execute();
+
 		Log.i(LOGTAG, "Create Fragment view complete...");
 		return view;
 	}
@@ -213,8 +195,8 @@ public class FriendsFragment extends Fragment {
 			
 		}
 		protected void onPostExecute(Void result){
-			Log.v("ui", "update");
-			updateUI(friends);		
+			updateUI(friends);
+			
 		}
 	}
 
