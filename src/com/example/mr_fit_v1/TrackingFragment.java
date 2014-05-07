@@ -83,6 +83,9 @@ public class TrackingFragment extends Fragment {
 		// Setup UI
 		chronometer = (Chronometer)view.findViewById(R.id.chronometer);
 		updateUI(0.0f);
+		TextView textview = (TextView)view.findViewById(R.id.textView1); 
+		String str = getActivity().getIntent().getStringExtra("type");
+		textview.setText(str);
 		
 		Log.i(LOGTAG, "Creating fragment view complete...");
 		return view;

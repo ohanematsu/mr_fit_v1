@@ -89,6 +89,9 @@ public class WeekTabFragment extends Fragment {
 		
 		TextView burnedCalorie = (TextView)view.findViewById(R.id.burnedCalorieTextView);
 		burnedCalorie.setText(df.format(statistics.getCurBurnedCalorie()));
+		
+		TextView feedback = (TextView)view.findViewById(R.id.feedback);
+		feedback.setText(statistics.getFeedback());
 		Log.i(LOGTAG, "Set up UI complete...");
 		
 		Log.i(LOGTAG, "Creating fragment view complete...");

@@ -86,11 +86,13 @@ public class TrackerActivity extends Activity {
 	public void WalkRequest(View view){
 		Intent intent = new Intent(this, TrackerSecondaryActivity.class);
 		//TODO
+		intent.putExtra("type", "Walking");
 		startActivity(intent);
 		
 	}
 	public void RunRequest(View view){
 		Intent intent = new Intent(this, TrackerSecondaryActivity.class);
+		intent.putExtra("type", "Runninging");
 		//TODO
 		startActivity(intent);
 		
