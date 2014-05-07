@@ -105,13 +105,15 @@ public class SignUpActivity extends Activity {
 			EditText etEmail = (EditText)findViewById(R.id.etEmail);
 			EditText etUserName = (EditText)findViewById(R.id.etUserName);
 			EditText etPass = (EditText)findViewById(R.id.etPass);
+			EditText etPhoneNum = (EditText)findViewById(R.id.etPhoneNum);
 			String email = etEmail.getText().toString();
 			String userName = etUserName.getText().toString();
+			String phone = etPhoneNum.getText().toString();
 			this.emailAddr = email;
 			String password = etPass.getText().toString();
 			Packet pkt = new Packet();
 			pkt.setType(Packet.USER_DATA);
-			RegisterPacket rp = new RegisterPacket(email, password, userName, 1, "default");
+			RegisterPacket rp = new RegisterPacket(email, password, userName, 1, "default", phone);
 			rp.setType(UserDataPacket.REGISTER);
 			pkt.setPayload(rp);
 			Log.v("host", "here");

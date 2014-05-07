@@ -46,6 +46,18 @@
             android:textColorHint="@color/hint_color" />
 
         <EditText
+            android:id="@+id/etPhoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:background="@drawable/edittext_default_bg"
+            android:drawableLeft="@drawable/ic_action_phone"
+            android:hint="Phone Number"
+            android:inputType="textPhonetic"
+            android:padding="@dimen/ten_margin"
+            android:textColorHint="@color/hint_color" />
+
+        <EditText
             android:id="@+id/etPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

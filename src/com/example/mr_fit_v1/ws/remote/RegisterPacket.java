@@ -12,15 +12,17 @@ public class RegisterPacket extends UserDataPacket {
 	private int avatarId;
 	private String gender;
 	private int status;
+	private String phonenum;
 	
 	// Used for registration
-	public RegisterPacket(String account, String password, String name, int avatarId, String gender) {
+	public RegisterPacket(String account, String password, String name, int avatarId, String gender, String phoneNum) {
 		super(UserDataPacket.REGISTER);
 		this.account = account;
 		this.password = password;
 		this.name = name;
 		this.avatarId = avatarId;
 		this.gender = gender;
+		this.setPhonenum(phoneNum);
 	}
 
 	public String getAccount() {
@@ -69,5 +71,13 @@ public class RegisterPacket extends UserDataPacket {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public String getPhonenum() {
+		return phonenum;
+	}
+
+	public void setPhonenum(String phonenum) {
+		this.phonenum = phonenum;
 	}
 }

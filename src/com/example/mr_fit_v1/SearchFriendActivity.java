@@ -43,7 +43,7 @@ public class SearchFriendActivity extends Activity {
 		this.frag = af;
 		//af.updateUI(friends);
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.add(R.id.container, af);
+		ft.replace(R.id.container, af);
 		ft.commit();
 		
 	}

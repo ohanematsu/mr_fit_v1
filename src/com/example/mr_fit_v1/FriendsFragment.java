@@ -83,6 +83,7 @@ public class FriendsFragment extends Fragment {
 		// Getting adapter
 		if(friendList == null)
 			return;
+		Log.v("friend list in updateUI", String.valueOf(friendList.size()));
         FriendAdapter adapter = new FriendAdapter(getActivity(), friendList);
         listView.setAdapter(adapter);
         Log.i(LOGTAG, "Setup adapter complete...");
@@ -187,6 +188,7 @@ public class FriendsFragment extends Fragment {
 			Packet recv = (Packet) ois.readObject();
 			FriendListResponsePacket rrp = (FriendListResponsePacket)recv.getPayload();
 			ArrayList<Friend> friendlist = rrp.getFriendList();
+			Log.v("size", String.valueOf(friendlist.size()));
 			this.friends = friendlist;
 			}catch (Exception e) {
 				
@@ -195,7 +197,8 @@ public class FriendsFragment extends Fragment {
 			
 		}
 		protected void onPostExecute(Void result){
-			updateUI(friends);
+			Log.v("after size", String.valueOf(this.friends.size()));
+			updateUI(this.friends);
 			
 		}
 	}

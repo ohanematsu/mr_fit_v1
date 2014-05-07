@@ -92,7 +92,7 @@ public class TrackerActivity extends Activity {
 	}
 	public void RunRequest(View view){
 		Intent intent = new Intent(this, TrackerSecondaryActivity.class);
-		intent.putExtra("type", "Runninging");
+		intent.putExtra("type", "Running");
 		//TODO
 		startActivity(intent);
 		

@@ -8,9 +8,8 @@ class UserDataManager extends BaseRemoteDatabaseManager implements ManageUserDat
 		super();
 	}
 	
-	@Override
-	public boolean register(String account, String password, String name, int avatarId, String gender) {
-		RegisterPacket registerPacket = new RegisterPacket(account, password, name, avatarId, gender);
+	public boolean register(String account, String password, String name, int avatarId, String gender, String phone) {
+		RegisterPacket registerPacket = new RegisterPacket(account, password, name, avatarId, gender, phone);
 		return sendUserDataPacket(registerPacket);
 	}
 
@@ -61,6 +60,13 @@ class UserDataManager extends BaseRemoteDatabaseManager implements ManageUserDat
 	private boolean sendUserDataPacket(UserDataPacket payload) {
 		Packet packet = new Packet(session.getUserId(), Packet.USER_DATA, payload);
 		return sendPacket(packet);
+	}
+
+	@Override
+	public boolean register(String account, String password, String name,
+			int avatarId, String gender) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

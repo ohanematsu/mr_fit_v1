@@ -69,11 +69,5 @@
             </TableRow>
         </TableLayout>
 
-        <fragment
-            android:id="@+id/fragment_friend"
-            android:name="com.example.mr_fit_v1.FriendsFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
     </LinearLayout>
 
