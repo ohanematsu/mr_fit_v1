@@ -116,21 +116,12 @@
         android:textStyle="italic" />
 
     <ImageButton
-        android:id="@+id/imageButton1"
+        android:id="@+id/mapButton"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_below="@+id/calorieTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="102dp"
         android:src="@drawable/ic_action_map" />
-
-    <Button
-        android:id="@+id/mapButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="23dp"
-        android:layout_toRightOf="@+id/imageButton1"
-        android:text="Path" />
 
 </RelativeLayout>

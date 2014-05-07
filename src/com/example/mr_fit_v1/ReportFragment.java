@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mr_fit_v1.dblayout.DatabaseManager;
@@ -84,7 +85,7 @@ public class ReportFragment extends Fragment {
 		burnedCalorieTextView.setText(df.format(report.getCurBurnedCalorie()));
 		Log.i(LOGTAG, "Set up UI complete...");
 		
-		Button mapButton = (Button)view.findViewById(R.id.mapButton);
+		ImageButton mapButton = (ImageButton)view.findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
